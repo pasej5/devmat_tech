@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'devmat_tech.urls'
+ROOT_URLCONF = 'jmatsika_website.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'devmat_tech.wsgi.application'
+WSGI_APPLICATION = 'jmatsika_website.wsgi.application'
 
 
 # Database
