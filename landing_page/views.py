@@ -16,3 +16,6 @@ def contact(request):
 
 def portfolio(request):
     return render(request, 'landing_page/portfolio.html')
+
+def careers(request):
+    return render(request, 'landing_page/careers.html')
