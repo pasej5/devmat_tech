@@ -9,7 +9,7 @@ def about(request):
     return render(request, 'landing_page/about.html')
 
 def blog(request):
-    return render(request, 'landing_page/medium.html')
+    return render(request, 'landing_page/insights.html')
 
 def contact(request):
     return render(request, 'landing_page/contact.html')
