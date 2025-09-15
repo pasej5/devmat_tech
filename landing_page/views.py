@@ -19,3 +19,6 @@ def portfolio(request):
 
 def careers(request):
     return render(request, 'landing_page/careers.html')
+
+def services(request):
+    return render(request, 'landing_page/services.html')
