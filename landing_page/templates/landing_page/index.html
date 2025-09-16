@@ -87,7 +87,7 @@
 				<div class="flexslider js-fullheight">
 					<ul class="slides">
 					{% comment %} <li style="background-image: url('{% static "landing_page/background.jpg" %}');"> {% endcomment %}
-					<li style="background-image: url('{% static 'landing_page/videos/myvideo.mp4' %}');">
+					{% comment %} <li style="background-image: url('{% static 'landing_page/videos/myvideo.mp4' %}');">
 				   		<div class="overlay"></div>
 				   		<div class="container-fluid">
 				   			<div class="row">
@@ -100,7 +100,32 @@
 					   			</div>
 					   		</div>
 				   		</div>
-				   	</li>
+				   	</li> {% endcomment %}
+
+					<li class="js-fullheight">
+					<!-- Video background -->
+					<video autoplay muted loop class="video-bg">
+					<source src="{% static 'landing_page/videos/myvideo.mp4' %}" type="video/mp4">
+					Your browser does not support the video tag.
+					</video>
+
+					<!-- Overlay -->
+					<div class="overlay"></div>
+
+					<!-- Your existing content -->
+					<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
+							<div class="slider-text-inner">
+								<h1>Intuitive, <strong></strong> We create IT strategies, provide consulting services.</h1>
+								<h2>Revolutionize IT support with <a href="https://jmatsika.com" target="_blank">JMatsika</a></h2>
+								<p></p>
+							</div>
+						</div>
+					</div>
+					</div>
+					</li>
+
 				   	<li style="background-image: url('{% static "images/background1.jpg" %}');">
 				   		<div class="overlay"></div>
 				   		<div class="container-fluid">
