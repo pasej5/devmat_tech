@@ -58,7 +58,36 @@
 		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
 		<aside id="fh5co-aside" role="complementary" class="border js-fullheight">
 
-		<h1 id="fh5co-logo">
+			<h1 id="fh5co-logo" style="margin:0;">
+				<a href="{% url 'index' %}" style="display:inline-flex; align-items:center; text-decoration:none; color:inherit;">
+					<img src="{% static 'images/weblogo.png' %}" alt="Jmatsika Logo"
+						style="width:48px; height:auto; display:block; margin-right:8px;">
+					<span class="logo-text" style="font-size:20px; font-weight:700; color:#ffc107;">
+					<span class="text-warning">Jmatsika</span> Innovations
+					</span>
+				</a>
+			</h1>
+
+			{% load static %}
+	<style>
+	/* Put this block inside the template (head or above the h1). */
+	#fh5co-logo a .logo-text { display: none; }
+	#fh5co-logo a:hover .logo-text,
+	#fh5co-logo a:focus .logo-text { display: inline-block; }
+	</style>
+
+<h1 id="fh5co-logo" style="margin:0;">
+  <a href="{% url 'index' %}" style="display:inline-flex; align-items:center; text-decoration:none; color:inherit;">
+    <img src="{% static 'images/weblogo.png' %}" alt="Jmatsika Logo"
+         style="width:48px; height:auto; display:block; margin-right:8px;">
+    <span class="logo-text" style="font-size:20px; font-weight:700; color:#ffc107;">
+      <span class="text-warning">Jmatsika</span> Innovations
+    </span>
+  </a>
+</h1>
+
+
+		{% comment %} <h1 id="fh5co-logo">
 			<a href="{% url 'index' %}">
 				<img src="{% static 'images/weblogo.png' %}" alt="Jmatsika Logo" class="site-logo">
 				<h1 id="fh5co-logo">
@@ -68,7 +97,7 @@
 				</h1>
 
 			</a>
-		</h1>
+		</h1> {% endcomment %}
 
 
 			{% comment %} <h1 id="fh5co-logo"><a href="{% url 'index' %}"><span class="text-warning">Jmatsika</span> Innovations</a></h1> {% endcomment %}
