@@ -280,7 +280,41 @@
 	<!-- MAIN JS -->
 	<script src="{% static 'js/main.js' %}"></script>
 
+
 	<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		const sliderBg = document.querySelector('.slider-bg');
+
+		// Initial settings
+		let scale = 1.2;           // start zoomed in
+		const targetScale = 1;     // end zoom (normal)
+		const zoomSpeed = 0.002;   // zoom-out speed
+		let posX = 0;
+		let direction = 1;
+		const shiftMax = window.innerWidth > 1200 ? 30 : 10; // horizontal shift limit
+
+		function animateBackground() {
+			// Zoom-out effect (only until targetScale)
+			if (scale > targetScale) {
+				scale -= zoomSpeed;
+				if (scale < targetScale) scale = targetScale;
+				sliderBg.style.transform = `scale(${scale})`;
+			}
+
+			// Horizontal movement
+			posX += 0.02 * direction;
+			if (posX > shiftMax || posX < -shiftMax) direction *= -1;
+			sliderBg.style.backgroundPosition = `${50 + posX}% center`;
+
+			requestAnimationFrame(animateBackground);
+		}
+
+		animateBackground();
+	});
+	</script>
+
+
+	{% comment %} <script>
 	document.addEventListener("DOMContentLoaded", function() {
 		const sliderBg = document.querySelector('.slider-bg');
 		let posX = 0;
@@ -298,7 +332,7 @@
 
 		animateBackground();
 	});
-	</script>
+	</script> {% endcomment %}
 
 	</body>
 </html>
