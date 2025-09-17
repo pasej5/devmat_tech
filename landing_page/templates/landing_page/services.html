@@ -5,7 +5,11 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>JMatsika — Services</title>
-    <link rel="icon" href="{% static 'images/weblogo.png' %}" type="image/png" />
+    <link
+      rel="icon"
+      href="{% static 'images/weblogo.png' %}"
+      type="image/png"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Explore services offered by JMatsika" />
     <meta name="author" content="JMatsika" />
@@ -32,13 +36,20 @@
         <h1 id="fh5co-logo"><a href="{% url 'index' %}">Jmatsika</a></h1>
         <nav id="fh5co-main-menu" role="navigation">
           <ul>
-            <li><a href="{% url 'index' %}">Home</a></li>
-            </li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="{% url 'portfolio' %}">Our Work</a></li>
+            <li><a href="{% url 'insights' %}">Insights</a></li>
             <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'careers' %}">Careers</a></li>
             <div class="logo-wrapper text-center mt-2">
-					<img src="{% static 'images/weblogo.png' %}" alt="Jmatsika Logo" class="img-fluid" style="max-width: 150px;">
-					</div>
+              <img
+                src="{% static 'images/weblogo.png' %}"
+                alt="Jmatsika Logo"
+                class="img-fluid"
+                style="max-width: 150px"
+              />
+            </div>
           </ul>
         </nav>
 
