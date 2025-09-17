@@ -58,7 +58,20 @@
 		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
 		<aside id="fh5co-aside" role="complementary" class="border js-fullheight">
 
-			<h1 id="fh5co-logo"><a href="{% url 'index' %}"><span class="text-warning">Jmatsika</span> Innovations</a></h1>
+		<h1 id="fh5co-logo">
+			<a href="{% url 'index' %}">
+				<img src="{% static 'images/logo.png' %}" alt="Jmatsika Logo" class="site-logo">
+				<h1 id="fh5co-logo">
+					<a href="{% url 'index' %}">
+						<span class="text-warning">Jmatsika</span> Innovations
+					</a>
+				</h1>
+
+			</a>
+		</h1>
+
+
+			{% comment %} <h1 id="fh5co-logo"><a href="{% url 'index' %}"><span class="text-warning">Jmatsika</span> Innovations</a></h1> {% endcomment %}
 		
 			<nav id="fh5co-main-menu" role="navigation">
 				<ul>
