@@ -273,7 +273,8 @@
 
 		function animateBackground() {
 			// Move background slowly left/right
-			posX += 0.05 * direction;
+			const maxShift = window.innerWidth > 1200 ? 30 : 10;
+			posX += 0.02* direction;
 			if (posX > 10 || posX < -10) direction *= -1; // reverse at edges
 			sliderBg.style.backgroundPosition = `${50 + posX}% center`;
 
