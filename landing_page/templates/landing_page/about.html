@@ -8,6 +8,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>JMatsika&mdash; About Section</title>
+	<link rel="icon" href="{% static 'images/logo.png' %}" type="image/png">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="About JMatsika" />
 	<meta name="keywords" content="JMatsika, About JMatsika, Portfolio, Contact" />
@@ -61,6 +62,9 @@
 					<li><a href="{% url 'portfolio' %}">Portfolio</a></li>
 					<li><a href="{% url 'about' %}">About</a></li>
 					<li><a href="{% url 'contact' %}">Contact</a></li>
+					<div class="logo-wrapper text-center mt-2">
+					<img src="{% static 'images/weblogo.png' %}" alt="Jmatsika Logo" class="img-fluid" style="max-width: 150px;">
+				</div>
 				</ul>
 			</nav>
 
