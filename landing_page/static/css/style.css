@@ -1214,4 +1214,33 @@ body.offcanvas .fh5co-nav-toggle {
   opacity: 0;
 }
 
+/* Make the hamburger icon white */
+.fh5co-nav-toggle i {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: white; /* visible on dark backgrounds */
+  position: relative;
+}
+
+.fh5co-nav-toggle i::before,
+.fh5co-nav-toggle i::after {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: white; /* visible on dark backgrounds */
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.fh5co-nav-toggle i::before {
+  top: -10px;
+}
+
+.fh5co-nav-toggle i::after {
+  bottom: -10px;
+}
+
 /*# sourceMappingURL=style.css.map */
