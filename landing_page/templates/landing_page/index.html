@@ -265,7 +265,28 @@
 	<!-- MAIN JS -->
 	<script src="{% static 'js/main.js' %}"></script>
 
+	<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		const sliderBg = document.querySelector('.slider-bg');
+		let posX = 0;
+		let direction = 1;
 
+		function animateBackground() {
+			// Move background slowly left/right
+			posX += 0.05 * direction;
+			if (posX > 10 || posX < -10) direction *= -1; // reverse at edges
+			sliderBg.style.backgroundPosition = `${50 + posX}% center`;
+
+			// Optional: subtle opacity flicker for fading effect
+			let opacity = 0.9 + 0.1 * Math.sin(posX);
+			sliderBg.style.opacity = opacity;
+
+			requestAnimationFrame(animateBackground);
+		}
+
+		animateBackground();
+	});
+	</script>
 	</body>
 </html>
 
