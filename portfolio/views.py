@@ -1,4 +1,4 @@
 from django.shortcuts import render
 
-def portfolio_home(request):
+def index(request):
     return render(request, 'portfolio/index.html')
