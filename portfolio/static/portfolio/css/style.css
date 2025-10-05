@@ -19,3 +19,9 @@ body {
 .container {
   padding: 10px 10%;
 }
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
