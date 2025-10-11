@@ -1,8 +1,4 @@
 * {
-  border: 5px solid red !important;
-}
-
-* {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
@@ -60,7 +56,4 @@ nav ul li a::after {
 }
 nav ul li a:hover::after {
   width: 100%;
-}
-nav ul li a {
-  background: yellow !important;
 }
