@@ -7,7 +7,7 @@
 
 body {
   background-color: #f2efef;
-  color: #ffffff;
+  color: #2f44cc;
 }
 #header {
   width: 100%;
@@ -67,4 +67,10 @@ nav ul li a:hover::after {
 }
 .header-text h1 span {
   color: red;
+}
+
+/* --------------------About section-------------------*/
+#about {
+  padding: 80px 0;
+  color: aquamarine;
 }
