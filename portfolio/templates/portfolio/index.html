@@ -67,24 +67,24 @@
             to solve real-world challenges through innovative and scalable software
             solutions in a collaborative team setting</p>
             <div class="tab-titles">
-              <p class="tab-links active-link"> Skills</p>
-              <p class="tab-links"> Experience</p>
-              <p class="tab-links"> Education</p>
+              <p class="tab-links active-link" onclick="opentab('skills')"> Skills</p>
+              <p class="tab-links" onclick="opentab('experience')"> Experience</p>
+              <p class="tab-links" onclick="opentab('education')"> Education</p>
             </div>
-            <div class="tab-contents active-tab">
+            <div class="tab-contents active-tab" id="skills">
               <ul>
                 <li><span>UI/UX</span><br>Designing Web/App Interfaces</li>
                 <li><span>Web Development</span><br>Web app Development</li>
                 <li><span>App Development</span><br>Building APIs</li>
               </ul>
             </div>
-            <div class="tab-contents">
+            <div class="tab-contents" id="experience">
               <ul>
                 <li><span>UI/UX</span><br>Designing Web/App Interfaces</li>
                 <li><span>Web Development</span><br>Web app Development</li>
                 <li><span>App Development</span><br>Building APIs</li>
               </ul>
-            </div><div class="tab-contents">
+            </div><div class="tab-contents" id="education">
               <ul>
                 <li><span>UI/UX</span><br>Designing Web/App Interfaces</li>
                 <li><span>Web Development</span><br>Web app Development</li>
@@ -95,5 +95,19 @@
         </div>
       </div>
     </div>
+    <script>
+      var tablinks = document.getElementsByClassName("tab-links")
+      var tabcontents = document.getElementsByClassName("tab-contents")
+
+      function opentab(tabname){
+        for (tablink of tablinks){
+          tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents){
+          tabcontent.classList.remove("active-tab");
+        }
+      }
+
+    </script>
   </body>
 </html>
