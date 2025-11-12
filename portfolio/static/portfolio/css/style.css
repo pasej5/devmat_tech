@@ -73,7 +73,7 @@ nav ul li a:hover::after {
 
 #about {
   padding: 80px 0;
-  color: rgba(8, 7, 7, 0.293);
+  color: rgb(253, 249, 249);
 }
 .row {
   display: flex;
@@ -93,7 +93,7 @@ nav ul li a:hover::after {
 .sub-title {
   font-size: 60px;
   font-weight: 600;
-  color: rgb(245, 241, 241);
+  color: rgba(106, 104, 104, 0.705);
 }
 .tab-titles {
   display: flex;
