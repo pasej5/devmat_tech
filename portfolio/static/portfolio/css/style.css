@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #f5edede2;
+  background-color: #000000e2;
   color: #2f44cc;
 }
 #header {
@@ -38,7 +38,7 @@ nav ul li {
   margin: 10px 20px;
 }
 nav ul li a {
-  color: black;
+  color: rgb(245, 239, 239);
   text-decoration: none;
   font-size: 18px;
   position: relative;
@@ -48,7 +48,7 @@ nav ul li a::after {
   content: '';
   width: 0%;
   height: 3px;
-  background: black;
+  background: rgb(129, 1, 1);
   position: absolute;
   left: 0;
   bottom: -6px;
@@ -93,7 +93,7 @@ nav ul li a:hover::after {
 .sub-title {
   font-size: 60px;
   font-weight: 600;
-  color: black;
+  color: rgb(245, 241, 241);
 }
 .tab-titles {
   display: flex;
