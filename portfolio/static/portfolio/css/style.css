@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #f1ecec90;
+  background-color: #f5edede2;
   color: #2f44cc;
 }
 #header {
@@ -124,6 +124,9 @@ nav ul li a:hover::after {
   margin: 10px 0;
 }
 .tab-contents ul li span {
-  color: red;
+  color: #ff004f;
   font-size: 14px;
+}
+.tab-contents {
+  display: none;
 }
