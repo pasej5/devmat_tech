@@ -236,3 +236,11 @@ nav ul li a:hover::after {
 .work:hover .layer {
   height: 100%;
 }
+.btn {
+  display: block;
+  margin: 50px auto;
+  width: fit-content;
+  border: 1px solid hsl(341, 100%, 50%);
+  padding: 14px 50px;
+  border-radius: 6px;
+}
