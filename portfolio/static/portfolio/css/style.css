@@ -243,4 +243,11 @@ nav ul li a:hover::after {
   border: 1px solid hsl(341, 100%, 50%);
   padding: 14px 50px;
   border-radius: 6px;
+  text-decoration: none;
+  text-decoration: none;
+  color: #fff;
+  transition: background 0.5s;
+}
+.btn:hover {
+  background: #ff004f;
 }
