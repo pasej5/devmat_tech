@@ -302,3 +302,9 @@ form textarea {
   font-size: 18px;
   border-radius: 6;
 }
+form btn2 {
+  padding: 14px 60px;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+}
