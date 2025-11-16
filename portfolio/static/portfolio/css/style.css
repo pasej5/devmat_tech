@@ -281,5 +281,5 @@ nav ul li a:hover::after {
 }
 .social-icons a:hover {
   color: #ff004f;
-  transform: translate(-5px);
+  transform: translateY(-10px);
 }
