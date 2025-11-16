@@ -336,4 +336,17 @@ nav .fa-solid {
   .header-text h1 {
     font-size: 30px;
   }
+  nav .fa-solid {
+    display: block;
+    font-size: 25px;
+  }
+  nav ul {
+    background: #ff004f;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100vh;
+    padding-top: 50px;
+  }
 }
