@@ -361,4 +361,11 @@ nav .fa-solid {
     left: 25px;
     cursor: pointer;
   }
+  .sub-title {
+    font-size: 40px;
+  }
+  .about-col-1,
+  .about-col-2 {
+    flex-basis: 100%;
+  }
 }
