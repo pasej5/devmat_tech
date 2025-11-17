@@ -30,4 +30,4 @@ def contact(request):
 
         return redirect('portfolio:index')  # redirect to home after submission
 
-    return render(request, 'portfolio/contact.html') 
+    return render(request, 'portfolio/index.html') 
