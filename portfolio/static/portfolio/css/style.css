@@ -14,7 +14,7 @@ body {
 #header {
   width: 100%;
   height: 100vh;
-  background-image: url('/static/port/images/background.jpg');
+  background-image: url('/static/portfolio/images/background.jpg');
   background-size: contain;
   background-position: right center;
   background-repeat: no-repeat;
