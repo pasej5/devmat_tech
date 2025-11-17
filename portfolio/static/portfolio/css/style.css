@@ -18,7 +18,6 @@ body {
   background-size: contain;
   background-position: right center;
   background-repeat: no-repeat;
-  background: fixed;
 }
 .container {
   padding: 10px 10%;
