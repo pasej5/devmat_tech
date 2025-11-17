@@ -19,9 +19,11 @@ def index(request):
                     from_email=settings.EMAIL_HOST_USER,
                     recipient_list=[settings.EMAIL_HOST_USER],
                     fail_silently=False,
+                     timeout=10,
                 )
                 messages.success(request, 'Your message has been sent successfully!')
             except Exception as e:
+                logger.error(f"Email error: {e}")
                 messages.error(request, 'An error occurred while sending your message.')
 
         return redirect('/')  # or return redirect('portfolio:index')
