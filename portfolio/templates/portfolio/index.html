@@ -228,7 +228,7 @@
             </a>
       </div>
       <div class="contact-right">
-        <form method="POST" action="{% url 'portfolio:contact' %}">
+        <form method="POST" action="">
           {% {% csrf_token %}%}
           <input type="text" name="name" placeholder="Your name"  required>
           <input  type="email"  name="email" placeholder="Your Email"  required>
