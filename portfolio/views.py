@@ -11,9 +11,9 @@ def index(request):
 
 def contact(request):
     if request.method == 'POST':
-        name = request.POST.get('Name')
+        name = request.POST.get('name')
         email = request.POST.get('email')
-        message = request.POST.get('Message')
+        message = request.POST.get('message')
 
         full_message = f"Message from {name} ({email}):\n\n{message}"
 
