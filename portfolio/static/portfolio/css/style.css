@@ -119,7 +119,7 @@ nav ul li a:hover::after {
   bottom: -8px;
   transition: 0.5s;
 }
-.tab-links.active-liks::after {
+.tab-links.active-links::after {
   width: 50%;
 }
 .tab-contents ul li {
