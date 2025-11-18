@@ -72,10 +72,8 @@ nav ul li a:hover::after {
   color: rgb(135, 4, 4);
 }
 header nav img {
-  width: 64px;
-  height: 64px;
   object-fit: cover;
-  border-radius: 30%;
+  border-radius: 50%;
 }
 
 /* --------------------About section-------------------*/
