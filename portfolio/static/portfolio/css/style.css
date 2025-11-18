@@ -74,6 +74,7 @@ nav ul li a:hover::after {
 header nav img {
   object-fit: cover;
   border-radius: 50%;
+  background: red;
 }
 
 /* --------------------About section-------------------*/
