@@ -332,7 +332,6 @@
         </p>
       </div>
     </div>
-
     {% if success %}
   <div id="toast" class="toast show">
     <div class="toast-body">
@@ -342,6 +341,13 @@
       </button>
     </div>
   </div>
+
+  <script>
+    setTimeout(function() {
+      document.getElementById("toast").classList.remove("show");
+    }, 3000); // disappear after 3 seconds
+  </script>
+{% endif %}
 
   <script>
     setTimeout(function() {
