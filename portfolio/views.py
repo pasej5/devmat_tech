@@ -23,11 +23,13 @@ def index(request):
                 recipient_list=[settings.DEFAULT_FROM_EMAIL],
                 fail_silently=True,  # Never crash the worker
             )
+            messages.success(request, 'Your message has been sent successfully!')
         except Exception as e:
             logger.error(f"send_mail raised an exception: {e}")
+            messages.error(request, 'Sorry, there was an error sending your message.')
 
            # Prevent form resubmission
-        return render(request, "portfolio/index.html", {"success": True})
+        return redirect("/")
     
     return render(request, "portfolio/index.html")
 
