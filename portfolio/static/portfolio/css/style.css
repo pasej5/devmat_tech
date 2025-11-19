@@ -401,51 +401,52 @@ nav .fa-solid {
   }
 }
 /* =================================
-   MODERN TOAST NOTIFICATION STYLES
+   MODERN TOAST NOTIFICATION STYLES (CENTERED)
    ================================= */
 
 /* The main toast container */
 .toast {
-  position: fixed; /* Stays in place even when scrolling */
-  bottom: 30px;
-  right: 30px;
+  position: fixed; /* Stays in place relative to the browser window */
+  top: 50%; /* Position the top edge at the vertical center */
+  left: 50%; /* Position the left edge at the horizontal center */
+
   background-color: #ffffff;
   color: #333;
-  padding: 15px 20px;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  padding: 20px 25px; /* A little more padding for a centered look */
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   gap: 15px;
   z-index: 1000;
 
-  /* Start hidden and prepare for animation */
-  transform: translateY(100px);
+  /* Start hidden, slightly smaller, and ready for animation */
+  transform: translate(-50%, -50%) scale(0.9); /* The key to perfect centering and the start of our animation */
   opacity: 0;
   visibility: hidden;
-  transition: transform 0.5s ease, opacity 0.5s ease, visibility 0.5s;
+  transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s;
 }
 
-/* The style for when the toast is active */
+/* The style for when the toast is active/visible */
 .toast.show {
-  transform: translateY(0);
+  transform: translate(-50%, -50%) scale(1); /* Animate to full size */
   opacity: 1;
   visibility: visible;
 }
 
 /* The green checkmark icon */
 .toast-icon {
-  font-size: 24px;
-  color: #28a745; /* A nice success green */
+  font-size: 28px;
+  color: #28a745;
 }
 
 .toast-message strong {
-  font-size: 16px;
+  font-size: 18px;
   color: #000;
 }
 
 .toast-message p {
-  font-size: 14px;
+  font-size: 15px;
   color: #666;
   margin: 4px 0 0 0;
 }
