@@ -29,16 +29,17 @@
   </head>
   <body>
     {% comment %} {% if messages %}
-    <div style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
-        {% for message in messages %}
-        <div style="background: {% if message.tags == 'success' %}#4CAF50{% else %}#f44336{% endif %}; color: white; padding: 15px; margin-bottom: 10px; border-radius: 5px;">
-            {{ message }}
-        </div>
-        {% endfor %}
+    <div style="position: fixed; top: 20px; right: 20px; z-index: 1000">
+      {% for message in messages %}
+      <div
+        style="background: {% if message.tags == 'success' %}#4CAF50{% else %}#f44336{% endif %}; color: white; padding: 15px; margin-bottom: 10px; border-radius: 5px;"
+      >
+        {{ message }}
+      </div>
+      {% endfor %}
     </div>
     {% endif %} {% endcomment %}
-    
-    <div>
+
     <div>
       <header id="header">
         <div class="container">
@@ -207,7 +208,9 @@
                 management. This project dives deep into SQL concepts, ORM
                 integration, database migrations, API testing, and deployment.
               </p>
-              <a href="https://github.com/pasej5/devmat_tech"><i class="fa-brands fa-github"></i></a>
+              <a href="https://github.com/pasej5/devmat_tech"
+                ><i class="fa-brands fa-github"></i
+              ></a>
             </div>
           </div>
           <div class="work">
@@ -220,7 +223,9 @@
                 management. This project dives deep into SQL concepts, ORM
                 integration, database migrations, API testing, and deployment.
               </p>
-              <a href="https://github.com/pasej5/fastApi"><i class="fa-solid fa-up-right-from-square"></i></a>
+              <a href="https://github.com/pasej5/fastApi"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
             </div>
           </div>
           <div class="work">
@@ -233,7 +238,9 @@
                 management. This project dives deep into SQL concepts, ORM
                 integration, database migrations, API testing, and deployment.
               </p>
-              <a href="https://github.com/pasej5/peace_online"><i class="fa-solid fa-up-right-from-square"></i></a>
+              <a href="https://github.com/pasej5/peace_online"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
             </div>
           </div>
         </div>
@@ -255,7 +262,9 @@
                 management. This project dives deep into SQL concepts, ORM
                 integration, database migrations, API testing, and deployment.
               </p>
-              <a href="https://github.com/pasej5/alx-intranet_clone"><i class="fa-solid fa-up-right-from-square"></i></a>
+              <a href="https://github.com/pasej5/alx-intranet_clone"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
             </div>
           </div>
           <div class="work">
@@ -268,7 +277,9 @@
                 management. This project dives deep into SQL concepts, ORM
                 integration, database migrations, API testing, and deployment.
               </p>
-              <a href="https://github.com/Emtuchi/SaveTube"><i class="fa-solid fa-up-right-from-square"></i></a>
+              <a href="https://github.com/Emtuchi/SaveTube"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
             </div>
           </div>
           <div class="work">
@@ -281,7 +292,9 @@
                 management. This project dives deep into SQL concepts, ORM
                 integration, database migrations, API testing, and deployment.
               </p>
-              <a href="https://github.com/Emtuchi/SaveTube"><i class="fa-solid fa-up-right-from-square"></i></a>
+              <a href="https://github.com/Emtuchi/SaveTube"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
             </div>
           </div>
         </div>
@@ -344,31 +357,31 @@
     </div>
 
     <!-- REPLACE the old toast block with this one -->
-{% if messages %}
-  <!-- The HTML for the Toast Notification -->
-  <div id="success-toast" class="toast">
-    {% for message in messages %}
+    {% if messages %}
+    <!-- The HTML for the Toast Notification -->
+    <div id="success-toast" class="toast">
+      {% for message in messages %}
       <div class="toast-icon">✔️</div>
       <div class="toast-message">
         <strong>Success!</strong>
         <p>{{ message }}</p>
       </div>
-    {% endfor %}
-  </div>
+      {% endfor %}
+    </div>
 
-  <!-- The JavaScript to make the Toast work -->
-  <script>
-    const successToast = document.getElementById('success-toast');
-    if (successToast) {
-      setTimeout(() => {
-        successToast.classList.add('show');
-      }, 100);
-      setTimeout(() => {
-        successToast.classList.remove('show');
-      }, 5000);
-    }
-  </script>
-{% endif %}  
+    <!-- The JavaScript to make the Toast work -->
+    <script>
+      const successToast = document.getElementById('success-toast');
+      if (successToast) {
+        setTimeout(() => {
+          successToast.classList.add('show');
+        }, 100);
+        setTimeout(() => {
+          successToast.classList.remove('show');
+        }, 5000);
+      }
+    </script>
+    {% endif %}
 
     <script>
       var tablinks = document.getElementsByClassName('tab-links');
@@ -394,6 +407,5 @@
         sidemenu.style.right = '-200px';
       }
     </script>
-    
   </body>
 </html>
