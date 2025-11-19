@@ -28,6 +28,16 @@
     ></script>
   </head>
   <body>
+    {% if messages %}
+    <div style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
+        {% for message in messages %}
+        <div style="background: {% if message.tags == 'success' %}#4CAF50{% else %}#f44336{% endif %}; color: white; padding: 15px; margin-bottom: 10px; border-radius: 5px;">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    
     <div>
     <div>
       <header id="header">
@@ -332,29 +342,6 @@
         </p>
       </div>
     </div>
-    {% if success %}
-  <div id="toast" class="toast show">
-    <div class="toast-body">
-      Message sent successfully!
-      <button type="button" class="close" data-dismiss="toast" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-  </div>
-
-  <script>
-    setTimeout(function() {
-      document.getElementById("toast").classList.remove("show");
-    }, 3000); // disappear after 3 seconds
-  </script>
-{% endif %}
-
-  <script>
-    setTimeout(function() {
-      document.getElementById("toast").classList.remove("show");
-    }, 3000); // disappear after 3 seconds
-  </script>
-{% endif %}
 
     <script>
       var tablinks = document.getElementsByClassName('tab-links');
