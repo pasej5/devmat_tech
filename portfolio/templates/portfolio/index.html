@@ -343,12 +343,6 @@
       </div>
     </div>
 
-    {% if success %}
-      <script>
-        alert("Message sent successfully!");
-      </script>
-    {% endif %}
-
     <script>
       var tablinks = document.getElementsByClassName('tab-links');
       var tabcontents = document.getElementsByClassName('tab-contents');
@@ -373,5 +367,10 @@
         sidemenu.style.right = '-200px';
       }
     </script>
+     {% if success %}
+      <script>
+        alert("Message sent successfully!");
+      </script>
+    {% endif %}
   </body>
 </html>
