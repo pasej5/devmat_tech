@@ -343,29 +343,32 @@
       </div>
     </div>
 
-          {% if success %}
-        <!-- The HTML for the Toast Notification -->
-        <div id="success-toast" class="toast">
-          <div class="toast-icon">✔️</div>
-          <div class="toast-message">
-            <strong>Success!</strong>
-            <p>Your message has been sent.</p>
-          </div>
-        </div>
+    <!-- REPLACE the old toast block with this one -->
+{% if messages %}
+  <!-- The HTML for the Toast Notification -->
+  <div id="success-toast" class="toast">
+    {% for message in messages %}
+      <div class="toast-icon">✔️</div>
+      <div class="toast-message">
+        <strong>Success!</strong>
+        <p>{{ message }}</p>
+      </div>
+    {% endfor %}
+  </div>
 
-        <!-- The JavaScript to make the Toast work -->
-        <script>
-          const successToast = document.getElementById('success-toast');
-          if (successToast) {
-            setTimeout(() => {
-              successToast.classList.add('show');
-            }, 100);
-            setTimeout(() => {
-              successToast.classList.remove('show');
-            }, 5000);
-          }
-        </script>
-      {% endif %}
+  <!-- The JavaScript to make the Toast work -->
+  <script>
+    const successToast = document.getElementById('success-toast');
+    if (successToast) {
+      setTimeout(() => {
+        successToast.classList.add('show');
+      }, 100);
+      setTimeout(() => {
+        successToast.classList.remove('show');
+      }, 5000);
+    }
+  </script>
+{% endif %}  
 
     <script>
       var tablinks = document.getElementsByClassName('tab-links');
