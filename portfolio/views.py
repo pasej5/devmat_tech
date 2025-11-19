@@ -26,5 +26,5 @@ def index(request):
         except Exception as e:
             logger.error(f"send_mail raised an exception: {e}")
 
-        return redirect("/")   # Prevent form resubmission
+        return redirect("/portfolio")   # Prevent form resubmission
     return render(request, "portfolio/index.html")
