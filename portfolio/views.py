@@ -28,3 +28,18 @@ def index(request):
 
         return redirect("/portfolio")   # Prevent form resubmission
     return render(request, "portfolio/index.html")
+
+def contact_view(request):
+    if request.method == "POST":
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        message = request.POST.get("message")
+
+        subject = f"New message from {name}"
+        body = f"From: {name}\nEmail: {email}\n\n{message}"
+
+        send_mail(subject, body, None, ["your_personal_email@gmail.com"])
+
+        return render(request, "index.html", {"success": True})
+
+    return render(request, "index.html")

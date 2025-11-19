@@ -343,6 +343,12 @@
       </div>
     </div>
 
+    {% if success %}
+      <script>
+        alert("Message sent successfully!");
+      </script>
+    {% endif %}
+
     <script>
       var tablinks = document.getElementsByClassName('tab-links');
       var tabcontents = document.getElementsByClassName('tab-contents');
