@@ -400,26 +400,52 @@ nav .fa-solid {
     font-size: 14px;
   }
 }
+/* =================================
+   MODERN TOAST NOTIFICATION STYLES
+   ================================= */
+
+/* The main toast container */
 .toast {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background-color: #333;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: fixed; /* Stays in place even when scrolling */
+  bottom: 30px;
+  right: 30px;
+  background-color: #ffffff;
+  color: #333;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 15px;
   z-index: 1000;
+
+  /* Start hidden and prepare for animation */
+  transform: translateY(100px);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.5s ease, opacity 0.5s ease, visibility 0.5s;
 }
 
+/* The style for when the toast is active */
 .toast.show {
-  display: block;
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
 }
 
-.toast .close {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  font-size: 18px;
-  cursor: pointer;
+/* The green checkmark icon */
+.toast-icon {
+  font-size: 24px;
+  color: #28a745; /* A nice success green */
+}
+
+.toast-message strong {
+  font-size: 16px;
+  color: #000;
+}
+
+.toast-message p {
+  font-size: 14px;
+  color: #666;
+  margin: 4px 0 0 0;
 }
