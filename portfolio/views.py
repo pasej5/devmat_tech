@@ -29,7 +29,7 @@ def index(request):
             messages.error(request, 'Sorry, there was an error sending your message.')
 
            # Prevent form resubmission
-        return redirect("/")
+        return redirect("/portfolio")
     
     return render(request, "portfolio/index.html")
 
