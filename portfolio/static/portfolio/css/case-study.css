@@ -12,14 +12,14 @@
 
 /* --- Main Body --- */
 body {
-  background-color: #6361619c;
-  color: rgb(255, 255, 255);
+  background-color: #636161b6;
+  color: rgb(114, 225, 226);
 }
 
 /* --- Case Study Container --- */
 #case-study {
   padding: 50px;
-  background-color: #6463636a;
+  background-color: #62606052;
   max-width: 960px;
   margin: -60px auto 50px auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -45,7 +45,7 @@ body {
   color: #1a1a1a;
   margin-top: 40px;
   margin-bottom: 15px;
-  border-bottom: 2px solid #e9ecef;
+  border-bottom: 2px solid #4ab1d9;
   padding-bottom: 8px;
 }
 
