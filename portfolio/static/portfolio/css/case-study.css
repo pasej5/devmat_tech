@@ -3,6 +3,16 @@
    ================================= */
 
 /* --- Main Body and Background --- */
+/* =================================
+   CASE STUDY PAGE - HEADER OVERRIDE
+   ================================= */
+
+#header {
+  height: auto; /* Let the header be only as tall as its content */
+  background-image: none; /* Remove the main background image */
+  background-color: #0d0d0d; /* A dark, simple background color for the header */
+  padding-bottom: 20px; /* Add some space at the bottom */
+}
 body {
   background-color: #f8f9fa; /* A very light, soft gray. Much easier on the eyes than pure white. */
   color: #343a40; /* A dark gray for text, softer than pure black. */
