@@ -33,3 +33,7 @@ def index(request):
     
     return render(request, "portfolio/index.html")
 
+def web_dev_service_page(request):
+    """Renders the detailed case study page for web development."""
+    return render(request, 'portfolio/service_web_dev.html')
+
