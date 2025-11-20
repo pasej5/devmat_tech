@@ -2,53 +2,58 @@
    STYLES FOR CASE STUDY PAGES
    ================================= */
 
-/* --- Main Body and Background --- */
-/* =================================
-   CASE STUDY PAGE - HEADER OVERRIDE
-   ================================= */
-
+/* --- Header Override --- */
 #header {
-  height: auto; /* Let the header be only as tall as its content */
-  background-image: none; /* Remove the main background image */
-  background-color: #0d0d0d; /* A dark, simple background color for the header */
-  padding-bottom: 20px; /* Add some space at the bottom */
+  height: auto;
+  background-image: none;
+  background-color: #0d0d0d;
+  padding-bottom: 20px;
 }
+
+/* --- Main Body --- */
 body {
-  background-color: #f8f9fa; /* A very light, soft gray. Much easier on the eyes than pure white. */
-  color: #343a40; /* A dark gray for text, softer than pure black. */
+  background-color: #f8f9fa;
+  color: #343a40;
   font-family: 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
 }
 
 /* --- Case Study Container --- */
 #case-study {
-  padding: 100px 15%; /* Give it more horizontal space on larger screens */
-  background-color: #ffffff; /* A clean white card for the content to sit on */
-  max-width: 960px; /* Prevents text lines from becoming too long on very wide screens */
-  margin: 0 auto; /* Center the content container on the page */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* A very subtle shadow to lift the content off the background */
-  border-radius: 8px; /* Slightly rounded corners */
+  padding: 50px;
+  background-color: #ffffff;
+  max-width: 960px;
+  margin: -60px auto 50px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  position: relative;
+  z-index: 10;
 }
 
-/* --- Typography for Readability --- */
+/* THIS IS THE FIX: Force text to be left-aligned inside the container */
+#case-study .container {
+  text-align: left;
+}
+
+/* --- Typography --- */
 #case-study .sub-title {
-  font-size: 2.5rem; /* A strong, clear main title */
+  font-size: 2.5rem;
   color: #000;
   margin-bottom: 20px;
 }
 
 #case-study h2 {
-  font-size: 1.8rem; /* Clear section headings */
+  font-size: 1.8rem;
   color: #1a1a1a;
   margin-top: 40px;
   margin-bottom: 15px;
-  border-bottom: 2px solid #e9ecef; /* A subtle line to separate sections */
+  border-bottom: 2px solid #e9ecef;
   padding-bottom: 8px;
 }
 
 #case-study p,
 #case-study li {
-  font-size: 1.1rem; /* Slightly larger text for easy reading */
+  font-size: 1.1rem;
   margin-bottom: 15px;
 }
 
@@ -65,7 +70,7 @@ body {
 #case-study .btn {
   display: inline-block;
   margin-top: 10px;
-  background: #007bff; /* A professional blue */
+  background: #007bff;
   color: #fff;
   padding: 12px 25px;
   border-radius: 5px;
@@ -74,5 +79,5 @@ body {
 }
 
 #case-study .btn:hover {
-  background: #0056b3; /* A darker blue on hover */
+  background: #0056b3;
 }
