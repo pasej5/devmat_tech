@@ -12,14 +12,14 @@
 
 /* --- Main Body --- */
 body {
-  background-image: url('/static/portfolio/images/case_study.jpg');
+  background-color: #6361619c;
   color: rgb(255, 255, 255);
 }
 
 /* --- Case Study Container --- */
 #case-study {
   padding: 50px;
-  background-color: #ffffff;
+  background-color: #6463636a;
   max-width: 960px;
   margin: -60px auto 50px auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
