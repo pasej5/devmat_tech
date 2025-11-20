@@ -36,4 +36,15 @@ def index(request):
 def web_dev_service_page(request):
     """Renders the detailed case study page for web development."""
     return render(request, 'portfolio/service_web_dev.html')
+def ai_ml_service_page(request):
+    """Renders the detailed case study page for AI/ML."""
+    return render(request, 'portfolio/service_ai_ml.html')
+
+def api_dev_service_page(request):
+    """Renders the detailed case study page for API Development."""
+    return render(request, 'portfolio/service_api_dev.html')
+
+def cloud_service_page(request):
+    """Renders the detailed case study page for Cloud Computing."""
+    return render(request, 'portfolio/service_cloud.html')
 
