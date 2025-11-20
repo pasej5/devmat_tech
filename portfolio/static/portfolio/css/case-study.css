@@ -1,0 +1,68 @@
+/* =================================
+   STYLES FOR CASE STUDY PAGES
+   ================================= */
+
+/* --- Main Body and Background --- */
+body {
+  background-color: #f8f9fa; /* A very light, soft gray. Much easier on the eyes than pure white. */
+  color: #343a40; /* A dark gray for text, softer than pure black. */
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* --- Case Study Container --- */
+#case-study {
+  padding: 100px 15%; /* Give it more horizontal space on larger screens */
+  background-color: #ffffff; /* A clean white card for the content to sit on */
+  max-width: 960px; /* Prevents text lines from becoming too long on very wide screens */
+  margin: 0 auto; /* Center the content container on the page */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* A very subtle shadow to lift the content off the background */
+  border-radius: 8px; /* Slightly rounded corners */
+}
+
+/* --- Typography for Readability --- */
+#case-study .sub-title {
+  font-size: 2.5rem; /* A strong, clear main title */
+  color: #000;
+  margin-bottom: 20px;
+}
+
+#case-study h2 {
+  font-size: 1.8rem; /* Clear section headings */
+  color: #1a1a1a;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #e9ecef; /* A subtle line to separate sections */
+  padding-bottom: 8px;
+}
+
+#case-study p,
+#case-study li {
+  font-size: 1.1rem; /* Slightly larger text for easy reading */
+  margin-bottom: 15px;
+}
+
+#case-study ul {
+  list-style-position: inside;
+  padding-left: 20px;
+}
+
+#case-study li strong {
+  color: #000;
+}
+
+/* --- Button Styling --- */
+#case-study .btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: #007bff; /* A professional blue */
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+#case-study .btn:hover {
+  background: #0056b3; /* A darker blue on hover */
+}
