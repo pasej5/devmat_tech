@@ -162,6 +162,14 @@ header nav img {
   font-weight: 300;
   border-radius: 10px;
   transition: background 0.5s, transform 0.5s;
+  height: 100%; /* Make the div take up the full height of the parent */
+  display: flex; /* Use flexbox to control the layout */
+  flex-direction: column;
+}
+.services-list div h2,
+.services-list div p {
+  overflow: hidden; /* Hide any overflowing text */
+  text-overflow: ellipsis; /* Add an ellipsis to indicate truncated text */
 }
 .services-list > a {
   text-decoration: none;
