@@ -135,7 +135,6 @@
                   teams and improving workflow
                 </li>
               </ul>
-              <button id="more-skills-btn">More</button>
             </div>
             <div class="tab-contents" id="experience">
               <ul>
@@ -484,25 +483,6 @@
       function close() {
         sidemenu.style.right = '-200px';
       }
-    </script>
-    <script>
-      document
-        .getElementById('more-skills-btn')
-        .addEventListener('click', function () {
-          var moreSkills = document.getElementsByClassName('more-skills');
-          for (var i = 0; i < moreSkills.length; i++) {
-            if (moreSkills[i].style.display === 'none') {
-              moreSkills[i].style.display = 'list-item';
-            } else {
-              moreSkills[i].style.display = 'none';
-            }
-          }
-          if (this.innerHTML === 'More') {
-            this.innerHTML = 'Less';
-          } else {
-            this.innerHTML = 'More';
-          }
-        });
     </script>
   </body>
 </html>
