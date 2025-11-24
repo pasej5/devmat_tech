@@ -152,19 +152,16 @@
       <div class="container">
         <h1 class="sub-title">My Services</h1>
         <div class="services-list">
-          <div>
-            <i class="fa-solid fa-code"></i>
-            <h2>Web Development</h2>
-            <p>
-              Custom web application development, e-commerce website
-              development, and web API development using Python and Django.
-            </p>
-            <a
-              class="service-link"
-              href="{% url 'portfolio:web_dev_service_page' %}"
-              >Learn more</a
-            >
-          </div>
+          <a href="{% url 'portfolio:web_dev_service_page' %}">
+            <div>
+              <i class="fa-solid fa-code"></i>
+              <h2>Web Development</h2>
+              <p>
+                Custom web application development, e-commerce website
+                development, and web API development using Python and Django.
+              </p>
+            </div>
+          </a>
           <div>
             <i class="fa-solid fa-crop"></i>
             <h2>AI and Machine Learning</h2>

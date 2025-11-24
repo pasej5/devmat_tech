@@ -183,39 +183,6 @@ header nav img {
   background: #ff004f;
   transform: translate(-10px);
 }
-/* Service "Learn more" Link Styling */
-.service-link {
-  display: inline-block;
-  text-decoration: none;
-  color: #ff004f; /* Change this to your preferred color */
-  font-size: 25px;
-  margin-top: 20px;
-  position: relative;
-  transition: color 0.3s;
-}
-
-.service-link::after {
-  content: '';
-  width: 0;
-  height: 3px;
-  background: #ff004f; /* Change this to your preferred color */
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  transition: width 0.5s;
-}
-
-.service-link:hover {
-  color: #0d00c4;
-}
-
-.service-link:hover::after {
-  width: 100%;
-}
-.service .service-link {
-  font-size: 20px;
-  font-weight: bold;
-}
 
 /* -------------portfoilo-------------*/
 
