@@ -212,6 +212,10 @@ header nav img {
 .service-link:hover::after {
   width: 100%;
 }
+.service .service-link {
+  font-size: 20px;
+  font-weight: bold;
+}
 
 /* -------------portfoilo-------------*/
 
