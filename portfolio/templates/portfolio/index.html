@@ -446,6 +446,7 @@
     </div>
 
     <!-- The JavaScript to make the Toast work -->
+    {% comment %}
     <script>
       const successToast = document.getElementById('success-toast');
       if (successToast) {
@@ -483,6 +484,9 @@
         sidemenu.style.right = '-200px';
       }
     </script>
+    <script src="{% static 'landing_page/main.js' %}"></script>
+    {% endcomment %}
+    <script src="{% static 'portfolio/js/main.js' %}"></script>
     <script src="{% static 'landing_page/main.js' %}"></script>
   </body>
 </html>
