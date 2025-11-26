@@ -18,7 +18,7 @@ body {
   font-size: 14px;
   line-height: 1.6;
   color: rgba(0, 0, 0, 0.5);
-  background: rgb(7, 7, 7);
+  background: whitesmoke;
 }
 @media screen and (max-width: 992px) {
   body {
@@ -109,6 +109,7 @@ figure figcaption {
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
+  background: #000 !important;
 }
 @media screen and (max-width: 1200px) {
   #fh5co-aside {
