@@ -90,64 +90,41 @@
 		</aside> {% endcomment %}
 
 		{% comment %} <div id="fh5co-main"> {% endcomment %}
-			<aside id="fh5co-hero" class="js-fullheight">
-				<div class="flexslider js-fullheight">
 
+		<!---------------------------------------------------->
 
-
-					<ul class="slides">
-						<li class="slider-bg" style="background-image: url('{% static "images/background0.webp" %}?v=2');">
-
-						{% comment %} <li class="slider-bg" style="background-image: url('{% static "images/bulb-small.webp" %}');"> {% endcomment %}
-							<div class="overlay"></div>
-							<div class="container-fluid">
-								<div class="row">
-									<div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
-
-
-										{% comment %} <div class="slider-text-inner">
-											<h1>Designing Impactful Digital Products</h1>
-											<video autoplay loop muted style="max-width:200px; border-radius:10px;">
-												<source src="{% static 'videos/myvd.mp4' %}" type="video/mp4">
-											</video>
-										</div>
-										 {% endcomment %}
-										<div class="slider-text-inner">
-											<h1>Designing Impactful Digital Products</h1>
-											<p><a class="btn btn-primary btn-demo popup-vimeo" href="{% url 'contact'%}">		
-											</i>Contact Us  </a> <a class="btn btn-primary btn-learn">Learn More<i class="icon-arrow-right3"></i></a></p>
-										</div>  
-									</div>
-								</div>
-							</div>
-						</li>
-
-                    </ul>
-					
-
-					{% comment %} <li>
-					<video autoplay muted loop class="video-bg">
-						<source src="{% static 'videos/myvd.mp4' %}" type="video/mp4">
-						Your browser does not support the video tag.
-					</video>
-					<div class="overlay"></div>
-					<div class="container-fluid">
-						<div class="row">
-							<div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
-								<div class="slider-text-inner">
-									<h1>Intuitive, <strong></strong> We create IT strategies, provide consulting services.</h1>
-									<h2>Revolutionize IT support with <a href="https://jmatsika.com" target="_blank">JMatsika</a></h2>
-									<p></p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li> {% endcomment %}
-
-
-			  	</div>
-			</aside>
+ <div>
+      <header id="header">
+        <div class="container">
+          <nav>
+            <img src="{% static 'portfolio/images/weblogo1.png' %}" />
+            <ul id="sidemenu">
+              <li><a href="#header">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+          </nav>
+          <div class="header-text">
+            <p>
+              Full-Stack Software Engineer | AI Training and Evaluation
+              Specialist
+            </p>
+            <h1>
+              Hi, I am <span>Jealous</span><br />
+              Matsikachando
+            </h1>
+          </div>
+        </div>
+      </header>
+    </div>
 			
+			
+<!---------------------------------------------------------------------------------->
+
 			<div class="fh5co-narrow-content">
 				<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Services</h2>
 				<div class="row">
