@@ -94,6 +94,8 @@ figure figcaption {
   width: 100%;
   overflow: hidden;
   position: relative;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 #fh5co-aside {
