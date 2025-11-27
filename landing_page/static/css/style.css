@@ -19,8 +19,6 @@ body {
   line-height: 1.6;
   background-color: #000000;
   color: rgb(255, 255, 255);
-  margin-left: 20px;
-  margin-right: 20px;
 }
 @media screen and (max-width: 992px) {
   body {
@@ -96,6 +94,8 @@ figure figcaption {
   width: 100%;
   overflow: hidden;
   position: relative;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 #fh5co-aside {
