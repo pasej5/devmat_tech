@@ -287,9 +287,6 @@ figure figcaption {
   padding: 4em 0;
   clear: both;
 }
-.fh5co-heading {
-  text-align: center;
-}
 @media screen and (max-width: 768px) {
   #fh5co-main .fh5co-narrow-content {
     width: 100%;
@@ -855,11 +852,12 @@ body.offcanvas .fh5co-nav-toggle {
 }
 
 .fh5co-heading {
-  font-size: 18px;
+  font-size: 35px;
   margin-bottom: 2em;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 2px;
+  text-align: center;
 }
 .fh5co-heading.fh5co-light {
   color: #fff;
