@@ -282,11 +282,13 @@ figure figcaption {
 }
 #fh5co-main .fh5co-narrow-content {
   position: relative;
-  max-width: 900%;
-  width: 100%;
+  width: 93%;
   margin: 0 auto;
   padding: 4em 0;
   clear: both;
+}
+.fh5co-heading {
+  text-align: center;
 }
 @media screen and (max-width: 768px) {
   #fh5co-main .fh5co-narrow-content {
