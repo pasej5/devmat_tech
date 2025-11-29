@@ -1300,12 +1300,14 @@ body {
 .container {
   padding: 10px 10%;
 }
+.container,
+.header-text,
 nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+  color: white;
 }
+
 .logo {
   width: 50px;
 }
