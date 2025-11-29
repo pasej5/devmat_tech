@@ -1311,7 +1311,7 @@ nav {
 .logo {
   width: 50px;
 }
-nav ul {
+/* nav ul {
   margin: 0;
   padding: 0;
 }
@@ -1339,4 +1339,52 @@ nav ul li a::after {
 }
 nav ul li a:hover::after {
   width: 100%;
+} */
+/* ===== Navbar: fixed + drop-down on load ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8); /* adjust opacity as needed */
+  padding: 20px 0;
+  z-index: 9999;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(6px);
+
+  /* drop-down animation on page load */
+  transform: translateY(-100%);
+  animation: dropdown 0.6s ease-out forwards;
+}
+
+@keyframes dropdown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/*  smaller navbar after scrolling */
+.navbar.shrink {
+  padding: 10px 0;
+  background: rgba(0, 0, 0, 0.95);
+}
+
+/* horizontal menu style (adjust to your existing styles) */
+#sidemenu {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+#sidemenu li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 15px;
 }
