@@ -1340,7 +1340,9 @@ nav ul li a::after {
 nav ul li a:hover::after {
   width: 100%;
 } */
-/* ===== Navbar: fixed + drop-down on load ===== */
+
+/* =================== Navbar: fixed + drop-down on load ============================ */
+
 .navbar {
   position: fixed;
   top: 0;
@@ -1387,4 +1389,58 @@ nav ul li a:hover::after {
   color: #fff;
   font-weight: 500;
   font-size: 15px;
+}
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-left .brand {
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-center {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.navbar-center li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar-right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.navbar-right .nav-icon {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 500;
+}
+
+.navbar-right .fa-bars {
+  display: none; /* Show only on mobile with media query */
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .navbar-center {
+    display: none;
+  }
+  .navbar-right .fa-bars {
+    display: block;
+    cursor: pointer;
+  }
 }
