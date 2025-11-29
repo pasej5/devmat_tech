@@ -333,7 +333,7 @@ figure figcaption {
   min-height: 500px;
   position: relative;
 }
-#fh5co-hero .flexslider .flex-control-nav {
+/* #fh5co-hero .flexslider .flex-control-nav {
   bottom: 20px;
   z-index: 1000;
   right: 20px;
@@ -358,7 +358,7 @@ figure figcaption {
 }
 #fh5co-hero .flexslider .flex-direction-nav {
   display: none;
-}
+} */
 #fh5co-hero .flexslider .slider-text {
   display: table;
   opacity: 0;
@@ -469,14 +469,14 @@ body.offcanvas #fh5co-aside {
   position: fixed;
 }
 body.offcanvas,
-body.offcanvas .fh5co-nav-toggle {
+/* body.offcanvas .fh5co-nav-toggle {
   top: 0;
   -moz-transform: translateX(270px);
   -webkit-transform: translateX(270px);
   -ms-transform: translateX(270px);
   -o-transform: translateX(270px);
   transform: translateX(270px);
-}
+} */
 
 .fh5co-services {
   margin-top: 5px;
@@ -1060,7 +1060,7 @@ body.offcanvas .fh5co-nav-toggle {
   height: 130px;
 }
 
-.fh5co-nav-toggle {
+/* .fh5co-nav-toggle {
   cursor: pointer;
   text-decoration: none;
 }
@@ -1182,7 +1182,7 @@ body.offcanvas .fh5co-nav-toggle {
     float: none;
     width: 100%;
   }
-}
+} */
 
 .row-bottom-padded-lg {
   padding-bottom: 7em;
@@ -1220,38 +1220,38 @@ body.offcanvas .fh5co-nav-toggle {
 }
 
 /* Make the hamburger icon white */
-.fh5co-nav-toggle i {
+/* .fh5co-nav-toggle i {
   display: block;
   width: 30px;
   height: 2px;
-  background: white; /* visible on dark backgrounds */
+  background: white;
   position: relative;
-}
+} */
 
-.fh5co-nav-toggle i::before,
+/* .fh5co-nav-toggle i::before,
 .fh5co-nav-toggle i::after {
   content: '';
   display: block;
   width: 30px;
   height: 2px;
-  background: white; /* visible on dark backgrounds */
+  background: white;
   position: absolute;
   left: 0;
   transition: all 0.3s ease;
-}
+} */
 
-.fh5co-nav-toggle i::before {
+/* .fh5co-nav-toggle i::before {
   top: -10px;
-}
+} */
 
-.fh5co-nav-toggle i::after {
+/* .fh5co-nav-toggle i::after {
   bottom: -10px;
-}
+} */
 /*=========================*/
 
-.fh5co-nav-toggle i::after {
+/* .fh5co-nav-toggle i::after {
   bottom: -10px;
-}
+} */
 
 * {
   margin: 0;
@@ -1288,7 +1288,7 @@ body {
   overflow: hidden;
 }
 .hero-video {
-  position: fixed; /* simulates background-attachment: fixed */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -1311,7 +1311,7 @@ nav {
 .logo {
   width: 50px;
 }
-nav ul {
+/* nav ul {
   margin: 0;
   padding: 0;
 }
@@ -1339,4 +1339,4 @@ nav ul li a::after {
 }
 nav ul li a:hover::after {
   width: 100%;
-}
+} */
