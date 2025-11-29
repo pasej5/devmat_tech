@@ -1311,7 +1311,7 @@ nav {
 .logo {
   width: 50px;
 }
-/* nav ul {
+nav ul {
   margin: 0;
   padding: 0;
 }
@@ -1339,4 +1339,4 @@ nav ul li a::after {
 }
 nav ul li a:hover::after {
   width: 100%;
-} */
+}
