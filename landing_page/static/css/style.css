@@ -1532,6 +1532,7 @@ nav ul li a:hover::after {
   justify-content: center;
   z-index: 1; /* On top of video */
   padding-left: 50px;
+  width: 50%;
 }
 
 .hero-headline {
@@ -1565,6 +1566,7 @@ nav ul li a:hover::after {
   justify-content: center;
   position: relative;
   z-index: 1;
+  width: 50%;
 }
 
 .floating-images {

@@ -54,25 +54,37 @@
 
 	</head>
 	<body>
-	<div id="fh5co-page">
-		 {% include "landing_page/navbar.html" %}
+		<div id="fh5co-page">
+		 	{% include "landing_page/navbar.html" %}
 		
 
 		<!---------------------------------------------------->
 
  
+		
       <header id="header">
+
+		<!-- Background video -->
+
 		<video class="hero-video" autoplay muted loop playsinline preload="auto"
 			poster="{% static 'images/poster_1280.jpg' %}">
 			<source src="{% static 'videos/landing_vid_compressed.mp4' %}" type="video/mp4">
   		</video>
+
+		<!-- Hero content container -->
+
 			<div class="hero-section">
+
+				<!-- Left side: Headline -->
+
 				<div class="hero-left">
 					<div class="hero-headline">
 						<h1 class="headline-line line-left">Your Vision</h1>
 						<h1 class="headline-line line-right">Engineered Into Reality</h1>
 					</div>
 				</div>
+
+				<!-- Right side: Floating images -->
 			
 				<div class="hero-right">
 					<div class="floating-images">
@@ -81,6 +93,8 @@
 						<img src="{% static 'images/dev3.jpg' %}" alt="Developer 3" class="float-circle circle3">
 					</div>
 				</div>
+
+				
 			</div>
       </header>
     </div>
