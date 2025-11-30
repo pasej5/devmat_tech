@@ -1445,7 +1445,65 @@ nav ul li a:hover::after {
     cursor: pointer;
   }
 }
-/* ---------- HERO SECTION ---------- */
+/* Hero headline container */
+.hero-headline {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10; /* above video */
+  width: 100%;
+  pointer-events: none; /* so nav is clickable */
+}
+
+/* Headline lines */
+.headline-line {
+  font-family: 'Roboto', sans-serif; /* you can replace with a bolder professional font */
+  font-weight: 900;
+  font-size: 4rem; /* increase for bigger impact */
+  color: white;
+  margin: 0.2em 0;
+  opacity: 0;
+}
+
+/* Slide from left */
+.line-left {
+  transform: translateX(-50px);
+  animation: slideLeft 1s ease-out forwards;
+}
+
+/* Slide from right */
+.line-right {
+  transform: translateX(50px);
+  animation: slideRight 1s ease-out forwards;
+  animation-delay: 0.3s; /* stagger effect */
+}
+
+/* Keyframes */
+@keyframes slideLeft {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideRight {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive sizing */
+@media screen and (max-width: 768px) {
+  .headline-line {
+    font-size: 2.5rem;
+  }
+}
+
+/* ---------- HERO SECTION with dev images ---------- */
+
 .hero-section {
   display: flex;
   position: relative;
@@ -1455,7 +1513,7 @@ nav ul li a:hover::after {
 }
 
 /* Background video */
-.hero-video {
+.hero_custom__background {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -1465,55 +1523,50 @@ nav ul li a:hover::after {
   z-index: 0;
 }
 
-/* ---------- LEFT HALF: Headline ---------- */
+/* Left half: Headline */
 .hero-left {
-  flex: 7;
+  flex: 1;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* aligns content to the left */
-  padding-left: 60px;
-  z-index: 1;
+  justify-content: center;
+  z-index: 1; /* On top of video */
+  padding-left: 50px;
+  width: 50%;
+  justify-content: center;
 }
 
-.hero-left .hero-headline {
+.hero-headline {
   display: flex;
   flex-direction: column;
-  gap: 0.2em;
 }
 
-/* Headline lines */
 .headline-line {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 900;
   font-size: 4rem;
-  color: #fff;
+  font-weight: bold;
+  color: #fff; /* Change to your preferred color */
   margin: 0;
   line-height: 1.2;
   opacity: 0;
-  width: 100%;
-}
-
-/* Slide animations */
-.line-left {
   transform: translateX(-50px);
   animation: slideInLeft 1s forwards;
 }
 
-.line-right {
-  color: #00f; /* right line color */
+.headline-line.line-right {
+  color: #00f; /* Example: different color for right line */
   transform: translateX(50px);
   animation: slideInRight 1s forwards;
   animation-delay: 0.5s;
 }
 
-/* ---------- RIGHT HALF: Floating Images ---------- */
+/* Right half: Floating images */
 .hero-right {
-  flex: 3;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   z-index: 1;
+  width: 50%;
 }
 
 .floating-images {
@@ -1579,32 +1632,5 @@ nav ul li a:hover::after {
   }
   100% {
     transform: translateY(0px);
-  }
-}
-
-/* ---------- RESPONSIVE ---------- */
-@media screen and (max-width: 1024px) {
-  .headline-line {
-    font-size: 3rem;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .hero-section {
-    flex-direction: column;
-  }
-  .hero-left,
-  .hero-right {
-    width: 100%;
-    justify-content: center;
-    padding-left: 0;
-  }
-  .headline-line {
-    font-size: 2.5rem;
-    text-align: center;
-  }
-  .floating-images {
-    width: 60%;
-    height: 60%;
   }
 }
