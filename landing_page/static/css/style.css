@@ -1450,6 +1450,7 @@ nav ul li a:hover::after {
   position: relative;
   text-align: center;
   margin-top: 150px; /* Adjust depending on your header height */
+  color: white;
 }
 
 /* Text 1 — comes from the left */
@@ -1459,6 +1460,7 @@ nav ul li a:hover::after {
   opacity: 0;
   transform: translateX(-100%);
   animation: leftSlide 1.2s ease-out forwards;
+  color: #00e5ff;
 }
 
 /* Text 2 — comes from the right */
@@ -1470,6 +1472,7 @@ nav ul li a:hover::after {
   transform: translateX(100%);
   animation: rightSlide 1.2s ease-out forwards;
   animation-delay: 0.3s; /* Starts slightly after text 1 */
+  color: #ffcc00;
 }
 
 /* Keyframes: Left → Center */
