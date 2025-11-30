@@ -1490,6 +1490,7 @@ nav ul li a:hover::after {
   margin: 0;
   line-height: 1.2;
   opacity: 0;
+  width: 100%;
 }
 
 /* Slide animations */
