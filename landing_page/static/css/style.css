@@ -1447,60 +1447,49 @@ nav ul li a:hover::after {
 }
 /* Wrapper */
 .intro-wrapper {
-  position: relative;
+  margin-top: 150px;
   text-align: center;
-  margin-top: 120px;
-  color: white;
-  position: relative;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #ffffff;
 }
 
 /* Text 1 — comes from the left */
 .intro-top {
-  font-size: 3rem;
+  font-size: 5rem;
   font-weight: 700;
+  margin: 0;
   opacity: 0;
-  transform: translateX(-100%);
-  animation: slideLeft 2.5s ease forwards;
-  color: #00e5ff;
+  animation: fadeInUp 1.8s ease forwards;
+  letter-spacing: 1px;
 }
 
 /* Text 2 — comes from the right */
 .intro-bottom {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-top: 10px;
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-top: 20px;
   opacity: 0;
-  transform: translateX(100%);
-  animation: slideRight 2.5s ease forwards;
-  animation-delay: 0.5s;
-  color: #ffcc00;
+  animation: fadeIn 2s ease forwards;
+  animation-delay: 0.7s;
+  letter-spacing: 0.5px;
 }
-
-@keyframes slideLeft {
+/* ANIMATIONS */
+@keyframes fadeInUp {
   0% {
-    transform: translateX(0);
     opacity: 0;
-  }
-  40% {
-    opacity: 1;
+    transform: translateY(30px);
   }
   100% {
-    transform: translateX(-80px); /* adjust how far left it slides */
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* Animation for the bottom text */
-@keyframes slideRight {
+@keyframes fadeIn {
   0% {
-    transform: translateX(0);
     opacity: 0;
   }
-  40% {
-    opacity: 1;
-  }
   100% {
-    transform: translateX(80px); /* adjust how far right it slides */
     opacity: 1;
   }
 }
