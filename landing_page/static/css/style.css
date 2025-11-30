@@ -1533,6 +1533,7 @@ nav ul li a:hover::after {
   z-index: 1; /* On top of video */
   padding-left: 50px;
   width: 50%;
+  justify-content: center;
 }
 
 .hero-headline {
