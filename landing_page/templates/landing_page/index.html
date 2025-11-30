@@ -63,36 +63,22 @@
  <div>
       <header id="header">
 		<video class="hero-video" autoplay muted loop playsinline preload="auto"
-		poster="{% static 'images/poster_1280.jpg' %}">
-      	<source src="{% static 'videos/landing_vid_compressed.mp4' %}" type="video/mp4">
+			poster="{% static 'images/poster_1280.jpg' %}">
+			<source src="{% static 'videos/landing_vid_compressed.mp4' %}" type="video/mp4">
   		</video>
-		<div class="hero-headline">
-			<h1 class="headline-line line-left">Your Vision</h1>
-			<h1 class="headline-line line-right">Engineered Into Reality</h1>
-		</div>
-        {% comment %} <div class="container">
-          <nav>
-            <ul id="sidemenu">
-              <li><a href="#header">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#portfolio">Portfolio</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
-            </ul>
-            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-          </nav>
-          <div class="header-text">
-            <p>
-              Full-Stack Software Engineer | AI Training and Evaluation
-              Specialist
-            </p>
-            <h1>
-              Hi, I am <span>Jealous</span><br />
-              Matsikachando
-            </h1>
-          </div>
-        </div> {% endcomment %}
+			<div class="hero-section">
+				<div class="hero-headline">
+					<h1 class="headline-line line-left">Your Vision</h1>
+					<h1 class="headline-line line-right">Engineered Into Reality</h1>
+				</div>
+			</div>
+			<divlass="hero-section">
+				<div class="floating-images">
+					<img src="{% static 'images/dev1.jpg' %}" alt="Developer 1" class="float-circle circle1">
+					<img src="{% static 'images/dev2.jpg' %}" alt="Developer 2" class="float-circle circle2">
+					<img src="{% static 'images/dev3.jpg' %}" alt="Developer 3" class="float-circle circle3">
+				</div>
+			</div>
       </header>
     </div>
 			
