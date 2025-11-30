@@ -1445,16 +1445,15 @@ nav ul li a:hover::after {
     cursor: pointer;
   }
 }
-/* Wrapper */
-.intro-wrapper {
+.accenture-intro {
   margin-top: 150px;
   text-align: center;
   font-family: 'Helvetica Neue', Arial, sans-serif;
   color: #ffffff;
 }
 
-/* Text 1 — comes from the left */
-.intro-top {
+/* MAIN TITLE */
+.acc-top {
   font-size: 5rem;
   font-weight: 700;
   margin: 0;
@@ -1463,8 +1462,8 @@ nav ul li a:hover::after {
   letter-spacing: 1px;
 }
 
-/* Text 2 — comes from the right */
-.intro-bottom {
+/* SUBTITLE */
+.acc-sub {
   font-size: 1.8rem;
   font-weight: 300;
   margin-top: 20px;
@@ -1473,6 +1472,7 @@ nav ul li a:hover::after {
   animation-delay: 0.7s;
   letter-spacing: 0.5px;
 }
+
 /* ANIMATIONS */
 @keyframes fadeInUp {
   0% {
