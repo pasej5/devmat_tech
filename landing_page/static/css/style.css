@@ -1460,6 +1460,7 @@ nav ul li a:hover::after {
   opacity: 0;
   animation: fadeInUp 1.8s ease forwards;
   letter-spacing: 1px;
+  color: #ffffff;
 }
 
 /* SUBTITLE */
@@ -1471,6 +1472,7 @@ nav ul li a:hover::after {
   animation: fadeIn 2s ease forwards;
   animation-delay: 0.7s;
   letter-spacing: 0.5px;
+  color: #ffffff;
 }
 
 /* ANIMATIONS */
