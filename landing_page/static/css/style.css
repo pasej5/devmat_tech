@@ -1316,7 +1316,7 @@ nav {
 }
 
 .headline-line.line-right {
-  color: #00f; /* Example: different color for right line */
+  color: #5bc0de;
   transform: translateX(50px);
   animation: slideInRight 1s forwards;
   animation-delay: 0.5s;
