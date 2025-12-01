@@ -1571,15 +1571,15 @@ nav ul li a:hover::after {
 
 .floating-images {
   position: relative;
-  width: 80%;
-  height: 80%;
+  width: 120%;
+  height: 100%;
 }
 
 .float-circle {
   position: absolute;
-  border-radius: 50%;
-  width: 140px;
-  height: 140px;
+  border-radius: 50% / 40%;
+  width: 80px;
+  height: 80px;
   object-fit: cover;
   animation: float 4s ease-in-out infinite alternate;
 }
