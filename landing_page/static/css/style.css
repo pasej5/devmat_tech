@@ -1578,8 +1578,8 @@ nav ul li a:hover::after {
 .float-circle {
   position: absolute;
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
+  width: 140px;
+  height: 140px;
   object-fit: cover;
   animation: float 4s ease-in-out infinite alternate;
 }
