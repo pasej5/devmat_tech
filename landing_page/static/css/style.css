@@ -1398,3 +1398,72 @@ nav {
     transform: translateY(0px);
   }
 }
+
+/* ---------- Insights ---------- */
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 40px;
+  margin-top: 40px;
+}
+
+.insight-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.insight-card img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.5s;
+}
+
+.insight-layer {
+  width: 100%;
+  height: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 14px;
+  transition: height 0.5s;
+  color: #fff;
+}
+
+.insight-layer h3 {
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.insight-layer a {
+  display: inline-block;
+  margin-top: 20px;
+  background: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  color: #ff004f;
+  text-decoration: none;
+}
+
+.insight-card:hover img {
+  transform: scale(1.1);
+}
+
+.insight-card:hover .insight-layer {
+  height: 100%;
+}
