@@ -1349,18 +1349,18 @@ nav {
 }
 
 .circle1 {
-  top: 10%;
-  left: 20%;
+  top: 15%;
+  left: auto;
   animation-delay: 0s;
 }
 .circle2 {
-  top: 50%;
-  left: 60%;
+  top: 85%;
+  left: 20%;
   animation-delay: 1s;
 }
 .circle3 {
-  top: 30%;
-  left: 80%;
+  top: 50%;
+  left: 60%;
   animation-delay: 2s;
 }
 
