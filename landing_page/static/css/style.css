@@ -1401,30 +1401,34 @@ nav {
 
 /* ---------- Insights ---------- */
 
-.work-list {
+/* Scoped portfolio work-list styles - paste at end of style.css */
+#portfolio .work-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 40px;
+  gap: 40px;
   margin-top: 50px;
 }
 
-.work {
+#portfolio .work {
   border-radius: 10px;
   position: relative;
   overflow: hidden;
+  background: transparent;
 }
 
-.work img {
+#portfolio .work img {
   width: 100%;
+  height: auto;
   border-radius: 10px;
   display: block;
-  transition: transform 0.5s;
+  transition: transform 0.5s ease;
+  object-fit: cover;
 }
 
-.layer {
+#portfolio .layer {
   width: 100%;
   height: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), #ff004f);
   border-radius: 10px;
   position: absolute;
   left: 0;
@@ -1434,16 +1438,53 @@ nav {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0 40px;
+  padding: 24px;
   text-align: center;
   font-size: 14px;
-  transition: height 0.5s;
+  color: #fff;
+  transition: height 0.45s ease;
 }
 
-.work:hover img {
-  transform: scale(1.1);
+#portfolio .layer h3 {
+  font-weight: 600;
+  margin-bottom: 12px;
+  font-size: 18px;
 }
 
-.work:hover .layer {
+#portfolio .layer p {
+  margin: 0;
+  line-height: 1.4;
+  max-height: 6.2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#portfolio .layer a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  text-decoration: none;
+  background: #fff;
+  color: #ff004f;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+#portfolio .work:hover img {
+  transform: scale(1.06);
+}
+
+#portfolio .work:hover .layer {
   height: 100%;
+}
+
+/* small tweak for mobile spacing */
+@media (max-width: 480px) {
+  #portfolio .layer {
+    padding: 18px;
+    font-size: 13px;
+  }
 }
