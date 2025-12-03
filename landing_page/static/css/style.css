@@ -1401,47 +1401,97 @@ nav {
 
 /* ---------- Insights ---------- */
 
-/* Make top blog cards behave like .work cards */
-.hover-card {
+/* ---------- Scoped exact-behavior styles for top insights (paste at file end) ---------- */
+#portfolio-insights .row-bottom-padded-md .hover-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: transparent;
+}
+
+/* image wrapper so absolute layer sits on top */
+#portfolio-insights .blog-img-wrapper {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
 }
 
-.blog-img-wrapper {
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-}
-
-.blog-img-wrapper img {
-  transition: transform 0.5s;
-}
-
-/* Use your existing layer style */
-.hover-card .layer {
+/* image behaviour */
+#portfolio-insights .blog-img-wrapper img,
+#portfolio-insights .blog-img img,
+#portfolio-insights .blog-entry img.img-responsive {
   width: 100%;
-  height: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);
-  border-radius: 10px;
+  height: auto;
+  display: block;
+  transition: transform 0.45s ease;
+  object-fit: cover;
+}
+
+/* the overlay layer (hidden by default) */
+#portfolio-insights .hover-card .layer {
   position: absolute;
   left: 0;
   bottom: 0;
-  overflow: hidden;
+  width: 100%;
+  height: 0;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), #ff004f);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 20px;
+  flex-direction: column;
+  padding: 20px;
   text-align: center;
-  font-size: 14px;
-  transition: height 0.5s;
+  color: #fff;
+  transition: height 0.45s ease;
+  z-index: 3;
 }
 
-/* Hover effect */
-.hover-card:hover img {
-  transform: scale(1.1);
+/* header inside layer */
+#portfolio-insights .hover-card .layer h3 {
+  margin: 0 0 12px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.2;
 }
 
-.hover-card:hover .layer {
+/* circular link icon inside layer */
+#portfolio-insights .hover-card .layer .layer-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  color: #ff004f;
+  text-decoration: none;
+  margin-top: 12px;
+  font-size: 16px;
+}
+
+/* hover triggers same effects as .work */
+#portfolio-insights .hover-card:hover img {
+  transform: scale(1.08);
+}
+
+#portfolio-insights .hover-card:hover .layer {
   height: 100%;
+}
+
+/* Ensure the desc sits below the image as before */
+#portfolio-insights .hover-card .desc {
+  padding: 18px 0 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* small screen adjustments */
+@media (max-width: 576px) {
+  #portfolio-insights .hover-card .layer {
+    padding: 14px;
+  }
+  #portfolio-insights .hover-card .layer h3 {
+    font-size: 15px;
+  }
 }
