@@ -7060,3 +7060,85 @@ button.close {
 }
 
 /*# sourceMappingURL=bootstrap.css.map */
+
+/* Make this specific row behave like .work-list (CSS grid) */
+.row.row-bottom-padded-md {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 40px;
+  margin-top: 50px;
+}
+
+/* Reset Bootstrap column behavior inside this grid */
+.row.row-bottom-padded-md .col-md-3,
+.row.row-bottom-padded-md .col-sm-6 {
+  width: auto;
+  float: none;
+  padding: 0;
+}
+
+/* Make each blog-entry behave like .work */
+.blog-entry {
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Make the image behave like .work img */
+.blog-entry .blog-img img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.5s;
+}
+
+/* Make .desc behave like .layer (overlay) */
+.blog-entry .desc {
+  width: 100%;
+  height: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff; /* ensure text is visible */
+  transition: height 0.5s;
+}
+
+/* Optional: tweak heading spacing inside overlay */
+.blog-entry .desc h3 {
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+/* Optional: style the "Read More" link like the round icon button */
+.blog-entry .desc .lead {
+  display: inline-block;
+  margin-top: 20px;
+  color: #ff004f;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 60px;
+  background: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+/* Hover effects: zoom image + show overlay */
+.blog-entry:hover .blog-img img {
+  transform: scale(1.1);
+}
+
+.blog-entry:hover .desc {
+  height: 100%;
+}
