@@ -7086,10 +7086,8 @@ button.close {
 
 /* Make the image behave like .work img */
 .blog-entry .blog-img img {
-  width: 100%;
-  border-radius: 10px;
-  display: block;
-  transition: transform 0.5s;
+  position: relative;
+  z-index: 1;
 }
 
 /* Make .desc behave like .layer (overlay) */
@@ -7111,6 +7109,7 @@ button.close {
   font-size: 14px;
   color: #fff; /* ensure text is visible */
   transition: height 0.5s;
+  z-index: 2;
 }
 
 /* Optional: tweak heading spacing inside overlay */
