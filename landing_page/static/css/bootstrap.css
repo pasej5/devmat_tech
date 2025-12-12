@@ -7070,11 +7070,14 @@ button.close {
 }
 
 /* Reset Bootstrap column behavior inside this grid */
+/* Reset ALL Bootstrap columns inside this grid */
+.row.row-bottom-padded-md .col-md-6,
+.row.row-bottom-padded-md .col-sm-12,
 .row.row-bottom-padded-md .col-md-3,
 .row.row-bottom-padded-md .col-sm-6 {
-  width: auto;
-  float: none;
-  padding: 0;
+  width: auto !important;
+  float: none !important;
+  padding: 0 !important;
 }
 
 /* Make each blog-entry behave like .work */
