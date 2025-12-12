@@ -7068,6 +7068,11 @@ button.close {
   grid-gap: 40px;
   margin-top: 50px;
 }
+.row.row-bottom-padded-md::before,
+.row.row-bottom-padded-md::after {
+  content: '' !important;
+  display: none !important;
+}
 
 /* Reset Bootstrap column behavior inside this grid */
 /* Reset ALL Bootstrap columns inside this grid */
