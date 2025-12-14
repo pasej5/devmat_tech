@@ -77,4 +77,4 @@ MESSAGE
             logger.error(f"send_mail raised an exception: {e}")
             messages.error(request, 'Sorry, there was an error sending your message.')
 
-    return render(request, 'about.html')
+    return render(request, 'landing_page/about.html')
