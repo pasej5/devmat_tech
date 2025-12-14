@@ -70,7 +70,7 @@ MESSAGE
                 message=email_message,
                 from_email=settings.DEFAULT_FROM_EMAIL,
                 recipient_list=[settings.DEFAULT_FROM_EMAIL],
-                fail_silently=True,
+                fail_silently=False,
             )
             messages.success(request, 'Your message has been sent successfully!')
         except Exception as e:
