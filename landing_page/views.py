@@ -29,29 +29,52 @@ def services(request):
     return render(request, 'landing_page/services.html')
 
 def about(request):
-    """Handle the about page with contact form"""
     if request.method == "POST":
-        name = request.POST.get("name", "").strip()
-        email = request.POST.get("email", "").strip()
-        message = request.POST.get("message", "").strip()
-        
-        logger.info(f"Contact form submitted: {name} <{email}>")
-        
+        first_name = request.POST.get("first_name")
+        last_name = request.POST.get("last_name")
+        email = request.POST.get("email")
+        phone = request.POST.get("phone", "Not provided")
+        company = request.POST.get("company", "Not provided")
+        service = request.POST.get("service", "Not specified")
+        budget = request.POST.get("budget", "Not specified")
+        message = request.POST.get("message")
+
+        logger.warning("CONTACT FORM HIT - ABOUT PAGE")
+
+        email_message = f"""
+New Contact Form Submission from jmatsika.com/about/
+
+----------------------------------
+CONTACT DETAILS
+----------------------------------
+Name: {first_name} {last_name}
+Email: {email}
+Phone: {phone}
+Company: {company}
+
+----------------------------------
+PROJECT DETAILS
+----------------------------------
+Service Interested In: {service}
+Estimated Budget: {budget}
+
+----------------------------------
+MESSAGE
+----------------------------------
+{message}
+        """
+
         try:
             send_mail(
-                subject=f"New Contact Form Message from {name}",
-                message=f"From: {name}\nEmail: {email}\n\nMessage:\n{message}",
+                subject=f"New Inquiry from {first_name} {last_name} - {service}",
+                message=email_message,
                 from_email=settings.DEFAULT_FROM_EMAIL,
                 recipient_list=[settings.DEFAULT_FROM_EMAIL],
-                fail_silently=False,
+                fail_silently=True,
             )
-            
             messages.success(request, 'Your message has been sent successfully!')
-            return redirect('about')
-            
         except Exception as e:
-            logger.error(f"Failed to send email: {e}")
+            logger.error(f"send_mail raised an exception: {e}")
             messages.error(request, 'Sorry, there was an error sending your message.')
-            return redirect('about')
-    
-    return render(request, 'landing_page/about.html')
+
+    return render(request, 'about.html')
