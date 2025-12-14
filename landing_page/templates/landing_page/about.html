@@ -1,253 +1,989 @@
-<!-- templates/landing_page/about.html -->
-
-{% include 'landing_page/navbar.html' %}
-
-<!-- Your existing about content here -->
+{% load static %}
 
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>JMatsika | About Section</title>
-	<link rel="icon" href="{% static 'images/weblogo.png' %}" type="image/png">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="About JMatsika" />
-	<meta name="keywords" content="JMatsika, About JMatsika, Portfolio, Contact" />
-  	<!-- 
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JMatsika | About Us</title>
+    <link
+      rel="icon"
+      href="{% static 'images/weblogo.png' %}"
+      type="image/png"
+    />
 
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
-	
-	<!-- Animate.css -->
-    <link rel="stylesheet" href="{% static 'landing_page/animate.css' %}">
-    <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="{% static 'landing_page/icomoon.css' %}">
-    <!-- Bootstrap  -->
-    <link rel="stylesheet" href="{% static 'landing_page/bootstrap.css' %}">
-    <!-- Flexslider  -->
-    <link rel="stylesheet" href="{% static 'landing_page/flexslider.css' %}">
-    <!-- Theme style  -->
-    <link rel="stylesheet" href="{% static 'landing_page/style.css' %}">
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
-	<!-- Modernizr JS -->
-	<script src="{% static 'landing_page/modernizr-2.6.2.min.js' %}"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+    <style>
+      :root {
+        --primary-color: #0057b8;
+        --secondary-color: #00a3e0;
+        --dark-color: #1a1a2e;
+        --light-bg: #f8f9fa;
+        --text-color: #333;
+        --text-light: #666;
+      }
 
-	</head>
-	<body>
-	<div id="fh5co-page">
-		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-		<aside id="fh5co-aside" role="complementary" class="border js-fullheight">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-			<h1 id="fh5co-logo"><a href="{% url 'index' %}">JMatsika</a></h1>
-			<nav id="fh5co-main-menu" role="navigation">
-				<ul>
-					<li class="fh5co-active"><a href="{% url 'index' %}">Home</a></li>
-					<li><a href="{% url 'insights' %}">insights</a></li>
-					<li><a href="{% url 'portfolio' %}">Portfolio</a></li>
-					<li><a href="{% url 'about' %}">About</a></li>
-					<li><a href="{% url 'contact' %}">Contact</a></li>
-					<div class="logo-wrapper text-center mt-2">
-					<img src="{% static 'images/weblogo.png' %}" alt="Jmatsika Logo" class="img-fluid" style="max-width: 150px;">
-				</div>
-				</ul>
-			</nav>
+      body {
+        font-family: 'Poppins', sans-serif;
+        color: var(--text-color);
+        line-height: 1.7;
+      }
 
-			<div class="fh5co-footer">
-				<p><small>&copy; 2024. All Rights Reserved.</span> <span>Designed by <a href="https://jmatsika.com/">Jealous Matsikachando <span>Images: <a href="https://https://jmatsika.com//" target="_blank">Jealous Matsikachando</a></span></small></p>
-				<ul>
-					<li><a href="#"><i class="icon-facebook2"></i></a></li>
-					<li><a href="#"><i class="icon-twitter2"></i></a></li>
-					<li><a href="#"><i class="icon-instagram"></i></a></li>
-					<li><a href="#"><i class="icon-linkedin2"></i></a></li>
-				</ul>
-			</div>
+      /* ============ NAVIGATION ============ */
+      .navbar {
+        background: white;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        padding: 15px 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
 
-		</aside>
+      .navbar-brand {
+        font-weight: 700;
+        font-size: 1.8rem;
+        color: var(--primary-color) !important;
+      }
 
-		<div id="fh5co-main">
-			<div class="fh5co-narrow-content">
-				<div class="row row-bottom-padded-md">
-					<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-						<img class="img-responsive" src="images/img_bg_1.jpg" alt="About us">
-					</div>
-					<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-						<h2 class="fh5co-heading">About Company</h2>
-						<p>JMatsika Innovations is a forward-thinking IT solutions company dedicated to helping businesses and individuals thrive in the digital age. We specialize in delivering high-quality web development, custom software solutions, and innovative digital experiences tailored to meet the unique needs of our clients.
-Our mission is to empower organizations by providing reliable, scalable, and cutting-edge technology solutions that drive growth and efficiency. With a team of skilled developers and technology experts, we combine creativity, technical expertise, and industry best practices to deliver projects that exceed expectations.
-At Jmatsika Digital, we believe that technology should simplify, not complicate. That’s why we focus on creating intuitive, user-friendly, and performance-driven digital solutions that help our clients stand out in a competitive landscape.
-Whether you’re looking to build a responsive website, optimize your online presence, or develop custom software to streamline your operations, we are committed to delivering solutions that make a measurable impact.
-</p>
-						<p>Our Values:
-Innovation: We leverage the latest technologies to deliver modern, effective solutions.
+      .nav-link {
+        font-weight: 500;
+        color: var(--text-color) !important;
+        margin: 0 15px;
+        transition: color 0.3s;
+      }
 
+      .nav-link:hover {
+        color: var(--primary-color) !important;
+      }
 
-Quality: We prioritize excellence in every project we undertake.
+      .btn-contact {
+        background: var(--primary-color);
+        color: white !important;
+        padding: 10px 25px;
+        border-radius: 25px;
+        font-weight: 500;
+      }
 
+      .btn-contact:hover {
+        background: var(--secondary-color);
+      }
 
-Client-Centric: Your goals are our roadmap; we succeed when you succeed.
+      /* ============ HERO SECTION ============ */
+      .hero-section {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--secondary-color) 100%
+        );
+        color: white;
+        padding: 180px 0 100px;
+        text-align: center;
+      }
 
+      .hero-section h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
 
-Integrity: We operate with transparency, honesty, and accountability.</p>
-					</div>
-				</div>
-			</div>
+      .hero-section p {
+        font-size: 1.3rem;
+        max-width: 700px;
+        margin: 0 auto;
+        opacity: 0.9;
+      }
 
-			<div class="fh5co-narrow-content">
-					<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Our Services</h2>
-					<div class="row">
-						<div class="col-md-6">
-							<div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
-								<div class="fh5co-icon">
-									<i class="icon-settings"></i>
-								</div>
-								<div class="fh5co-text">
-									<h3>Strategy</h3>
-									<p>Great results come from a clear, thoughtful approach. Our strategy is built on understanding your needs, leveraging technology, and delivering solutions that create real impact.</p>
-									<p>1. Discovery & Analysis
- We start by understanding your business, goals, and challenges. This ensures that every solution we build is aligned with your vision and addresses the problems that matter most.</p>
-									<p>2. Planning & Design
- We create structured project plans and design intuitive, user-friendly digital experiences. Our focus is on functionality, aesthetics, and performance—so your solution not only works well but also engages users effectively.
-</p>
-									<p>3. Development & Implementation
- Using modern technologies and industry best practices, we build scalable and reliable solutions. Our agile approach allows us to adapt and refine as the project progresses.
-</p>
-									<p>4. Testing & Quality Assurance
- Every solution undergoes rigorous testing to ensure it meets the highest standards of quality, performance, and security.
-</p>
-									<p>5. Launch & Continuous Support
- We don’t just deliver; we ensure your project succeeds post-launch. From monitoring performance to ongoing maintenance and updates, we stay by your side to ensure long-term success.
-</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
-								<div class="fh5co-icon">
-									<i class="icon-search4"></i>
-								</div>
-								<div class="fh5co-text">
-									<h3>Explore</h3>
-									<p>We delve deep into your industry, market trends, and user behaviors to uncover insights that drive effective solutions.</p>
-								</div>
-							</div>
-						</div>
+      /* ============ ABOUT SECTION ============ */
+      .about-section {
+        padding: 100px 0;
+      }
 
-						<div class="col-md-6">
-							<div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
-								<div class="fh5co-icon">
-									<i class="icon-paperplane"></i>
-								</div>
-								<div class="fh5co-text">
-									<h3>Direction</h3>
-									<p>We guide businesses through the digital landscape with innovation, growth, and excellence. Our focus is on creating scalable, reliable, and forward-thinking solutions that drive lasting impact. </p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
-								<div class="fh5co-icon">
-									<i class="icon-params"></i>
-								</div>
-								<div class="fh5co-text">
-									<h3>Expertise</h3>
-									<p>we specialize in delivering high-quality digital solutions that help businesses succeed online. Our expertise includes:
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--dark-color);
+        margin-bottom: 20px;
+      }
 
-Web Development: Responsive, user-friendly websites built to engage and convert.
+      .section-subtitle {
+        color: var(--primary-color);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+      }
 
-Custom Software Solutions: Tailored applications that streamline operations and drive efficiency.
+      .lead-text {
+        font-size: 1.2rem;
+        color: var(--text-light);
+        margin-bottom: 30px;
+      }
 
-IT Consulting: Strategic guidance to optimize your digital presence and technology stack.
+      .about-image {
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+      }
 
-Digital Innovation: Leveraging the latest technologies to create modern, scalable solutions.
+      /* ============ STATS SECTION ============ */
+      .stats-section {
+        background: var(--dark-color);
+        color: white;
+        padding: 80px 0;
+      }
 
-We combine creativity, technical skill, and industry best practices to ensure every project exceeds expectations. </p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-		
-			<div class="fh5co-narrow-content">
-				<div class="row">
-					<div class="col-md-4 animate-box" data-animate-effect="fadeInLeft">
-						<h1 class="fh5co-heading-colored">Get in touch</h1>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-						<p class="fh5co-lead">We’re ready to help you bring your digital vision to life. Whether you have a project in mind or just want to explore possibilities, reach out today and let’s create something remarkable together.</p>
-						<p><a href="#" class="btn btn-primary">Learn More</a></p>
-					</div>
-					
-				</div>
-			</div>
-		</div>
-	</div>
+      .stat-item {
+        text-align: center;
+        padding: 20px;
+      }
 
-	<h1>About Me</h1>
-<p>Your about page content...</p>
+      .stat-number {
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: var(--secondary-color);
+      }
 
-<!-- ADD THIS SECTION FOR THE CONTACT FORM -->
-<div class="contact-right">
-    <h2>Contact Me</h2>
-    
-    <!-- Display messages -->
-    {% if messages %}
-    <div class="messages">
-        {% for message in messages %}
-        <div class="alert alert-{{ message.tags }}">
-            {{ message }}
+      .stat-label {
+        font-size: 1rem;
+        opacity: 0.8;
+        margin-top: 10px;
+      }
+
+      /* ============ VALUES SECTION ============ */
+      .values-section {
+        padding: 100px 0;
+        background: var(--light-bg);
+      }
+
+      .value-card {
+        background: white;
+        padding: 40px 30px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s, box-shadow 0.3s;
+        height: 100%;
+      }
+
+      .value-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+      }
+
+      .value-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 25px;
+      }
+
+      .value-icon i {
+        font-size: 2rem;
+        color: white;
+      }
+
+      .value-card h4 {
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: var(--dark-color);
+      }
+
+      .value-card p {
+        color: var(--text-light);
+        font-size: 0.95rem;
+      }
+
+      /* ============ SERVICES SECTION ============ */
+      .services-section {
+        padding: 100px 0;
+      }
+
+      .service-card {
+        border: none;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+        height: 100%;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .service-card .card-body {
+        padding: 30px;
+      }
+
+      .service-card h5 {
+        font-weight: 600;
+        color: var(--dark-color);
+        margin-bottom: 15px;
+      }
+
+      .service-card p {
+        color: var(--text-light);
+      }
+
+      .service-number {
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--secondary-color);
+        opacity: 0.3;
+      }
+
+      /* ============ TEAM SECTION ============ */
+      .team-section {
+        padding: 100px 0;
+        background: var(--light-bg);
+      }
+
+      .team-card {
+        text-align: center;
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      }
+
+      .team-card img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 20px;
+        border: 5px solid var(--secondary-color);
+      }
+
+      .team-card h5 {
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      .team-card .position {
+        color: var(--primary-color);
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+      }
+
+      /* ============ CONTACT SECTION ============ */
+      .contact-section {
+        padding: 100px 0;
+        background: linear-gradient(135deg, var(--dark-color) 0%, #16213e 100%);
+        color: white;
+      }
+
+      .contact-info-card {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 30px;
+        border-radius: 15px;
+        margin-bottom: 20px;
+      }
+
+      .contact-info-card i {
+        font-size: 2rem;
+        color: var(--secondary-color);
+        margin-bottom: 15px;
+      }
+
+      .contact-info-card h5 {
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .contact-form {
+        background: white;
+        padding: 50px;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      }
+
+      .contact-form h3 {
+        color: var(--dark-color);
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .contact-form .subtitle {
+        color: var(--text-light);
+        margin-bottom: 30px;
+      }
+
+      .form-control {
+        border: 2px solid #e9ecef;
+        padding: 15px 20px;
+        border-radius: 10px;
+        font-size: 1rem;
+        margin-bottom: 20px;
+        transition: border-color 0.3s;
+      }
+
+      .form-control:focus {
+        border-color: var(--primary-color);
+        box-shadow: none;
+      }
+
+      .form-select {
+        border: 2px solid #e9ecef;
+        padding: 15px 20px;
+        border-radius: 10px;
+        font-size: 1rem;
+        margin-bottom: 20px;
+      }
+
+      .btn-submit {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        color: white;
+        padding: 15px 40px;
+        border: none;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        width: 100%;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .btn-submit:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(0, 87, 184, 0.4);
+        color: white;
+      }
+
+      /* ============ FOOTER ============ */
+      .footer {
+        background: #0d0d1a;
+        color: white;
+        padding: 60px 0 30px;
+      }
+
+      .footer h5 {
+        font-weight: 600;
+        margin-bottom: 25px;
+        color: white;
+      }
+
+      .footer-links {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-links li {
+        margin-bottom: 12px;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-links a:hover {
+        color: var(--secondary-color);
+      }
+
+      .social-icons a {
+        display: inline-flex;
+        width: 45px;
+        height: 45px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        margin-right: 10px;
+        transition: background 0.3s;
+      }
+
+      .social-icons a:hover {
+        background: var(--primary-color);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 30px;
+        margin-top: 40px;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* ============ ALERTS ============ */
+      .alert-success {
+        background: #d4edda;
+        color: #155724;
+        padding: 15px 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+
+      .alert-error {
+        background: #f8d7da;
+        color: #721c24;
+        padding: 15px 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+
+      /* ============ RESPONSIVE ============ */
+      @media (max-width: 768px) {
+        .hero-section h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero-section {
+          padding: 150px 0 80px;
+        }
+
+        .contact-form {
+          padding: 30px;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .stat-number {
+          font-size: 2.5rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ============ NAVIGATION ============ -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="{% url 'index' %}">
+          <img
+            src="{% static 'images/weblogo.png' %}"
+            alt="JMatsika"
+            height="40"
+            class="me-2"
+          />
+          JMatsika
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'index' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'about' %}">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'insights' %}">Insights</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'portfolio' %}">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-contact ms-3" href="#contact">Contact Us</a>
+            </li>
+          </ul>
         </div>
-        {% endfor %}
-    </div>
-    {% endif %}
-    
-    <!-- Contact Form -->
-    <form method="POST" action="">
-        {% csrf_token %}
-        <input type="text" name="name" placeholder="Your name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" rows="6" placeholder="Your Message"></textarea>
-        <button type="submit" class="btn btn2">Submit</button>
-    </form>
-</div>
+      </div>
+    </nav>
 
-	<!-- jQuery -->
+    <!-- ============ HERO SECTION ============ -->
+    <section class="hero-section">
+      <div class="container">
+        <h1>About JMatsika Innovations</h1>
+        <p>
+          We are a forward-thinking IT consulting company dedicated to helping
+          businesses thrive in the digital age through innovative technology
+          solutions.
+        </p>
+      </div>
+    </section>
 
-	<script src="{% static 'js/jquery.min.js' %}"></script>
-	<!-- jQuery Easing -->
-	<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
-	<!-- Bootstrap -->
-	<script src="{% static 'js/bootstrap.min.js' %}"></script>
-	<!-- Waypoints -->
-	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
-	<!-- Flexslider -->
-	<script src="{% static 'js/jquery.flexslider-min.js' %}"></script>
+    <!-- ============ ABOUT SECTION ============ -->
+    <section class="about-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <span class="section-subtitle">Who We Are</span>
+            <h2 class="section-title">
+              Transforming Businesses Through Technology
+            </h2>
+            <p class="lead-text">
+              JMatsika Innovations is a leading IT consulting firm that partners
+              with organizations to solve their most complex challenges and
+              drive meaningful change.
+            </p>
+            <p>
+              Founded with a vision to bridge the gap between business needs and
+              technological possibilities, we have grown into a trusted partner
+              for businesses across various industries. Our team of expert
+              consultants, developers, and strategists work collaboratively to
+              deliver solutions that create lasting value.
+            </p>
+            <p>
+              We believe that technology should simplify, not complicate. That's
+              why we focus on creating intuitive, scalable, and
+              performance-driven digital solutions that help our clients stand
+              out in a competitive landscape.
+            </p>
+            <a href="#contact" class="btn btn-contact mt-3">
+              <i class="fas fa-arrow-right me-2"></i>Start a Conversation
+            </a>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="{% static 'images/about-team.jpg' %}"
+              alt="Our Team"
+              class="about-image"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
 
-	<!-- MAIN JS -->
-	<script src="{% static 'js/main.js' %}"></script>
+    <!-- ============ STATS SECTION ============ -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-6">
+            <div class="stat-item">
+              <div class="stat-number">50+</div>
+              <div class="stat-label">Projects Completed</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="stat-item">
+              <div class="stat-number">30+</div>
+              <div class="stat-label">Happy Clients</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="stat-item">
+              <div class="stat-number">5+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="stat-item">
+              <div class="stat-number">24/7</div>
+              <div class="stat-label">Support Available</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- ============ VALUES SECTION ============ -->
+    <section class="values-section">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-subtitle">Our Core Values</span>
+          <h2 class="section-title">What Drives Us Forward</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6">
+            <div class="value-card">
+              <div class="value-icon">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <h4>Innovation</h4>
+              <p>
+                We leverage cutting-edge technologies to deliver modern,
+                effective solutions that keep you ahead of the competition.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="value-card">
+              <div class="value-icon">
+                <i class="fas fa-award"></i>
+              </div>
+              <h4>Excellence</h4>
+              <p>
+                We prioritize quality in every project, ensuring deliverables
+                that exceed expectations and stand the test of time.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="value-card">
+              <div class="value-icon">
+                <i class="fas fa-handshake"></i>
+              </div>
+              <h4>Partnership</h4>
+              <p>
+                Your success is our success. We work as an extension of your
+                team, fully invested in achieving your goals.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="value-card">
+              <div class="value-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h4>Integrity</h4>
+              <p>
+                We operate with complete transparency, honesty, and
+                accountability in every interaction and decision.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-	</body>
+    <!-- ============ SERVICES SECTION ============ -->
+    <section class="services-section">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-subtitle">What We Do</span>
+          <h2 class="section-title">Our Services</h2>
+          <p class="lead-text mx-auto" style="max-width: 600px">
+            We offer comprehensive IT consulting services designed to transform
+            your business operations and drive growth.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="card service-card">
+              <div class="card-body">
+                <div class="service-number">01</div>
+                <h5>Web Development</h5>
+                <p>
+                  Custom, responsive websites and web applications built with
+                  modern technologies to engage users and drive conversions.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card service-card">
+              <div class="card-body">
+                <div class="service-number">02</div>
+                <h5>Custom Software</h5>
+                <p>
+                  Tailored software solutions designed to streamline your
+                  operations, automate processes, and improve efficiency.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card service-card">
+              <div class="card-body">
+                <div class="service-number">03</div>
+                <h5>IT Consulting</h5>
+                <p>
+                  Strategic guidance to help you make informed technology
+                  decisions that align with your business objectives.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card service-card">
+              <div class="card-body">
+                <div class="service-number">04</div>
+                <h5>Cloud Solutions</h5>
+                <p>
+                  Scalable cloud infrastructure and migration services to
+                  enhance flexibility and reduce operational costs.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card service-card">
+              <div class="card-body">
+                <div class="service-number">05</div>
+                <h5>Data Analytics</h5>
+                <p>
+                  Transform raw data into actionable insights with our
+                  comprehensive analytics and business intelligence solutions.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card service-card">
+              <div class="card-body">
+                <div class="service-number">06</div>
+                <h5>Digital Strategy</h5>
+                <p>
+                  Comprehensive digital transformation strategies to help your
+                  business adapt and thrive in the digital economy.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT SECTION ============ -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 mb-5 mb-lg-0">
+            <span class="section-subtitle" style="color: var(--secondary-color)"
+              >Get In Touch</span
+            >
+            <h2 class="section-title" style="color: white">
+              Let's Start a Conversation
+            </h2>
+            <p class="mb-5" style="opacity: 0.8">
+              Ready to transform your business? We'd love to hear from you. Fill
+              out the form and our team will get back to you within 24 hours.
+            </p>
+
+            <div class="contact-info-card">
+              <i class="fas fa-map-marker-alt"></i>
+              <h5>Our Office</h5>
+              <p style="opacity: 0.8; margin: 0">
+                123 Business Street<br />Harare, Zimbabwe
+              </p>
+            </div>
+
+            <div class="contact-info-card">
+              <i class="fas fa-envelope"></i>
+              <h5>Email Us</h5>
+              <p style="opacity: 0.8; margin: 0">
+                info@jmatsika.com<br />support@jmatsika.com
+              </p>
+            </div>
+
+            <div class="contact-info-card">
+              <i class="fas fa-phone-alt"></i>
+              <h5>Call Us</h5>
+              <p style="opacity: 0.8; margin: 0">
+                +263 XXX XXX XXX<br />+263 XXX XXX XXX
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="contact-form">
+              <h3>Send Us a Message</h3>
+              <p class="subtitle">
+                Fill out the form below and we'll be in touch soon.
+              </p>
+
+              <!-- Display Messages -->
+              {% if messages %} {% for message in messages %}
+              <div class="alert-{{ message.tags }}">{{ message }}</div>
+              {% endfor %} {% endif %}
+
+              <form method="POST" action="">
+                {% csrf_token %}
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      name="first_name"
+                      class="form-control"
+                      placeholder="First Name *"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      name="last_name"
+                      class="form-control"
+                      placeholder="Last Name *"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <input
+                      type="email"
+                      name="email"
+                      class="form-control"
+                      placeholder="Email Address *"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <input
+                      type="tel"
+                      name="phone"
+                      class="form-control"
+                      placeholder="Phone Number"
+                    />
+                  </div>
+                </div>
+
+                <input
+                  type="text"
+                  name="company"
+                  class="form-control"
+                  placeholder="Company Name"
+                />
+
+                <select name="service" class="form-select">
+                  <option value="" disabled selected>
+                    What service are you interested in?
+                  </option>
+                  <option value="web-development">Web Development</option>
+                  <option value="custom-software">
+                    Custom Software Development
+                  </option>
+                  <option value="it-consulting">IT Consulting</option>
+                  <option value="cloud-solutions">Cloud Solutions</option>
+                  <option value="data-analytics">Data Analytics</option>
+                  <option value="digital-strategy">Digital Strategy</option>
+                  <option value="other">Other</option>
+                </select>
+
+                <select name="budget" class="form-select">
+                  <option value="" disabled selected>
+                    What is your estimated budget?
+                  </option>
+                  <option value="under-5000">Under $5,000</option>
+                  <option value="5000-10000">$5,000 - $10,000</option>
+                  <option value="10000-25000">$10,000 - $25,000</option>
+                  <option value="25000-50000">$25,000 - $50,000</option>
+                  <option value="over-50000">Over $50,000</option>
+                  <option value="not-sure">Not Sure Yet</option>
+                </select>
+
+                <textarea
+                  name="message"
+                  class="form-control"
+                  rows="5"
+                  placeholder="Tell us about your project or how we can help you... *"
+                  required
+                ></textarea>
+
+                <button type="submit" class="btn btn-submit">
+                  <i class="fas fa-paper-plane me-2"></i>Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+            <h5>JMatsika Innovations</h5>
+            <p style="opacity: 0.7">
+              Empowering businesses through innovative technology solutions. We
+              are committed to delivering excellence in every project.
+            </p>
+            <div class="social-icons mt-4">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-5 mb-lg-0">
+            <h5>Quick Links</h5>
+            <ul class="footer-links">
+              <li><a href="{% url 'index' %}">Home</a></li>
+              <li><a href="{% url 'about' %}">About Us</a></li>
+              <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+              <li><a href="{% url 'insights' %}">Insights</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+            <h5>Services</h5>
+            <ul class="footer-links">
+              <li><a href="#">Web Development</a></li>
+              <li><a href="#">Custom Software</a></li>
+              <li><a href="#">IT Consulting</a></li>
+              <li><a href="#">Cloud Solutions</a></li>
+              <li><a href="#">Data Analytics</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h5>Contact Info</h5>
+            <ul class="footer-links">
+              <li>
+                <i class="fas fa-map-marker-alt me-2"></i>Harare, Zimbabwe
+              </li>
+              <li><i class="fas fa-phone me-2"></i>+263 XXX XXX XXX</li>
+              <li><i class="fas fa-envelope me-2"></i>info@jmatsika.com</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2024 JMatsika Innovations. All Rights Reserved. | Designed
+            with <i class="fas fa-heart" style="color: #e74c3c"></i> by Jealous
+            Matsikachando
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Smooth Scroll -->
+    <script>
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth',
+          });
+        });
+      });
+    </script>
+  </body>
 </html>
