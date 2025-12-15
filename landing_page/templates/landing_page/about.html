@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="{% static 'css/about.css' %}" />
     <link rel="stylesheet" href="{% static 'css/toast.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}" />
 
     <!-- Google Fonts -->
     <link
@@ -35,47 +36,7 @@
 
   <body>
     <!-- ============ NAVIGATION ============ -->
-    <nav class="navbar navbar-expand-lg">
-      <div class="container">
-        <a class="navbar-brand" href="{% url 'index' %}">
-          <img
-            src="{% static 'images/weblogo.png' %}"
-            alt="JMatsika"
-            height="40"
-            class="me-2"
-          />
-          JMatsika
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto align-items-center">
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'index' %}">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Insights</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="btn btn-contact ms-3" href="#contact">Contact Us</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
+    {% include "landing_page/navbar.html" %}
     <!-- ============ HERO SECTION ============ -->
     <section class="hero-section">
       <div class="container">

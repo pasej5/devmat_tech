@@ -1,26 +1,124 @@
-.navbar {
-  background: white;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-  padding: 15px 0;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
+/*==========================Nav new======================================*/
+
+/* ============================================
+   NAVBAR OVERRIDES - Must be at bottom of file
+   ============================================ */
+
+nav.navbar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100vw !important;
+  margin: 0 !important;
+  padding: 20px 0 !important;
+  background: rgba(0, 0, 0, 0.8) !important;
+  z-index: 9999 !important;
+  backdrop-filter: blur(6px);
+  box-sizing: border-box !important;
 }
 
-.navbar-brand {
-  font-weight: 700;
-  font-size: 1.8rem;
-  color: var(--primary-color) !important;
+nav.navbar .container,
+nav.navbar .container-fluid {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding: 0 40px !important;
+  margin: 0 !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
 }
 
-.nav-link {
-  font-weight: 500;
-  color: var(--text-color) !important;
-  margin: 0 15px;
-  transition: color 0.3s;
+/* Brand / Logo */
+nav.navbar .navbar-brand {
+  color: #fff !important;
+  font-weight: bold !important;
+  font-size: 1.5rem !important;
+  text-decoration: none !important;
+  display: flex !important;
+  align-items: center !important;
 }
 
-.nav-link:hover {
-  color: var(--primary-color) !important;
+nav.navbar .navbar-brand:hover,
+nav.navbar .navbar-brand:focus {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+nav.navbar .navbar-brand img {
+  margin-right: 10px !important;
+}
+
+/* Nav Links */
+nav.navbar .navbar-nav {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+nav.navbar .navbar-nav .nav-item {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+nav.navbar .navbar-nav .nav-link {
+  color: #fff !important;
+  font-weight: 500 !important;
+  font-size: 15px !important;
+  text-decoration: none !important;
+  padding: 8px 15px !important;
+  transition: color 0.3s ease !important;
+}
+
+nav.navbar .navbar-nav .nav-link:hover,
+nav.navbar .navbar-nav .nav-link:focus,
+nav.navbar .navbar-nav .nav-link:active,
+nav.navbar .navbar-nav .nav-link.active {
+  color: #5bc0de !important;
+  text-decoration: none !important;
+  outline: none !important;
+}
+
+/* Contact Button */
+nav.navbar .btn-contact {
+  background: #5bc0de !important;
+  color: #fff !important;
+  padding: 10px 25px !important;
+  border-radius: 5px !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  border: none !important;
+  transition: background 0.3s ease !important;
+}
+
+nav.navbar .btn-contact:hover,
+nav.navbar .btn-contact:focus {
+  background: #46b8da !important;
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+/* Mobile Toggle Button */
+nav.navbar .navbar-toggler {
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  padding: 5px 10px !important;
+}
+
+nav.navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Collapse Menu */
+nav.navbar .navbar-collapse {
+  justify-content: flex-end !important;
+}
+
+/* Shrink on scroll */
+nav.navbar.shrink {
+  padding: 10px 0 !important;
+  background: rgba(0, 0, 0, 0.95) !important;
 }
