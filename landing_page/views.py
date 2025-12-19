@@ -10,6 +10,12 @@ logger = logging.getLogger(__name__)
 def index(request):
     return render(request, 'landing_page/index.html')
 
+def what_we_do(request):
+    return render(request, 'landing_page/what_we_do.html')
+
+def blog(request):
+	return render(request, 'landing_page/blog.html')
+
 def about(request):
     return render(request, 'landing_page/about.html')
 
@@ -19,8 +25,8 @@ def blog(request):
 def contact(request):
     return render(request, 'landing_page/contact.html')
 
-def portfolio(request):
-    return render(request, 'landing_page/portfolio.html')
+def portfolio_new(request):
+    return render(request, 'landing_page/portfolio_new.html')
 
 def careers(request):
     return render(request, 'landing_page/careers.html')
@@ -78,3 +84,5 @@ MESSAGE
             messages.error(request, 'Sorry, there was an error sending your message.')
 
     return render(request, 'landing_page/about.html')
+def what_we_do(request):
+    return render(request, 'landing_page/what_we_do.html')
