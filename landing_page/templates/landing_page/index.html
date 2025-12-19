@@ -139,8 +139,152 @@
 			</div>
 
 
+<!------------------------------------------------------>
 
-			<div class="fh5co-narrow-content">
+{% comment %} <section class="fh5co-narrow-content" id="blog-preview">
+	<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">
+		From the Blog
+	</h2>
+	<p class="fh5co-lead">
+		Engineering insights, lessons learned, and growth stories.
+	</p>
+
+	<div class="row row-bottom-padded-md">
+
+		<div class="col-md-4 col-sm-6 animate-box">
+			<article class="blog-entry">
+				<a href="{% url 'blog' %}" class="blog-img">
+					<img src="{% static 'images/perceverance.png' %}" class="img-responsive" alt="Perseverance">
+				</a>
+				<div class="desc">
+					<h3>The Power of Perseverance</h3>
+					<p>Turning challenges into growth opportunities.</p>
+				</div>
+			</article>
+		</div>
+
+		<div class="col-md-4 col-sm-6 animate-box">
+			<article class="blog-entry">
+				<a href="{% url 'blog' %}" class="blog-img">
+					<img src="{% static 'images/postmoterm.png' %}" class="img-responsive" alt="Postmortem">
+				</a>
+				<div class="desc">
+					<h3>My First Postmortem</h3>
+					<p>A production failure and what it taught me.</p>
+				</div>
+			</article>
+		</div>
+
+		<div class="col-md-4 col-sm-6 animate-box">
+			<article class="blog-entry">
+				<a href="{% url 'blog' %}" class="blog-img">
+					<img src="{% static 'images/virtual.png' %}" class="img-responsive" alt="Virtual Learning">
+				</a>
+				<div class="desc">
+					<h3>Virtual vs In-Person Learning</h3>
+					<p>The real trade-offs in modern education.</p>
+				</div>
+			</article>
+		</div>
+
+	</div>
+
+	<div class="text-center animate-box">
+		<a href="{% url 'blog' %}" class="btn btn-primary">
+			View All Articles
+		</a>
+	</div>
+</section>
+ {% endcomment %}
+<section class="fh5co-narrow-content" id="insights">
+	<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">
+		Insights & Case Studies
+	</h2>
+
+	<p class="fh5co-lead">
+		How we help organizations design, build, and scale reliable digital systems.
+	</p>
+
+	<div class="row row-bottom-padded-md">
+
+		<div class="col-md-4 col-sm-6 animate-box">
+			<article class="blog-entry">
+				<img src="{% static 'images/virtual.png' %}" class="img-responsive" alt="Digital Platforms">
+
+				<div class="desc">
+					<span class="insight-tag">Case Study</span>
+					<h3>Modernizing Digital Learning Platforms</h3>
+
+					<p>
+						<strong>Challenge:</strong> Scaling digital learning without sacrificing performance or engagement.
+					</p>
+					<p>
+						<strong>Outcome:</strong> Improved reliability, better user experience, and reduced operational overhead.
+					</p>
+
+					<a href="{% url 'contact' %}" class="lead">
+						Discuss This Case <i class="icon-arrow-right3"></i>
+					</a>
+				</div>
+			</article>
+		</div>
+
+		<div class="col-md-4 col-sm-6 animate-box">
+			<article class="blog-entry">
+				<img src="{% static 'images/dowloader.png' %}" class="img-responsive" alt="Automation">
+
+				<div class="desc">
+					<span class="insight-tag">Solution Brief</span>
+					<h3>Automating Large-Scale File Retrieval</h3>
+
+					<p>
+						<strong>Problem:</strong> Manual data handling slowed operations and introduced errors.
+					</p>
+					<p>
+						<strong>Result:</strong> Faster access to data and streamlined workflows.
+					</p>
+
+					<a href="{% url 'services' %}" class="lead">
+						View Related Services <i class="icon-arrow-right3"></i>
+					</a>
+				</div>
+			</article>
+		</div>
+
+		<div class="col-md-4 col-sm-6 animate-box">
+			<article class="blog-entry">
+				<img src="{% static 'images/postmoterm.png' %}" class="img-responsive" alt="Reliability Engineering">
+
+				<div class="desc">
+					<span class="insight-tag">Industry Insight</span>
+					<h3>Building Resilient Systems Through Postmortems</h3>
+
+					<p>
+						<strong>Insight:</strong> High-performing teams treat failures as learning opportunities.
+					</p>
+					<p>
+						<strong>Impact:</strong> Higher uptime, faster recovery, and stronger engineering culture.
+					</p>
+
+					<a href="{% url 'portfolio' %}" class="lead">
+						Learn How We Improve Reliability <i class="icon-arrow-right3"></i>
+					</a>
+				</div>
+			</article>
+		</div>
+
+	</div>
+</section>
+
+
+
+<!------------------------------------------------------>
+
+
+
+
+
+			{% comment %} <div class="fh5co-narrow-content">
 				<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Insights</h2>
 
 
@@ -156,11 +300,11 @@
 								<a href="#" class="lead">Read More <i class="icon-arrow-right3"></i></a>
 							</div>
 						</div>
-					</div>
+					</div> {% endcomment %}
 
 <!---------------------------------------------------------------------------------------------------->
 
-					<div class="col-md-6 col-sm-12 col-padding animate-box" data-animate-effect="fadeInLeft">
+					{% comment %} <div class="col-md-6 col-sm-12 col-padding animate-box" data-animate-effect="fadeInLeft">
 						<div class="blog-entry">
 							<a href="https://medium.com/@pasej5/the-power-of-perseverance-turning-challenges-into-triumphs-884ecdda20d0" class="blog-img"><img src="{% static 'images/perceverance.png' %}" class="img-responsive" alt="perseverance"></a>
 							<div class="desc">
@@ -170,12 +314,12 @@
 								<a href="https://medium.com/@pasej5/the-power-of-perseverance-turning-challenges-into-triumphs-884ecdda20d0" class="lead">Read More <i class="icon-arrow-right3"></i></a>
 							</div>
 						</div>
-					</div>
+					</div> {% endcomment %}
 <!---------------------------------------------------------------------------------------------------->
 
 
 
-					<div class="col-md-6 col-sm-12 col-padding animate-box" data-animate-effect="fadeInLeft">
+					{% comment %} <div class="col-md-6 col-sm-12 col-padding animate-box" data-animate-effect="fadeInLeft">
 						<div class="blog-entry">
 							<a href="https://medium.com/@pasej5/the-power-of-perseverance-turning-challenges-into-triumphs-884ecdda20d0" class="blog-img"><img src="{% static 'images/perceverance.png' %}" class="img-responsive" alt="perseverance"></a>
 							<div class="desc">
@@ -185,13 +329,13 @@
 								<a href="https://medium.com/@pasej5/the-power-of-perseverance-turning-challenges-into-triumphs-884ecdda20d0" class="lead">Read More <i class="icon-arrow-right3"></i></a>
 							</div>
 						</div>
-					</div>
+					</div> {% endcomment %}
 
 
 <!---------------------------------------------------------------------------------------------------->
 
 
-					<div class="col-md-6 col-sm-12 col-padding animate-box" data-animate-effect="fadeInLeft">
+					{% comment %} <div class="col-md-6 col-sm-12 col-padding animate-box" data-animate-effect="fadeInLeft">
 						<div class="blog-entry">
 							<a href="https://medium.com/@pasej5/unveiling-the-ultimate-file-downloader-empowering-you-to-obtain-anything-anywhere-04c8fab312cc" class="blog-img"><img src="{% static 'images/dowloader.png' %}" class="img-responsive" alt="dowloader"></a>
 							<div class="desc">
@@ -202,11 +346,11 @@
 								<a href="https://medium.com/@pasej5/unveiling-the-ultimate-file-downloader-empowering-you-to-obtain-anything-anywhere-04c8fab312cc" class="lead">Read More <i class="icon-arrow-right3"></i></a>
 							</div>
 						</div>
-					</div>
+					</div> {% endcomment %}
 
 <!---------------------------------------------------------------------------------------------------->
 
-				<div class="col-md-6 col-sm-12 col-padding animate-box" data-animate-effect="fadeInLeft">
+				{% comment %} <div class="col-md-6 col-sm-12 col-padding animate-box" data-animate-effect="fadeInLeft">
 						<div class="blog-entry">
 							<a href="https://medium.com/@pasej5/the-power-of-perseverance-turning-challenges-into-triumphs-884ecdda20d0" class="blog-img"><img src="{% static 'images/perceverance.png' %}" class="img-responsive" alt="perseverance"></a>
 							<div class="desc">
@@ -216,11 +360,11 @@
 								<a href="https://medium.com/@pasej5/the-power-of-perseverance-turning-challenges-into-triumphs-884ecdda20d0" class="lead">Read More <i class="icon-arrow-right3"></i></a>
 							</div>
 						</div>
-					</div>	
+					</div>	 {% endcomment %}
 
 <!---------------------------------------------------------------------------------------------------->
 
-					<div class="col-md-6 col-sm-12 col-padding animate-box" data-animate-effect="fadeInLeft">
+					{% comment %} <div class="col-md-6 col-sm-12 col-padding animate-box" data-animate-effect="fadeInLeft">
 						<div class="blog-entry">
 							<a href="https://medium.com/@pasej5/my-first-postmortem-4f74a9db6af1" class="blog-img"><img src="{% static 'images/postmoterm.png' %}" class="img-responsive" alt="postmortem"></a>
 							<div class="desc">
@@ -232,7 +376,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> {% endcomment %}
 
 			</div> 
 

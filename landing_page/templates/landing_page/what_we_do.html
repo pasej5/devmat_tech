@@ -1,0 +1,187 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Approach & Capabilities | JMatsika Innovations</title>
+    <link
+      rel="icon"
+      href="{% static 'images/weblogo.png' %}"
+      type="image/png"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="{% static 'landing_page/style.css' %}" />
+    <style>
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease-in-out;
+      }
+      .feature-icon {
+        font-size: 3rem;
+        color: #0d6efd;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="d-flex">
+      <!-- Sidebar -->
+      <aside class="bg-light border p-3 vh-100">
+        <h1 class="mb-4">
+          <a href="{% url 'index' %}" class="text-decoration-none">JMatsika</a>
+        </h1>
+        <nav>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'index' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'services' %}"
+                >Services</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'portfolio' %}">Our Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'insights' %}">Insights</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about' %}">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'careers' %}">Careers</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="p-5 flex-grow-1">
+        <span class="badge bg-primary mb-3">Capabilities</span>
+        <h1 class="mb-4">Our Approach to Digital Transformation</h1>
+        <p class="lead mb-5">
+          JMatsika Innovations designs and delivers software solutions that
+          solve complex business challenges while driving measurable value.
+        </p>
+
+        <div class="row g-4">
+          <!-- Agile Development -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card feature-card p-4 h-100">
+              <div class="feature-icon mb-3">
+                <i class="bi bi-code-slash"></i>
+              </div>
+              <h5 class="card-title">Agile Development</h5>
+              <p class="card-text">
+                Iterative delivery with stakeholder feedback, minimizing risk
+                and maximizing value.
+              </p>
+              <ul>
+                <li>Daily stand-ups, sprint planning, and retrospectives</li>
+                <li>Incremental releases to validate assumptions</li>
+                <li>Prioritization of high-impact features</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- DevOps & CI/CD -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card feature-card p-4 h-100">
+              <div class="feature-icon mb-3"><i class="bi bi-gear"></i></div>
+              <h5 class="card-title">DevOps & CI/CD</h5>
+              <p class="card-text">
+                Automated deployments with continuous integration, ensuring
+                reliable software delivery.
+              </p>
+              <ul>
+                <li>Automated testing and code review</li>
+                <li>Seamless staging & production deployments</li>
+                <li>Monitoring & logging for proactive issue resolution</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- TDD -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card feature-card p-4 h-100">
+              <div class="feature-icon mb-3">
+                <i class="bi bi-check2-square"></i>
+              </div>
+              <h5 class="card-title">Test-Driven Development</h5>
+              <p class="card-text">
+                Write tests before code to ensure quality, maintainability, and
+                robustness.
+              </p>
+            </div>
+          </div>
+
+          <!-- Microservices -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card feature-card p-4 h-100">
+              <div class="feature-icon mb-3"><i class="bi bi-layers"></i></div>
+              <h5 class="card-title">Microservices Architecture</h5>
+              <p class="card-text">
+                Modular systems for scalability, reliability, and
+                maintainability.
+              </p>
+              <ul>
+                <li>Independent services for faster iteration</li>
+                <li>Reduced downtime</li>
+                <li>Flexible API integration</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- AI & Data Analytics -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card feature-card p-4 h-100">
+              <div class="feature-icon mb-3"><i class="bi bi-brain"></i></div>
+              <h5 class="card-title">AI & Data Analytics</h5>
+              <p class="card-text">
+                Predictive insights, automation, and smarter business decisions
+                with AI adoption roadmap.
+              </p>
+              <ul>
+                <li>Predictive analytics for business insights</li>
+                <li>Automation to improve efficiency</li>
+                <li>Guided AI adoption for risk mitigation</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Tools & Technologies -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card feature-card p-4 h-100">
+              <div class="feature-icon mb-3"><i class="bi bi-tools"></i></div>
+              <h5 class="card-title">Tools & Technologies</h5>
+              <ul>
+                <li>Python & Django</li>
+                <li>Docker & Kubernetes</li>
+                <li>React / Vue</li>
+                <li>Cloud & AI Integration</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center mt-5">
+          <a href="{% url 'contact' %}" class="btn btn-primary btn-lg"
+            >Discuss Your Project With Us</a
+          >
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

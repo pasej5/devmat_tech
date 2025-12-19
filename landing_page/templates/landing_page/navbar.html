@@ -154,6 +154,8 @@
 </nav>
 {% endcomment %} {% load static %}
 
+<li><a href="{% url 'blog' %}">Blog</a></li>
+
 <style>
   /* ==================== NAVBAR BASE STYLES ==================== */
   nav.navbar.main-navbar {
@@ -406,7 +408,7 @@
           <a class="nav-link" href="{% url 'about' %}">Who we are</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">What we do</a>
+          <a class="nav-link" href="{% url 'what_we_do'%}">What we do</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">What we think</a>
