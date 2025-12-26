@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
     <title>AI Integration & Strategy | JMatsika Insights</title>
@@ -10,87 +10,1364 @@
       type="image/png"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Helping organizations leverage artificial intelligence to optimize operations, improve decision-making, and unlock new business opportunities."
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="{% static 'landing_page/bootstrap.css' %}" />
-    <link rel="stylesheet" href="{% static 'landing_page/style.css' %}" />
+
+    <style>
+      /* ============================================
+         JMatsika Insights - AI Integration Page
+         ============================================ */
+
+      :root {
+        --primary-color: #7c3aed;
+        --primary-dark: #6d28d9;
+        --secondary-color: #0f172a;
+        --accent-color: #a855f7;
+        --text-color: #334155;
+        --text-light: #64748b;
+        --background: #ffffff;
+        --background-alt: #faf5ff;
+        --border-color: #e2e8f0;
+        --gradient-1: linear-gradient(
+          135deg,
+          #7c3aed 0%,
+          #a855f7 50%,
+          #06b6d4 100%
+        );
+        --gradient-2: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+        --gradient-3: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
+        --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+        --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+          0 4px 6px -4px rgb(0 0 0 / 0.1);
+        --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+          0 8px 10px -6px rgb(0 0 0 / 0.1);
+        --radius-md: 12px;
+        --radius-lg: 16px;
+        --radius-xl: 24px;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          Roboto, sans-serif;
+        font-size: 16px;
+        line-height: 1.7;
+        color: var(--text-color);
+        background: var(--background);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: 700;
+        color: var(--secondary-color);
+        line-height: 1.3;
+        margin-bottom: 1rem;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+      }
+      h3 {
+        font-size: clamp(1.25rem, 3vw, 1.5rem);
+      }
+
+      p {
+        margin-bottom: 1.25rem;
+        color: var(--text-color);
+      }
+
+      a {
+        color: var(--primary-color);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      a:hover {
+        color: var(--primary-dark);
+      }
+
+      /* Main Content */
+      #fh5co-main {
+        width: 100%;
+        background: var(--background);
+      }
+
+      .fh5co-narrow-content {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 3rem 2rem 4rem;
+      }
+
+      /* Hero Section */
+      .hero-section {
+        position: relative;
+        padding: 5rem 2rem;
+        background: var(--gradient-2);
+        overflow: hidden;
+        text-align: center;
+      }
+
+      .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200')
+          center/cover;
+        opacity: 0.15;
+      }
+
+      /* Animated AI particles background */
+      .hero-section::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: radial-gradient(
+            circle at 20% 80%,
+            rgba(124, 58, 237, 0.3) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 20%,
+            rgba(6, 182, 212, 0.3) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 40% 40%,
+            rgba(168, 85, 247, 0.2) 0%,
+            transparent 40%
+          );
+        animation: float 6s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(1deg);
+        }
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .insight-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #ffffff;
+        padding: 0.5rem 1.25rem;
+        border-radius: 50px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 1.5rem;
+      }
+
+      .insight-tag svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .fh5co-heading {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        color: #ffffff;
+      }
+
+      .fh5co-heading .gradient-text {
+        background: var(--gradient-1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .fh5co-lead {
+        font-size: 1.25rem;
+        color: rgba(255, 255, 255, 0.85);
+        max-width: 700px;
+        margin: 0 auto 2rem;
+        line-height: 1.8;
+      }
+
+      /* Featured Image */
+      .featured-image {
+        margin: -3rem auto 3rem;
+        max-width: 1000px;
+        padding: 0 2rem;
+      }
+
+      .featured-image img {
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-xl);
+        transition: var(--transition);
+      }
+
+      .featured-image:hover img {
+        transform: scale(1.01);
+      }
+
+      /* Section Cards */
+      .section-card {
+        background: var(--background);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-lg);
+        padding: 2rem;
+        margin-bottom: 2rem;
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .section-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: var(--gradient-1);
+      }
+
+      .section-card:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-4px);
+        border-color: var(--primary-color);
+      }
+
+      .section-card h3 {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .section-icon {
+        width: 48px;
+        height: 48px;
+        background: var(--gradient-1);
+        border-radius: var(--radius-md);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .section-icon svg {
+        color: #ffffff;
+      }
+
+      /* Alert/Warning Card */
+      .section-card.warning {
+        background: linear-gradient(135deg, #fef3c7 0%, #fef9c3 100%);
+        border-color: #f59e0b;
+      }
+
+      .section-card.warning::before {
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      }
+
+      .section-card.warning .section-icon {
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      }
+
+      /* Lists */
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      ul li {
+        padding: 0.75rem 0 0.75rem 2rem;
+        position: relative;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      ul li:last-child {
+        border-bottom: none;
+      }
+
+      ul li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 8px;
+        height: 8px;
+        background: var(--gradient-1);
+        border-radius: 50%;
+      }
+
+      .section-card.warning ul li {
+        border-color: rgba(217, 119, 6, 0.2);
+      }
+
+      .section-card.warning ul li::before {
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      }
+
+      /* Benefits Grid */
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .benefit-card {
+        background: var(--background-alt);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-lg);
+        padding: 1.5rem;
+        transition: var(--transition);
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .benefit-card:hover {
+        background: var(--gradient-1);
+        border-color: transparent;
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .benefit-card:hover * {
+        color: #ffffff !important;
+      }
+
+      .benefit-card:hover .benefit-icon {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      .benefit-icon {
+        width: 48px;
+        height: 48px;
+        background: var(--gradient-1);
+        border-radius: var(--radius-md);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .benefit-icon svg {
+        color: #ffffff;
+        width: 24px;
+        height: 24px;
+      }
+
+      .benefit-content h4 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .benefit-content p {
+        font-size: 0.9rem;
+        color: var(--text-light);
+        margin: 0;
+      }
+
+      /* Image Grid */
+      .image-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin: 2.5rem 0;
+      }
+
+      .image-card {
+        position: relative;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+        aspect-ratio: 16/10;
+      }
+
+      .image-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+      }
+
+      .image-card:hover img {
+        transform: scale(1.1);
+      }
+
+      .image-card .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1.5rem;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+        color: #ffffff;
+      }
+
+      .image-card .overlay h4 {
+        color: #ffffff;
+        font-size: 1rem;
+        margin: 0;
+      }
+
+      /* Stats Section */
+      .stats-section {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        margin: 2.5rem 0;
+      }
+
+      .stat-card {
+        text-align: center;
+        padding: 2rem;
+        background: var(--background-alt);
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--border-color);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .stat-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: var(--gradient-1);
+        border-radius: 0 0 4px 4px;
+      }
+
+      .stat-card:hover {
+        background: var(--gradient-1);
+        border-color: transparent;
+        transform: translateY(-4px);
+      }
+
+      .stat-card:hover::before {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      .stat-card:hover * {
+        color: #ffffff !important;
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--primary-color);
+        display: block;
+      }
+
+      .stat-label {
+        color: var(--text-light);
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 0.5rem;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        background: var(--gradient-2);
+        border-radius: var(--radius-xl);
+        padding: 3rem;
+        text-align: center;
+        margin-top: 3rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-section::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 400px;
+        height: 400px;
+        background: var(--gradient-1);
+        border-radius: 50%;
+        opacity: 0.15;
+      }
+
+      .cta-section::after {
+        content: '';
+        position: absolute;
+        bottom: -30%;
+        left: -10%;
+        width: 300px;
+        height: 300px;
+        background: var(--gradient-3);
+        border-radius: 50%;
+        opacity: 0.1;
+      }
+
+      .cta-section h3 {
+        color: #ffffff;
+        margin-bottom: 1rem;
+        font-size: 1.75rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .cta-section p {
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 2rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Buttons */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 50px;
+        border: none;
+        cursor: pointer;
+        transition: var(--transition);
+        text-decoration: none;
+        position: relative;
+        z-index: 1;
+      }
+
+      .btn-primary {
+        background: var(--gradient-1);
+        color: #ffffff;
+        box-shadow: 0 4px 14px rgba(124, 58, 237, 0.4);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
+        color: #ffffff;
+      }
+
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .btn-secondary:hover {
+        background: #ffffff;
+        color: var(--secondary-color);
+        border-color: #ffffff;
+      }
+
+      .btn-group {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      /* Process Timeline */
+      .process-timeline {
+        position: relative;
+        padding-left: 3rem;
+        margin: 2rem 0;
+      }
+
+      .process-timeline::before {
+        content: '';
+        position: absolute;
+        left: 12px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(
+          180deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+      }
+
+      .timeline-item {
+        position: relative;
+        padding-bottom: 2rem;
+      }
+
+      .timeline-item:last-child {
+        padding-bottom: 0;
+      }
+
+      .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -2.5rem;
+        top: 4px;
+        width: 24px;
+        height: 24px;
+        background: var(--gradient-1);
+        border-radius: 50%;
+        border: 4px solid var(--background);
+        box-shadow: var(--shadow-md);
+      }
+
+      .timeline-item .step-number {
+        position: absolute;
+        left: -2.35rem;
+        top: 8px;
+        font-size: 0.7rem;
+        font-weight: 700;
+        color: #ffffff;
+      }
+
+      .timeline-item h4 {
+        font-size: 1.125rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .timeline-item p {
+        color: var(--text-light);
+        margin: 0;
+      }
+
+      /* Tech Stack */
+      .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin: 1.5rem 0;
+      }
+
+      .tech-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: var(--background-alt);
+        border: 1px solid var(--border-color);
+        border-radius: 50px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        transition: var(--transition);
+      }
+
+      .tech-badge:hover {
+        background: var(--primary-color);
+        color: #ffffff;
+        border-color: var(--primary-color);
+      }
+
+      .tech-badge img {
+        width: 20px;
+        height: 20px;
+      }
+
+      /* AI Features Icons */
+      .ai-features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 1rem;
+        margin: 2rem 0;
+      }
+
+      .ai-feature {
+        text-align: center;
+        padding: 1.5rem 1rem;
+        background: var(--background-alt);
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--border-color);
+        transition: var(--transition);
+      }
+
+      .ai-feature:hover {
+        border-color: var(--primary-color);
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .ai-feature-icon {
+        width: 56px;
+        height: 56px;
+        margin: 0 auto 1rem;
+        background: var(--gradient-1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .ai-feature-icon svg {
+        width: 28px;
+        height: 28px;
+        color: #ffffff;
+      }
+
+      .ai-feature span {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--secondary-color);
+      }
+
+      /* Responsive */
+      @media (max-width: 992px) {
+        .stats-section {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .image-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .benefits-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-section {
+          padding: 3rem 1.5rem;
+        }
+
+        .fh5co-narrow-content {
+          padding: 2rem 1.25rem 3rem;
+        }
+
+        .featured-image {
+          padding: 0 1rem;
+          margin-top: -2rem;
+        }
+
+        .featured-image img {
+          height: 280px;
+        }
+
+        .section-card {
+          padding: 1.5rem;
+        }
+
+        .stats-section {
+          grid-template-columns: 1fr 1fr;
+          gap: 1rem;
+        }
+
+        .stat-card {
+          padding: 1.5rem 1rem;
+        }
+
+        .stat-number {
+          font-size: 2rem;
+        }
+
+        .image-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .cta-section {
+          padding: 2rem 1.5rem;
+        }
+
+        .btn-group {
+          flex-direction: column;
+        }
+
+        .ai-features {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in-up {
+        animation: fadeInUp 0.6s ease-out forwards;
+      }
+
+      .delay-1 {
+        animation-delay: 0.1s;
+      }
+      .delay-2 {
+        animation-delay: 0.2s;
+      }
+      .delay-3 {
+        animation-delay: 0.3s;
+      }
+
+      /* Glowing effect for AI theme */
+      @keyframes glow {
+        0%,
+        100% {
+          box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+        }
+        50% {
+          box-shadow: 0 0 40px rgba(124, 58, 237, 0.5);
+        }
+      }
+
+      .glow {
+        animation: glow 3s ease-in-out infinite;
+      }
+    </style>
   </head>
   <body>
-    <div id="fh5co-page">
-      <!-- Sidebar / Navigation -->
-      <aside id="fh5co-aside" role="complementary" class="border js-fullheight">
-        <h1 id="fh5co-logo"><a href="{% url 'index' %}">JMatsika</a></h1>
-        <nav id="fh5co-main-menu">
-          <ul>
-            <li><a href="{% url 'index' %}">Home</a></li>
-            <li><a href="{% url 'services' %}">Services</a></li>
-            <li><a href="{% url 'portfolio_new' %}">Our Work</a></li>
-            <li class="fh5co-active">
-              <a href="{% url 'insights' %}">Insights</a>
-            </li>
-            <li><a href="{% url 'about' %}">About</a></li>
-            <li><a href="{% url 'careers' %}">Careers</a></li>
-          </ul>
-        </nav>
-      </aside>
+    {% include "landing_page/navbar.html" %}
 
-      <!-- Main Content -->
-      <div id="fh5co-main">
-        <section class="fh5co-narrow-content">
-          <span class="insight-tag">Example Scenario</span>
-          <h1 class="fh5co-heading">AI Integration & Strategy</h1>
-          <p class="fh5co-lead">
-            Helping organizations leverage artificial intelligence to optimize
-            operations, improve decision-making, and unlock new business
-            opportunities.
-          </p>
-          <hr />
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <span class="insight-tag fade-in-up">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+            />
+          </svg>
+          Artificial Intelligence
+        </span>
+        <h1 class="fh5co-heading fade-in-up delay-1">
+          AI Integration <span class="gradient-text">&</span> Strategy
+        </h1>
+        <p class="fh5co-lead fade-in-up delay-2">
+          Helping organizations leverage artificial intelligence to optimize
+          operations, improve decision-making, and unlock new business
+          opportunities.
+        </p>
+        <div class="btn-group fade-in-up delay-3">
+          <a href="#overview" class="btn btn-primary">
+            <svg
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 10V3L4 14h7v7l9-11h-7z"
+              />
+            </svg>
+            Explore Solutions
+          </a>
+          <a href="{% url 'index' %}" class="btn btn-secondary"
+            >Schedule Consultation</a
+          >
+        </div>
+      </div>
+    </section>
 
-          <!-- Overview -->
-          <h3>Overview</h3>
+    <!-- Featured Image -->
+    <div class="featured-image">
+      <img
+        src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80"
+        alt="Artificial Intelligence and Machine Learning visualization"
+        class="glow"
+      />
+    </div>
+
+    <!-- Main Content -->
+    <div id="fh5co-main">
+      <section class="fh5co-narrow-content">
+        <!-- AI Features Icons -->
+        <div class="ai-features">
+          <div class="ai-feature">
+            <div class="ai-feature-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                />
+              </svg>
+            </div>
+            <span>Machine Learning</span>
+          </div>
+          <div class="ai-feature">
+            <div class="ai-feature-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
+            <span>Natural Language</span>
+          </div>
+          <div class="ai-feature">
+            <div class="ai-feature-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                />
+              </svg>
+            </div>
+            <span>Computer Vision</span>
+          </div>
+          <div class="ai-feature">
+            <div class="ai-feature-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                />
+              </svg>
+            </div>
+            <span>Predictive Analytics</span>
+          </div>
+          <div class="ai-feature">
+            <div class="ai-feature-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                />
+              </svg>
+            </div>
+            <span>Automation</span>
+          </div>
+        </div>
+
+        <!-- Overview -->
+        <div id="overview" class="section-card">
+          <h3>
+            <span class="section-icon">
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </span>
+            Overview
+          </h3>
           <p>
             AI is transforming industries by enabling smarter, data-driven
             decisions and automating repetitive tasks. JMatsika Innovations
             guides companies through AI adoption, from strategy to
             implementation, ensuring measurable business impact.
           </p>
+          <p>
+            Whether you're looking to implement machine learning models,
+            automate workflows, or gain predictive insights from your data, our
+            team provides end-to-end support tailored to your unique business
+            needs.
+          </p>
+        </div>
 
-          <!-- Potential Challenges -->
-          <h3>Typical Challenges</h3>
+        <!-- Stats Section -->
+        <div class="stats-section">
+          <div class="stat-card">
+            <span class="stat-number">40%</span>
+            <span class="stat-label">Efficiency Gain</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">60%</span>
+            <span class="stat-label">Faster Decisions</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">85%</span>
+            <span class="stat-label">Accuracy Rate</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">3x</span>
+            <span class="stat-label">ROI Improvement</span>
+          </div>
+        </div>
+
+        <!-- Challenges -->
+        <div class="section-card">
+          <h3>
+            <span class="section-icon">
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                />
+              </svg>
+            </span>
+            Typical Challenges
+          </h3>
           <ul>
             <li>Unstructured data and lack of analytics readiness.</li>
             <li>Limited AI expertise within the organization.</li>
             <li>Integration with existing systems without disruption.</li>
             <li>Ethical and regulatory considerations for AI usage.</li>
           </ul>
+        </div>
 
-          <!-- Our Approach -->
-          <h3>Our Approach</h3>
-          <ul>
-            <li>Assess AI readiness and identify high-impact use cases.</li>
-            <li>
-              Design tailored AI solutions aligned with business objectives.
-            </li>
-            <li>
-              Integrate AI models into existing systems with minimal disruption.
-            </li>
-            <li>Provide training and change management for teams.</li>
-            <li>
-              Monitor AI performance, ensuring fairness, transparency, and
-              scalability.
-            </li>
-          </ul>
+        <!-- Image Grid -->
+        <div class="image-grid">
+          <div class="image-card">
+            <img
+              src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&q=80"
+              alt="AI Data Analysis"
+            />
+            <div class="overlay">
+              <h4>Data-Driven Insights</h4>
+            </div>
+          </div>
+          <div class="image-card">
+            <img
+              src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&q=80"
+              alt="Machine Learning"
+            />
+            <div class="overlay">
+              <h4>Machine Learning Models</h4>
+            </div>
+          </div>
+          <div class="image-card">
+            <img
+              src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=80"
+              alt="AI Automation"
+            />
+            <div class="overlay">
+              <h4>Intelligent Automation</h4>
+            </div>
+          </div>
+        </div>
 
-          <!-- Advantages & Value -->
-          <h3>Benefits of AI Integration</h3>
-          <ul>
-            <li>Automates repetitive and time-consuming tasks.</li>
-            <li>Improves decision-making with predictive insights.</li>
-            <li>Enhances operational efficiency and reduces errors.</li>
-            <li>Enables innovation and new business models.</li>
-            <li>Supports data-driven culture and continuous improvement.</li>
-          </ul>
+        <!-- Our Approach -->
+        <div class="section-card">
+          <h3>
+            <span class="section-icon">
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+                />
+              </svg>
+            </span>
+            Our Approach
+          </h3>
 
-          <!-- Considerations -->
-          <h3>Considerations & Risks</h3>
+          <div class="process-timeline">
+            <div class="timeline-item">
+              <span class="step-number">1</span>
+              <h4>Assess AI Readiness</h4>
+              <p>
+                Evaluate your current data infrastructure and identify
+                high-impact use cases.
+              </p>
+            </div>
+            <div class="timeline-item">
+              <span class="step-number">2</span>
+              <h4>Design Tailored Solutions</h4>
+              <p>
+                Create AI solutions aligned with your specific business
+                objectives and goals.
+              </p>
+            </div>
+            <div class="timeline-item">
+              <span class="step-number">3</span>
+              <h4>Seamless Integration</h4>
+              <p>
+                Integrate AI models into existing systems with minimal
+                disruption to operations.
+              </p>
+            </div>
+            <div class="timeline-item">
+              <span class="step-number">4</span>
+              <h4>Training & Change Management</h4>
+              <p>Provide comprehensive training and support for your teams.</p>
+            </div>
+            <div class="timeline-item">
+              <span class="step-number">5</span>
+              <h4>Monitor & Optimize</h4>
+              <p>
+                Ensure fairness, transparency, and scalability with ongoing
+                performance monitoring.
+              </p>
+            </div>
+          </div>
+
+          <h4 style="margin-top: 2rem">Technologies We Work With</h4>
+          <div class="tech-stack">
+            <span class="tech-badge">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                alt="Python"
+              />
+              Python
+            </span>
+            <span class="tech-badge">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+                alt="TensorFlow"
+              />
+              TensorFlow
+            </span>
+            <span class="tech-badge">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
+                alt="PyTorch"
+              />
+              PyTorch
+            </span>
+            <span class="tech-badge">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg"
+                alt="Scikit-learn"
+              />
+              Scikit-learn
+            </span>
+            <span class="tech-badge">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg"
+                alt="AWS"
+              />
+              AWS AI/ML
+            </span>
+            <span class="tech-badge">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
+                alt="Azure"
+              />
+              Azure AI
+            </span>
+          </div>
+        </div>
+
+        <!-- Benefits -->
+        <div class="section-card">
+          <h3>
+            <span class="section-icon">
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+                />
+              </svg>
+            </span>
+            Benefits of AI Integration
+          </h3>
+
+          <div class="benefits-grid">
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                  />
+                </svg>
+              </div>
+              <div class="benefit-content">
+                <h4>Task Automation</h4>
+                <p>
+                  Automates repetitive and time-consuming tasks, freeing up
+                  valuable resources.
+                </p>
+              </div>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                  />
+                </svg>
+              </div>
+              <div class="benefit-content">
+                <h4>Predictive Insights</h4>
+                <p>
+                  Improves decision-making with data-driven predictions and
+                  analytics.
+                </p>
+              </div>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+              </div>
+              <div class="benefit-content">
+                <h4>Operational Efficiency</h4>
+                <p>Enhances efficiency and reduces errors across operations.</p>
+              </div>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                  />
+                </svg>
+              </div>
+              <div class="benefit-content">
+                <h4>Innovation Enablement</h4>
+                <p>
+                  Enables innovation and new business models through AI
+                  capabilities.
+                </p>
+              </div>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"
+                  />
+                </svg>
+              </div>
+              <div class="benefit-content">
+                <h4>Data-Driven Culture</h4>
+                <p>
+                  Supports continuous improvement through data-driven decision
+                  making.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Considerations & Risks -->
+        <div class="section-card warning">
+          <h3>
+            <span class="section-icon">
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                />
+              </svg>
+            </span>
+            Considerations & Risks
+          </h3>
           <ul>
             <li>
               AI adoption requires clear strategy and stakeholder alignment.
@@ -102,15 +1379,53 @@
               success.
             </li>
           </ul>
+        </div>
 
-          <!-- Call to Action -->
-          <div class="text-center mt-4">
-            <a href="{% url 'insights' %}" class="btn btn-primary">
+        <!-- CTA Section -->
+        <div class="cta-section">
+          <h3>Ready to Harness the Power of AI?</h3>
+          <p>
+            Let's explore how artificial intelligence can transform your
+            business operations and drive growth.
+          </p>
+          <div class="btn-group">
+            <a href="{% url 'index' %}" class="btn btn-primary">
+              <svg
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                />
+              </svg>
+              Start AI Consultation
+            </a>
+            <a href="{% url 'insights' %}" class="btn btn-secondary">
+              <svg
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                />
+              </svg>
               Back to Insights
             </a>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   </body>
 </html>
