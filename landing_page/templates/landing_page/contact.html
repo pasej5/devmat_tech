@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
     <title>Modernizing Digital Learning Platforms | JMatsika Insights</title>
@@ -10,30 +10,655 @@
       type="image/png"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="{% static 'landing_page/bootstrap.css' %}" />
-    <link rel="stylesheet" href="{% static 'landing_page/style.css' %}" />
+
+    <style>
+      /* ============================================
+         JMatsika Insights - Professional Styles
+         ============================================ */
+
+      :root {
+        --primary-color: #2563eb;
+        --primary-dark: #1d4ed8;
+        --secondary-color: #0f172a;
+        --accent-color: #06b6d4;
+        --text-color: #334155;
+        --text-light: #64748b;
+        --background: #ffffff;
+        --background-alt: #f8fafc;
+        --border-color: #e2e8f0;
+        --gradient-1: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+        --gradient-2: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+        --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+          0 4px 6px -4px rgb(0 0 0 / 0.1);
+        --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+          0 8px 10px -6px rgb(0 0 0 / 0.1);
+        --radius-md: 12px;
+        --radius-lg: 16px;
+        --radius-xl: 24px;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          Roboto, sans-serif;
+        font-size: 16px;
+        line-height: 1.7;
+        color: var(--text-color);
+        background: var(--background);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: 700;
+        color: var(--secondary-color);
+        line-height: 1.3;
+        margin-bottom: 1rem;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+      }
+      h3 {
+        font-size: clamp(1.25rem, 3vw, 1.5rem);
+      }
+
+      p {
+        margin-bottom: 1.25rem;
+        color: var(--text-color);
+      }
+
+      a {
+        color: var(--primary-color);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      a:hover {
+        color: var(--primary-dark);
+      }
+
+      /* Main Content - FULL WIDTH NOW */
+      #fh5co-main {
+        width: 100%;
+        background: var(--background);
+      }
+
+      .fh5co-narrow-content {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 3rem 2rem 4rem;
+      }
+
+      /* Hero Section */
+      .hero-section {
+        position: relative;
+        padding: 5rem 2rem;
+        background: var(--gradient-2);
+        overflow: hidden;
+        text-align: center;
+      }
+
+      .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200')
+          center/cover;
+        opacity: 0.1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .insight-tag {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #ffffff;
+        padding: 0.5rem 1.25rem;
+        border-radius: 50px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 1.5rem;
+      }
+
+      .fh5co-heading {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        color: #ffffff;
+      }
+
+      .fh5co-lead {
+        font-size: 1.25rem;
+        color: rgba(255, 255, 255, 0.8);
+        max-width: 700px;
+        margin: 0 auto 2rem;
+        line-height: 1.8;
+      }
+
+      /* Featured Image */
+      .featured-image {
+        margin: -3rem auto 3rem;
+        max-width: 1000px;
+        padding: 0 2rem;
+      }
+
+      .featured-image img {
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-xl);
+        transition: var(--transition);
+      }
+
+      .featured-image:hover img {
+        transform: scale(1.01);
+      }
+
+      /* Section Cards */
+      .section-card {
+        background: var(--background);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-lg);
+        padding: 2rem;
+        margin-bottom: 2rem;
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .section-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: var(--gradient-1);
+      }
+
+      .section-card:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-4px);
+        border-color: var(--primary-color);
+      }
+
+      .section-card h3 {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .section-icon {
+        width: 48px;
+        height: 48px;
+        background: var(--gradient-1);
+        border-radius: var(--radius-md);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .section-icon svg {
+        color: #ffffff;
+      }
+
+      /* Lists */
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      ul li {
+        padding: 0.75rem 0 0.75rem 2rem;
+        position: relative;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      ul li:last-child {
+        border-bottom: none;
+      }
+
+      ul li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 8px;
+        height: 8px;
+        background: var(--gradient-1);
+        border-radius: 50%;
+      }
+
+      /* Image Grid */
+      .image-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin: 2.5rem 0;
+      }
+
+      .image-card {
+        position: relative;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+        aspect-ratio: 16/10;
+      }
+
+      .image-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+      }
+
+      .image-card:hover img {
+        transform: scale(1.1);
+      }
+
+      .image-card .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1.5rem;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        color: #ffffff;
+      }
+
+      .image-card .overlay h4 {
+        color: #ffffff;
+        font-size: 1rem;
+        margin: 0;
+      }
+
+      /* Stats Section */
+      .stats-section {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        margin: 2.5rem 0;
+      }
+
+      .stat-card {
+        text-align: center;
+        padding: 2rem;
+        background: var(--background-alt);
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--border-color);
+        transition: var(--transition);
+      }
+
+      .stat-card:hover {
+        background: var(--gradient-1);
+        border-color: transparent;
+        transform: translateY(-4px);
+      }
+
+      .stat-card:hover * {
+        color: #ffffff !important;
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--primary-color);
+        display: block;
+      }
+
+      .stat-label {
+        color: var(--text-light);
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 0.5rem;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        background: var(--gradient-2);
+        border-radius: var(--radius-xl);
+        padding: 3rem;
+        text-align: center;
+        margin-top: 3rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-section::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 400px;
+        height: 400px;
+        background: var(--gradient-1);
+        border-radius: 50%;
+        opacity: 0.1;
+      }
+
+      .cta-section h3 {
+        color: #ffffff;
+        margin-bottom: 1rem;
+        font-size: 1.75rem;
+      }
+
+      .cta-section p {
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 2rem;
+      }
+
+      /* Buttons */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 50px;
+        border: none;
+        cursor: pointer;
+        transition: var(--transition);
+        text-decoration: none;
+      }
+
+      .btn-primary {
+        background: var(--gradient-1);
+        color: #ffffff;
+        box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+        color: #ffffff;
+      }
+
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .btn-secondary:hover {
+        background: #ffffff;
+        color: var(--secondary-color);
+        border-color: #ffffff;
+      }
+
+      .btn-group {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      /* Process Timeline */
+      .process-timeline {
+        position: relative;
+        padding-left: 3rem;
+        margin: 2rem 0;
+      }
+
+      .process-timeline::before {
+        content: '';
+        position: absolute;
+        left: 12px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: var(--border-color);
+      }
+
+      .timeline-item {
+        position: relative;
+        padding-bottom: 2rem;
+      }
+
+      .timeline-item:last-child {
+        padding-bottom: 0;
+      }
+
+      .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -2.5rem;
+        top: 4px;
+        width: 24px;
+        height: 24px;
+        background: var(--gradient-1);
+        border-radius: 50%;
+        border: 4px solid var(--background);
+        box-shadow: var(--shadow-md);
+      }
+
+      .timeline-item h4 {
+        font-size: 1.125rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .timeline-item p {
+        color: var(--text-light);
+        margin: 0;
+      }
+
+      /* Tech Stack */
+      .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin: 1.5rem 0;
+      }
+
+      .tech-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: var(--background-alt);
+        border: 1px solid var(--border-color);
+        border-radius: 50px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        transition: var(--transition);
+      }
+
+      .tech-badge:hover {
+        background: var(--primary-color);
+        color: #ffffff;
+        border-color: var(--primary-color);
+      }
+
+      .tech-badge img {
+        width: 20px;
+        height: 20px;
+      }
+
+      /* Responsive */
+      @media (max-width: 992px) {
+        .stats-section {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .image-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-section {
+          padding: 3rem 1.5rem;
+        }
+
+        .fh5co-narrow-content {
+          padding: 2rem 1.25rem 3rem;
+        }
+
+        .featured-image {
+          padding: 0 1rem;
+          margin-top: -2rem;
+        }
+
+        .featured-image img {
+          height: 280px;
+        }
+
+        .section-card {
+          padding: 1.5rem;
+        }
+
+        .stats-section {
+          grid-template-columns: 1fr 1fr;
+          gap: 1rem;
+        }
+
+        .stat-card {
+          padding: 1.5rem 1rem;
+        }
+
+        .stat-number {
+          font-size: 2rem;
+        }
+
+        .image-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .cta-section {
+          padding: 2rem 1.5rem;
+        }
+
+        .btn-group {
+          flex-direction: column;
+        }
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in-up {
+        animation: fadeInUp 0.6s ease-out forwards;
+      }
+
+      .delay-1 {
+        animation-delay: 0.1s;
+      }
+      .delay-2 {
+        animation-delay: 0.2s;
+      }
+      .delay-3 {
+        animation-delay: 0.3s;
+      }
+    </style>
   </head>
   <body>
     {% include "landing_page/navbar.html" %}
-    <div id="fh5co-page">
-      <!-- Sidebar / Navigation -->
-      <aside id="fh5co-aside" role="complementary" class="border js-fullheight">
-        <h1 id="fh5co-logo"><a href="{% url 'index' %}">JMatsika</a></h1>
-      </aside>
 
-      <!-- Main Content -->
-      <div id="fh5co-main">
-        <section class="fh5co-narrow-content">
-          <span class="insight-tag">Example Scenario</span>
-          <h1 class="fh5co-heading">Modernizing Digital Learning Platforms</h1>
-          <p class="fh5co-lead">
-            Scaling digital education platforms while maintaining engagement,
-            reliability, and operational efficiency.
-          </p>
-          <hr />
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <span class="insight-tag fade-in-up">Example Scenario</span>
+        <h1 class="fh5co-heading fade-in-up delay-1">
+          Modernizing Digital Learning Platforms
+        </h1>
+        <p class="fh5co-lead fade-in-up delay-2">
+          Scaling digital education platforms while maintaining engagement,
+          reliability, and operational efficiency.
+        </p>
+        <div class="btn-group fade-in-up delay-3">
+          <a href="#overview" class="btn btn-primary">Learn More</a>
+          <a href="{% url 'index' %}" class="btn btn-secondary">Get in Touch</a>
+        </div>
+      </div>
+    </section>
 
-          <!-- Scenario Summary -->
-          <h3>Scenario Overview</h3>
+    <!-- Featured Image -->
+    <div class="featured-image">
+      <img
+        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80"
+        alt="Team collaborating on digital learning platform"
+      />
+    </div>
+
+    <!-- Main Content -->
+    <div id="fh5co-main">
+      <section class="fh5co-narrow-content">
+        <!-- Scenario Overview -->
+        <div id="overview" class="section-card">
+          <h3>
+            <span class="section-icon">
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                />
+              </svg>
+            </span>
+            Scenario Overview
+          </h3>
           <p>
             Many organizations face challenges with digital learning platforms
             that struggle to scale, suffer downtime, or fail to provide insights
@@ -41,9 +666,49 @@
             challenges by modernizing platforms to be scalable, reliable, and
             user-friendly.
           </p>
+        </div>
 
-          <!-- Potential Challenges -->
-          <h3>Typical Challenges</h3>
+        <!-- Stats Section -->
+        <div class="stats-section">
+          <div class="stat-card">
+            <span class="stat-number">99.9%</span>
+            <span class="stat-label">Uptime Target</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">3x</span>
+            <span class="stat-label">Faster Load Times</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">50%</span>
+            <span class="stat-label">Cost Reduction</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Monitoring</span>
+          </div>
+        </div>
+
+        <!-- Challenges -->
+        <div class="section-card">
+          <h3>
+            <span class="section-icon">
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                />
+              </svg>
+            </span>
+            Typical Challenges
+          </h3>
           <ul>
             <li>
               High traffic causing slow load times and occasional downtime.
@@ -57,45 +722,159 @@
               Need for a scalable architecture without compromising performance.
             </li>
           </ul>
+        </div>
 
-          <!-- Our Approach -->
-          <h3>Our Approach</h3>
-          <ul>
-            <li>
-              Redesign platform architecture with modular Django and
-              microservices.
-            </li>
-            <li>Implement CI/CD pipelines for faster, reliable deployments.</li>
-            <li>
-              Optimize database queries, caching, and performance monitoring.
-            </li>
-            <li>Enhance UX through data-driven content recommendations.</li>
-            <li>Introduce dashboards to monitor performance and engagement.</li>
-          </ul>
+        <!-- Image Grid -->
+        <div class="image-grid">
+          <div class="image-card">
+            <img
+              src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80"
+              alt="Development team"
+            />
+            <div class="overlay">
+              <h4>Agile Development</h4>
+            </div>
+          </div>
+          <div class="image-card">
+            <img
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80"
+              alt="Analytics"
+            />
+            <div class="overlay">
+              <h4>Data Analytics</h4>
+            </div>
+          </div>
+          <div class="image-card">
+            <img
+              src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80"
+              alt="Cloud"
+            />
+            <div class="overlay">
+              <h4>Cloud Infrastructure</h4>
+            </div>
+          </div>
+        </div>
 
-          <!-- Expected Outcomes -->
-          <h3>Potential Outcomes</h3>
+        <!-- Our Approach -->
+        <div class="section-card">
+          <h3>
+            <span class="section-icon">
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
+              </svg>
+            </span>
+            Our Approach
+          </h3>
+
+          <div class="process-timeline">
+            <div class="timeline-item">
+              <h4>Platform Architecture Redesign</h4>
+              <p>Modular Django and microservices for maximum flexibility.</p>
+            </div>
+            <div class="timeline-item">
+              <h4>CI/CD Pipeline Implementation</h4>
+              <p>Faster, reliable deployments with automated testing.</p>
+            </div>
+            <div class="timeline-item">
+              <h4>Performance Optimization</h4>
+              <p>Database optimization, caching, and monitoring.</p>
+            </div>
+            <div class="timeline-item">
+              <h4>UX Enhancement</h4>
+              <p>Data-driven content recommendations.</p>
+            </div>
+          </div>
+
+          <h4 style="margin-top: 2rem">Technologies We Use</h4>
+          <div class="tech-stack">
+            <span class="tech-badge">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg"
+                alt="Django"
+              />
+              Django
+            </span>
+            <span class="tech-badge">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                alt="Python"
+              />
+              Python
+            </span>
+            <span class="tech-badge">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                alt="PostgreSQL"
+              />
+              PostgreSQL
+            </span>
+            <span class="tech-badge">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+                alt="Docker"
+              />
+              Docker
+            </span>
+          </div>
+        </div>
+
+        <!-- Outcomes -->
+        <div class="section-card">
+          <h3>
+            <span class="section-icon">
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </span>
+            Potential Outcomes
+          </h3>
           <ul>
             <li>Faster page load times and improved platform uptime.</li>
-            <li>
-              Operational efficiency through automation of updates and
-              deployments.
-            </li>
+            <li>Operational efficiency through automation.</li>
             <li>Increased user engagement and satisfaction.</li>
-            <li>
-              Actionable insights from user analytics for continuous
-              improvement.
-            </li>
+            <li>Actionable insights from user analytics.</li>
           </ul>
+        </div>
 
-          <!-- Call to Action -->
-          <div class="text-center mt-4">
-            <a href="{% url 'insights' %}" class="btn btn-primary">
-              Back to Insights
-            </a>
+        <!-- CTA Section -->
+        <div class="cta-section">
+          <h3>Ready to Transform Your Learning Platform?</h3>
+          <p>
+            Let's discuss how we can help modernize your digital education
+            experience.
+          </p>
+          <div class="btn-group">
+            <a href="{% url 'index' %}" class="btn btn-primary"
+              >Start a Conversation</a
+            >
+            <a href="{% url 'insights' %}" class="btn btn-secondary"
+              >Back to Insights</a
+            >
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   </body>
 </html>

@@ -9,9 +9,15 @@
 	<link rel="icon" href="{% static 'images/weblogo.png' %}" type="image/png">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  	<!-- 
-	//////////////////////////////////////////////////////
-	-->
+	<!-- Social Media Meta Tags -->
+<meta name="description" content="Your Vision Engineered Into Reality - Software Engineering Solutions">
+<meta property="og:title" content="JMatsika Innovations">
+<meta property="og:description" content="Your Vision Engineered Into Reality - Software Engineering Solutions">
+<meta property="og:image" content="{% static 'images/weblogo.png' %}">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="JMatsika Innovations">
+<meta name="twitter:description" content="Your Vision Engineered Into Reality - Software Engineering Solutions">
 
 	<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
 
@@ -33,12 +39,7 @@
 	</head>
 	<body>
 		{% include "landing_page/navbar.html" %}
-		<div id="fh5co-page">
-
-		<!---------------------------------------------------->
-
- 
-		
+		<div id="fh5co-page">	
       <header id="header">
 
 		<!-- Background video -->
@@ -83,10 +84,6 @@
 			</div>
       </header>
     </div>
-			
-			
-<!---------------------------------------------------------------------------------->
-
 			<div class="fh5co-narrow-content">
 				<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Services</h2>
 				<div class="row">
@@ -138,64 +135,6 @@
 				</div>
 			</div>
 
-
-<!------------------------------------------------------>
-
-{% comment %} <section class="fh5co-narrow-content" id="blog-preview">
-	<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">
-		From the Blog
-	</h2>
-	<p class="fh5co-lead">
-		Engineering insights, lessons learned, and growth stories.
-	</p>
-
-	<div class="row row-bottom-padded-md">
-
-		<div class="col-md-4 col-sm-6 animate-box">
-			<article class="blog-entry">
-				<a href="{% url 'blog' %}" class="blog-img">
-					<img src="{% static 'images/perceverance.png' %}" class="img-responsive" alt="Perseverance">
-				</a>
-				<div class="desc">
-					<h3>The Power of Perseverance</h3>
-					<p>Turning challenges into growth opportunities.</p>
-				</div>
-			</article>
-		</div>
-
-		<div class="col-md-4 col-sm-6 animate-box">
-			<article class="blog-entry">
-				<a href="{% url 'blog' %}" class="blog-img">
-					<img src="{% static 'images/postmoterm.png' %}" class="img-responsive" alt="Postmortem">
-				</a>
-				<div class="desc">
-					<h3>My First Postmortem</h3>
-					<p>A production failure and what it taught me.</p>
-				</div>
-			</article>
-		</div>
-
-		<div class="col-md-4 col-sm-6 animate-box">
-			<article class="blog-entry">
-				<a href="{% url 'blog' %}" class="blog-img">
-					<img src="{% static 'images/virtual.png' %}" class="img-responsive" alt="Virtual Learning">
-				</a>
-				<div class="desc">
-					<h3>Virtual vs In-Person Learning</h3>
-					<p>The real trade-offs in modern education.</p>
-				</div>
-			</article>
-		</div>
-
-	</div>
-
-	<div class="text-center animate-box">
-		<a href="{% url 'blog' %}" class="btn btn-primary">
-			View All Articles
-		</a>
-	</div>
-</section>
- {% endcomment %}
 <section class="fh5co-narrow-content" id="insights">
 	<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">
 		Insights & Case Studies
@@ -275,114 +214,6 @@
 
 	</div>
 </section>
-
-
-
-<!------------------------------------------------------>
-
-
-
-
-
-			{% comment %} <div class="fh5co-narrow-content">
-				<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Insights</h2>
-
-
-
-				<div class="row row-bottom-padded-md">
-					<div class="col-md-6 col-sm-12 col-padding animate-box" data-animate-effect="fadeInLeft">
-						<div class="blog-entry">
-							<a href="https://medium.com/@pasej5/the-advantages-and-disadvantages-of-virtual-hybrid-and-in-person-studying-9ffce8302588" class="blog-img"><img src="{% static 'images/virtual.png' %}" class="img-responsive" alt="hybrid"></a>
-							<div class="desc">
-								<h3><a href="#">The Advantages and Disadvantages of Virtual, Hybrid, and In-Person Studying</a></h3>
-								<span><small>By Jealous Matsikachando </small> / <small> Software Engineer </small> / <small> <i class="icon-comment"></i> 14</small></span>
-								<p>Design must be functional and functionality must be translated into visual aesthetics</p>
-								<a href="#" class="lead">Read More <i class="icon-arrow-right3"></i></a>
-							</div>
-						</div>
-					</div> {% endcomment %}
-
-<!---------------------------------------------------------------------------------------------------->
-
-					{% comment %} <div class="col-md-6 col-sm-12 col-padding animate-box" data-animate-effect="fadeInLeft">
-						<div class="blog-entry">
-							<a href="https://medium.com/@pasej5/the-power-of-perseverance-turning-challenges-into-triumphs-884ecdda20d0" class="blog-img"><img src="{% static 'images/perceverance.png' %}" class="img-responsive" alt="perseverance"></a>
-							<div class="desc">
-								<h3><a href="https://medium.com/@pasej5/the-power-of-perseverance-turning-challenges-into-triumphs-884ecdda20d0">The Power of Perseverance: Turning Challenges into Triumphs</a></h3>
-								<span><small>By Jealous Matsikachando </small> / <small> Software Engineer </small> / <small> <i class="icon-comment"></i> 14</small></span>
-								<p>In the journey of life, challenges are inevitable. It’s our response to these challenges that define our path. One powerful trait that can make all the difference is perseverance.</p>
-								<a href="https://medium.com/@pasej5/the-power-of-perseverance-turning-challenges-into-triumphs-884ecdda20d0" class="lead">Read More <i class="icon-arrow-right3"></i></a>
-							</div>
-						</div>
-					</div> {% endcomment %}
-<!---------------------------------------------------------------------------------------------------->
-
-
-
-					{% comment %} <div class="col-md-6 col-sm-12 col-padding animate-box" data-animate-effect="fadeInLeft">
-						<div class="blog-entry">
-							<a href="https://medium.com/@pasej5/the-power-of-perseverance-turning-challenges-into-triumphs-884ecdda20d0" class="blog-img"><img src="{% static 'images/perceverance.png' %}" class="img-responsive" alt="perseverance"></a>
-							<div class="desc">
-								<h3><a href="https://medium.com/@pasej5/the-power-of-perseverance-turning-challenges-into-triumphs-884ecdda20d0">The Power of Perseverance: Turning Challenges into Triumphs</a></h3>
-								<span><small>By Jealous Matsikachando </small> / <small> Software Engineer </small> / <small> <i class="icon-comment"></i> 14</small></span>
-								<p>In the journey of life, challenges are inevitable. It’s our response to these challenges that define our path. One powerful trait that can make all the difference is perseverance.</p>
-								<a href="https://medium.com/@pasej5/the-power-of-perseverance-turning-challenges-into-triumphs-884ecdda20d0" class="lead">Read More <i class="icon-arrow-right3"></i></a>
-							</div>
-						</div>
-					</div> {% endcomment %}
-
-
-<!---------------------------------------------------------------------------------------------------->
-
-
-					{% comment %} <div class="col-md-6 col-sm-12 col-padding animate-box" data-animate-effect="fadeInLeft">
-						<div class="blog-entry">
-							<a href="https://medium.com/@pasej5/unveiling-the-ultimate-file-downloader-empowering-you-to-obtain-anything-anywhere-04c8fab312cc" class="blog-img"><img src="{% static 'images/dowloader.png' %}" class="img-responsive" alt="dowloader"></a>
-							<div class="desc">
-								<h3><a href="https://medium.com/@pasej5/unveiling-the-ultimate-file-downloader-empowering-you-to-obtain-anything-anywhere-04c8fab312cc">Unveiling the Ultimate File Downloader: Empowering You to Obtain Anything, Anywhere</a></h3>
-								<span><small>By Jealous Matsikachando </small> / <small> Software Engineer </small> / <small> <i class="icon-comment"></i> 
-								Dec 14, 2023</small></span>
-								<p>Design must be functional and functionality must be translated into visual aesthetics</p>
-								<a href="https://medium.com/@pasej5/unveiling-the-ultimate-file-downloader-empowering-you-to-obtain-anything-anywhere-04c8fab312cc" class="lead">Read More <i class="icon-arrow-right3"></i></a>
-							</div>
-						</div>
-					</div> {% endcomment %}
-
-<!---------------------------------------------------------------------------------------------------->
-
-				{% comment %} <div class="col-md-6 col-sm-12 col-padding animate-box" data-animate-effect="fadeInLeft">
-						<div class="blog-entry">
-							<a href="https://medium.com/@pasej5/the-power-of-perseverance-turning-challenges-into-triumphs-884ecdda20d0" class="blog-img"><img src="{% static 'images/perceverance.png' %}" class="img-responsive" alt="perseverance"></a>
-							<div class="desc">
-								<h3><a href="https://medium.com/@pasej5/the-power-of-perseverance-turning-challenges-into-triumphs-884ecdda20d0">The Power of Perseverance: Turning Challenges into Triumphs</a></h3>
-								<span><small>By Jealous Matsikachando </small> / <small> Software Engineer </small> / <small> <i class="icon-comment"></i> 14</small></span>
-								<p>In the journey of life, challenges are inevitable. It’s our response to these challenges that define our path. One powerful trait that can make all the difference is perseverance.</p>
-								<a href="https://medium.com/@pasej5/the-power-of-perseverance-turning-challenges-into-triumphs-884ecdda20d0" class="lead">Read More <i class="icon-arrow-right3"></i></a>
-							</div>
-						</div>
-					</div>	 {% endcomment %}
-
-<!---------------------------------------------------------------------------------------------------->
-
-					{% comment %} <div class="col-md-6 col-sm-12 col-padding animate-box" data-animate-effect="fadeInLeft">
-						<div class="blog-entry">
-							<a href="https://medium.com/@pasej5/my-first-postmortem-4f74a9db6af1" class="blog-img"><img src="{% static 'images/postmoterm.png' %}" class="img-responsive" alt="postmortem"></a>
-							<div class="desc">
-								<h3><a href="https://medium.com/@pasej5/my-first-postmortem-4f74a9db6af1">My first postmortem</a></h3>
-								<span><small>By Jealous Matsikachando </small> / <small> Software Engineer </small> / <small> <i class="icon-comment"></i> 
-								Nov 12, 2023</small></span>
-								<p>Short Summary: On June 15th, 2023, at 8 pm (Eastern Standard Time), an issue emerged in the e-commerce platform’s codebase, resulting in a complete failure of the database connection.</p>
-								<a href="https://medium.com/@pasej5/my-first-postmortem-4f74a9db6af1" class="lead">Read More <i class="icon-arrow-right3"></i></a>
-							</div>
-						</div>
-					</div>
-				</div> {% endcomment %}
-
-			</div> 
-
-
-
-
 			<div id="get-in-touch">
 				<div class="fh5co-narrow-content">
 					<div class="row">
