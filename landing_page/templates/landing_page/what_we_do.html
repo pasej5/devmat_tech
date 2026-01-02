@@ -18,170 +18,1792 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="{% static 'landing_page/style.css' %}" />
     <style>
-      .feature-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        transition: all 0.3s ease-in-out;
+      :root {
+        --primary: #0a0a0a;
+        --secondary: #1a1a2e;
+        --accent: #a855f7;
+        --accent-secondary: #6366f1;
+        --gold: #d4af37;
+        --text-primary: #0a0a0a;
+        --text-secondary: #6b7280;
+        --text-light: #9ca3af;
+        --bg-light: #fafafa;
+        --bg-cream: #f5f5f0;
+        --white: #ffffff;
+        --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --gradient-dark: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+        --gradient-accent: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
       }
-      .feature-icon {
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        color: var(--text-primary);
+        background: var(--white);
+        overflow-x: hidden;
+        line-height: 1.6;
+      }
+
+      /* Typography */
+      .font-display {
+        font-family: 'Playfair Display', Georgia, serif;
+      }
+
+      .text-gradient {
+        background: var(--gradient-accent);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* ==================== HERO SECTION ==================== */
+      .hero-epic {
+        min-height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        background: var(--primary);
+      }
+
+      .hero-video-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.4;
+      }
+
+      .hero-image-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80')
+          center/cover;
+        opacity: 0.3;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(10, 10, 10, 0.95) 0%,
+          rgba(26, 26, 46, 0.85) 50%,
+          rgba(10, 10, 10, 0.9) 100%
+        );
+      }
+
+      .hero-grid-pattern {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(
+            rgba(255, 255, 255, 0.03) 1px,
+            transparent 1px
+          ),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 50px 50px;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 10;
+        padding: 0 5%;
+        max-width: 1400px;
+        margin: 0 auto;
+        width: 100%;
+      }
+
+      .hero-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--accent);
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+      }
+
+      .hero-eyebrow::before {
+        content: '';
+        width: 40px;
+        height: 2px;
+        background: var(--accent);
+      }
+
+      .hero-title {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(3rem, 8vw, 7rem);
+        font-weight: 700;
+        color: var(--white);
+        line-height: 1.05;
+        margin-bottom: 2rem;
+        max-width: 900px;
+      }
+
+      .hero-title .highlight {
+        position: relative;
+        display: inline-block;
+      }
+
+      .hero-title .highlight::after {
+        content: '';
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        width: 100%;
+        height: 12px;
+        background: var(--gradient-accent);
+        opacity: 0.4;
+        z-index: -1;
+      }
+
+      .hero-description {
+        font-size: 1.25rem;
+        color: rgba(255, 255, 255, 0.7);
+        max-width: 600px;
+        margin-bottom: 3rem;
+        line-height: 1.8;
+      }
+
+      .hero-cta-group {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .btn-epic {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 1.25rem 2.5rem;
+        font-size: 0.95rem;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 0;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-epic-primary {
+        background: var(--white);
+        color: var(--primary);
+      }
+
+      .btn-epic-primary::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--gradient-accent);
+        transition: left 0.4s ease;
+        z-index: -1;
+      }
+
+      .btn-epic-primary:hover {
+        color: var(--white);
+      }
+
+      .btn-epic-primary:hover::before {
+        left: 0;
+      }
+
+      .btn-epic-outline {
+        background: transparent;
+        color: var(--white);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .btn-epic-outline:hover {
+        background: var(--white);
+        color: var(--primary);
+        border-color: var(--white);
+      }
+
+      .hero-scroll-indicator {
+        position: absolute;
+        bottom: 3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      .scroll-line {
+        width: 1px;
+        height: 60px;
+        background: linear-gradient(to bottom, var(--accent), transparent);
+        animation: scrollPulse 2s ease-in-out infinite;
+      }
+
+      @keyframes scrollPulse {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scaleY(1);
+        }
+        50% {
+          opacity: 0.5;
+          transform: scaleY(0.8);
+        }
+      }
+
+      /* ==================== MARQUEE SECTION ==================== */
+      .marquee-section {
+        background: var(--primary);
+        padding: 2rem 0;
+        overflow: hidden;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .marquee-wrapper {
+        display: flex;
+        animation: marquee 30s linear infinite;
+      }
+
+      .marquee-item {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        padding: 0 3rem;
+        white-space: nowrap;
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 0.9rem;
+        font-weight: 500;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      .marquee-item span {
+        color: var(--accent);
+      }
+
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* ==================== INTRO SECTION ==================== */
+      .intro-section {
+        padding: 10rem 5%;
+        background: var(--white);
+        position: relative;
+      }
+
+      .intro-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem;
+        max-width: 1400px;
+        margin: 0 auto;
+        align-items: center;
+      }
+
+      .intro-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--accent);
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+      }
+
+      .intro-label::before {
+        content: '';
+        width: 30px;
+        height: 2px;
+        background: var(--accent);
+      }
+
+      .intro-title {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(2.5rem, 4vw, 3.5rem);
+        font-weight: 600;
+        line-height: 1.2;
+        margin-bottom: 2rem;
+        color: var(--primary);
+      }
+
+      .intro-text {
+        font-size: 1.1rem;
+        color: var(--text-secondary);
+        line-height: 1.9;
+        margin-bottom: 2rem;
+      }
+
+      .intro-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin-top: 3rem;
+        padding-top: 3rem;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .stat-item {
+        text-align: left;
+      }
+
+      .stat-number {
+        font-family: 'Playfair Display', serif;
         font-size: 3rem;
-        color: #0d6efd;
+        font-weight: 700;
+        color: var(--primary);
+        line-height: 1;
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-number span {
+        color: var(--accent);
+      }
+
+      .stat-label {
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .intro-image-wrapper {
+        position: relative;
+      }
+
+      .intro-image-main {
+        width: 100%;
+        height: 600px;
+        object-fit: cover;
+      }
+
+      .intro-image-accent {
+        position: absolute;
+        bottom: -3rem;
+        left: -3rem;
+        width: 250px;
+        height: 300px;
+        object-fit: cover;
+        border: 8px solid var(--white);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      }
+
+      .intro-badge {
+        position: absolute;
+        top: 2rem;
+        right: -2rem;
+        background: var(--primary);
+        color: var(--white);
+        padding: 1.5rem 2rem;
+        text-align: center;
+      }
+
+      .intro-badge-number {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        display: block;
+      }
+
+      .intro-badge-text {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        opacity: 0.8;
+      }
+
+      /* ==================== SERVICES SECTION ==================== */
+      .services-section {
+        padding: 10rem 5%;
+        background: var(--bg-light);
+        position: relative;
+      }
+
+      .services-section::before {
+        content: 'CAPABILITIES';
+        position: absolute;
+        top: 8rem;
+        right: 5%;
+        font-size: 10rem;
+        font-weight: 900;
+        color: rgba(0, 0, 0, 0.02);
+        pointer-events: none;
+        line-height: 1;
+      }
+
+      .section-header {
+        max-width: 1400px;
+        margin: 0 auto 5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      .section-header-content {
+        max-width: 600px;
+      }
+
+      .section-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--accent);
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+      }
+
+      .section-label::before {
+        content: '';
+        width: 30px;
+        height: 2px;
+        background: var(--accent);
+      }
+
+      .section-title {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(2.5rem, 4vw, 3.5rem);
+        font-weight: 600;
+        line-height: 1.2;
+        color: var(--primary);
+      }
+
+      .section-description {
+        font-size: 1.1rem;
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-top: 1.5rem;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .service-card {
+        background: var(--white);
+        padding: 3rem;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        cursor: pointer;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .service-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 0;
+        background: var(--gradient-accent);
+        transition: height 0.5s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.15);
+      }
+
+      .service-card:hover::before {
+        height: 100%;
+      }
+
+      .service-number {
+        font-family: 'Playfair Display', serif;
+        font-size: 4rem;
+        font-weight: 700;
+        color: rgba(0, 0, 0, 0.05);
+        position: absolute;
+        top: 1rem;
+        right: 2rem;
+        line-height: 1;
+      }
+
+      .service-icon {
+        width: 60px;
+        height: 60px;
+        background: var(--bg-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: var(--accent);
+        margin-bottom: 2rem;
+        transition: all 0.4s ease;
+      }
+
+      .service-card:hover .service-icon {
+        background: var(--gradient-accent);
+        color: var(--white);
+      }
+
+      .service-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--primary);
+      }
+
+      .service-text {
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+      }
+
+      .service-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 2rem 0;
+      }
+
+      .service-list li {
+        padding: 0.5rem 0;
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .service-list li::before {
+        content: '→';
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      .service-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--primary);
+        font-weight: 600;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .service-link:hover {
+        color: var(--accent);
+        gap: 12px;
+      }
+
+      /* ==================== FEATURED CAPABILITY ==================== */
+      .featured-section {
+        padding: 0;
+        background: var(--primary);
+        color: var(--white);
+      }
+
+      .featured-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 80vh;
+      }
+
+      .featured-image {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .featured-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.8s ease;
+      }
+
+      .featured-image:hover img {
+        transform: scale(1.05);
+      }
+
+      .featured-content {
+        padding: 6rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .featured-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--accent);
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+      }
+
+      .featured-label::before {
+        content: '';
+        width: 30px;
+        height: 2px;
+        background: var(--accent);
+      }
+
+      .featured-title {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(2rem, 3.5vw, 3rem);
+        font-weight: 600;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+      }
+
+      .featured-text {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.9;
+        margin-bottom: 2rem;
+      }
+
+      .featured-points {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+      }
+
+      .featured-point {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+      .featured-point-icon {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--accent);
+        flex-shrink: 0;
+      }
+
+      .featured-point-text {
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.6;
+      }
+
+      /* ==================== PROCESS SECTION ==================== */
+      .process-section {
+        padding: 10rem 5%;
+        background: var(--white);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .process-container {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .process-header {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 6rem;
+      }
+
+      .process-timeline {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+      }
+
+      .process-timeline::before {
+        content: '';
+        position: absolute;
+        top: 60px;
+        left: 10%;
+        right: 10%;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          var(--accent),
+          var(--accent-secondary),
+          var(--accent)
+        );
+        opacity: 0.3;
+      }
+
+      .process-step {
+        text-align: center;
+        position: relative;
+        padding-top: 4rem;
+      }
+
+      .process-step-number {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 80px;
+        background: var(--white);
+        border: 2px solid var(--accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--accent);
+        transition: all 0.4s ease;
+      }
+
+      .process-step:hover .process-step-number {
+        background: var(--gradient-accent);
+        color: var(--white);
+        border-color: transparent;
+        transform: translateX(-50%) scale(1.1);
+      }
+
+      .process-step-content {
+        padding-top: 3rem;
+      }
+
+      .process-step-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--primary);
+      }
+
+      .process-step-text {
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        line-height: 1.7;
+      }
+
+      /* ==================== TECH STACK ==================== */
+      .tech-section {
+        padding: 8rem 5%;
+        background: var(--bg-cream);
+      }
+
+      .tech-container {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .tech-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      .tech-grid {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 3rem;
+      }
+
+      .tech-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 2rem;
+        background: var(--white);
+        min-width: 150px;
+        transition: all 0.4s ease;
+        border: 1px solid transparent;
+      }
+
+      .tech-item:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent);
+        box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+      }
+
+      .tech-icon-wrapper {
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        color: var(--accent);
+      }
+
+      .tech-name {
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: var(--primary);
+      }
+
+      /* ==================== TESTIMONIAL ==================== */
+      .testimonial-section {
+        padding: 10rem 5%;
+        background: var(--primary);
+        color: var(--white);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .testimonial-section::before {
+        content: '"';
+        position: absolute;
+        top: 5rem;
+        left: 5%;
+        font-family: 'Playfair Display', serif;
+        font-size: 30rem;
+        color: rgba(255, 255, 255, 0.03);
+        line-height: 1;
+      }
+
+      .testimonial-container {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .testimonial-quote {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(1.5rem, 3vw, 2.5rem);
+        font-weight: 400;
+        line-height: 1.6;
+        margin-bottom: 3rem;
+        font-style: italic;
+      }
+
+      .testimonial-author {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .testimonial-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--accent);
+      }
+
+      .testimonial-name {
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+
+      .testimonial-role {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.9rem;
+      }
+
+      /* ==================== CTA SECTION ==================== */
+      .cta-section {
+        padding: 10rem 5%;
+        background: var(--white);
+        position: relative;
+      }
+
+      .cta-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .cta-content {
+        padding-right: 2rem;
+      }
+
+      .cta-title {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(2.5rem, 4vw, 4rem);
+        font-weight: 600;
+        line-height: 1.15;
+        margin-bottom: 1.5rem;
+        color: var(--primary);
+      }
+
+      .cta-text {
+        font-size: 1.15rem;
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: 2.5rem;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .btn-cta-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 1.25rem 2.5rem;
+        background: var(--primary);
+        color: var(--white);
+        font-size: 0.95rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-cta-primary::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--gradient-accent);
+        transition: left 0.4s ease;
+        z-index: 0;
+      }
+
+      .btn-cta-primary span {
+        position: relative;
+        z-index: 1;
+      }
+
+      .btn-cta-primary:hover::before {
+        left: 0;
+      }
+
+      .btn-cta-primary:hover {
+        color: var(--white);
+      }
+
+      .btn-cta-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 1.25rem 2.5rem;
+        background: transparent;
+        color: var(--primary);
+        font-size: 0.95rem;
+        font-weight: 600;
+        text-decoration: none;
+        border: 2px solid var(--primary);
+        transition: all 0.4s ease;
+      }
+
+      .btn-cta-secondary:hover {
+        background: var(--primary);
+        color: var(--white);
+      }
+
+      .cta-image-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+
+      .cta-image-item {
+        overflow: hidden;
+      }
+
+      .cta-image-item:first-child {
+        grid-row: span 2;
+      }
+
+      .cta-image-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      .cta-image-item:hover img {
+        transform: scale(1.05);
+      }
+
+      /* ==================== FOOTER ==================== */
+      .footer-minimal {
+        padding: 4rem 5%;
+        background: var(--primary);
+        color: var(--white);
+      }
+
+      .footer-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      .footer-brand {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--white);
+        text-decoration: none;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .footer-link {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+      }
+
+      .footer-link:hover {
+        color: var(--white);
+      }
+
+      .footer-copyright {
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 0.85rem;
+      }
+
+      /* ==================== RESPONSIVE ==================== */
+      @media (max-width: 1200px) {
+        .services-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 991px) {
+        .intro-grid,
+        .featured-grid,
+        .cta-container {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+
+        .intro-image-wrapper {
+          order: -1;
+        }
+
+        .intro-image-accent {
+          display: none;
+        }
+
+        .intro-badge {
+          right: 2rem;
+        }
+
+        .featured-content {
+          padding: 4rem 2rem;
+        }
+
+        .featured-image {
+          height: 400px;
+        }
+
+        .process-timeline {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 3rem;
+        }
+
+        .process-timeline::before {
+          display: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .services-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .process-timeline {
+          grid-template-columns: 1fr;
+        }
+
+        .intro-stats {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .stat-item {
+          text-align: center;
+        }
+
+        .featured-points {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-cta-group {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .cta-image-grid {
+          display: none;
+        }
+
+        .footer-container {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .footer-links {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
       }
     </style>
   </head>
   <body>
-    <div class="d-flex">
-      <!-- Sidebar -->
-      <aside class="bg-light border p-3 vh-100">
-        <h1 class="mb-4">
-          <a href="{% url 'index' %}" class="text-decoration-none">JMatsika</a>
+    <!-- YOUR NAVBAR GOES HERE -->
+
+    {% include "landing_page/navbar.html" %}
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero-epic">
+      <div class="hero-image-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-grid-pattern"></div>
+
+      <div class="hero-content">
+        <span class="hero-eyebrow" data-aos="fade-up"
+          >Capabilities & Services</span
+        >
+        <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+          Engineering the <span class="highlight">Future</span> of Digital
         </h1>
-        <nav>
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'index' %}">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="{% url 'services' %}"
-                >Services</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'portfolio_new' %}">Our Work</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'insights' %}">Insights</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'about' %}">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'careers' %}">Careers</a>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-
-      <!-- Main Content -->
-      <main class="p-5 flex-grow-1">
-        <span class="badge bg-primary mb-3">Capabilities</span>
-        <h1 class="mb-4">Our Approach to Digital Transformation</h1>
-        <p class="lead mb-5">
-          JMatsika Innovations designs and delivers software solutions that
-          solve complex business challenges while driving measurable value.
+        <p class="hero-description" data-aos="fade-up" data-aos-delay="200">
+          We partner with ambitious organizations to design, build, and scale
+          transformative technology solutions that drive measurable business
+          impact.
         </p>
-
-        <div class="row g-4">
-          <!-- Agile Development -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card feature-card p-4 h-100">
-              <div class="feature-icon mb-3">
-                <i class="bi bi-code-slash"></i>
-              </div>
-              <h5 class="card-title">Agile Development</h5>
-              <p class="card-text">
-                Iterative delivery with stakeholder feedback, minimizing risk
-                and maximizing value.
-              </p>
-              <ul>
-                <li>Daily stand-ups, sprint planning, and retrospectives</li>
-                <li>Incremental releases to validate assumptions</li>
-                <li>Prioritization of high-impact features</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- DevOps & CI/CD -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card feature-card p-4 h-100">
-              <div class="feature-icon mb-3"><i class="bi bi-gear"></i></div>
-              <h5 class="card-title">DevOps & CI/CD</h5>
-              <p class="card-text">
-                Automated deployments with continuous integration, ensuring
-                reliable software delivery.
-              </p>
-              <ul>
-                <li>Automated testing and code review</li>
-                <li>Seamless staging & production deployments</li>
-                <li>Monitoring & logging for proactive issue resolution</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- TDD -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card feature-card p-4 h-100">
-              <div class="feature-icon mb-3">
-                <i class="bi bi-check2-square"></i>
-              </div>
-              <h5 class="card-title">Test-Driven Development</h5>
-              <p class="card-text">
-                Write tests before code to ensure quality, maintainability, and
-                robustness.
-              </p>
-            </div>
-          </div>
-
-          <!-- Microservices -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card feature-card p-4 h-100">
-              <div class="feature-icon mb-3"><i class="bi bi-layers"></i></div>
-              <h5 class="card-title">Microservices Architecture</h5>
-              <p class="card-text">
-                Modular systems for scalability, reliability, and
-                maintainability.
-              </p>
-              <ul>
-                <li>Independent services for faster iteration</li>
-                <li>Reduced downtime</li>
-                <li>Flexible API integration</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- AI & Data Analytics -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card feature-card p-4 h-100">
-              <div class="feature-icon mb-3"><i class="bi bi-brain"></i></div>
-              <h5 class="card-title">AI & Data Analytics</h5>
-              <p class="card-text">
-                Predictive insights, automation, and smarter business decisions
-                with AI adoption roadmap.
-              </p>
-              <ul>
-                <li>Predictive analytics for business insights</li>
-                <li>Automation to improve efficiency</li>
-                <li>Guided AI adoption for risk mitigation</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Tools & Technologies -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card feature-card p-4 h-100">
-              <div class="feature-icon mb-3"><i class="bi bi-tools"></i></div>
-              <h5 class="card-title">Tools & Technologies</h5>
-              <ul>
-                <li>Python & Django</li>
-                <li>Docker & Kubernetes</li>
-                <li>React / Vue</li>
-                <li>Cloud & AI Integration</li>
-              </ul>
-            </div>
-          </div>
+        <div class="hero-cta-group" data-aos="fade-up" data-aos-delay="300">
+          <a href="{% url 'contact' %}" class="btn-epic btn-epic-primary">
+            Start a Conversation <i class="bi bi-arrow-right"></i>
+          </a>
+          <a href="{% url 'portfolio_new' %}" class="btn-epic btn-epic-outline">
+            View Case Studies
+          </a>
         </div>
+      </div>
 
-        <!-- CTA -->
-        <div class="text-center mt-5">
-          <a href="{% url 'contact' %}" class="btn btn-primary btn-lg"
-            >Discuss Your Project With Us</a
-          >
+      <div class="hero-scroll-indicator">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ==================== MARQUEE ==================== -->
+    <div class="marquee-section">
+      <div class="marquee-wrapper">
+        <div class="marquee-item">
+          <span>★</span> Strategy & Consulting <span>★</span> Digital
+          Transformation <span>★</span> Cloud Solutions <span>★</span> AI &
+          Analytics <span>★</span> Software Engineering <span>★</span> DevOps
+          Excellence
         </div>
-      </main>
+        <div class="marquee-item">
+          <span>★</span> Strategy & Consulting <span>★</span> Digital
+          Transformation <span>★</span> Cloud Solutions <span>★</span> AI &
+          Analytics <span>★</span> Software Engineering <span>★</span> DevOps
+          Excellence
+        </div>
+      </div>
     </div>
 
+    <!-- ==================== INTRO SECTION ==================== -->
+    <section class="intro-section">
+      <div class="intro-grid">
+        <div class="intro-content" data-aos="fade-right">
+          <span class="intro-label">Who We Are</span>
+          <h2 class="intro-title">
+            We transform complexity into competitive advantage
+          </h2>
+          <p class="intro-text">
+            JMatsika Innovations is a technology consultancy that partners with
+            forward-thinking organizations to solve their most complex
+            challenges. We combine deep technical expertise with strategic
+            insight to deliver solutions that create lasting value.
+          </p>
+          <p class="intro-text">
+            Our multidisciplinary teams bring together strategy, design, and
+            engineering to build products and platforms that transform
+            businesses and entire industries.
+          </p>
+
+          <div class="intro-stats">
+            <div class="stat-item">
+              <div class="stat-number">50<span>+</span></div>
+              <div class="stat-label">Projects Delivered</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">99<span>%</span></div>
+              <div class="stat-label">Client Satisfaction</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">5<span>+</span></div>
+              <div class="stat-label">Years Excellence</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="intro-image-wrapper" data-aos="fade-left">
+          <img
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            alt="Team collaboration"
+            class="intro-image-main"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+            alt="Innovation"
+            class="intro-image-accent"
+          />
+          <div class="intro-badge">
+            <span class="intro-badge-number">24/7</span>
+            <span class="intro-badge-text">Support</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SERVICES SECTION ==================== -->
+    <section class="services-section">
+      <div class="section-header">
+        <div class="section-header-content">
+          <span class="section-label">What We Do</span>
+          <h2 class="section-title">Capabilities that drive transformation</h2>
+          <p class="section-description">
+            From strategy to execution, we deliver end-to-end solutions that
+            accelerate growth and create sustainable competitive advantage.
+          </p>
+        </div>
+        <a
+          href="{% url 'contact' %}"
+          class="btn-epic btn-epic-primary"
+          style="background: var(--primary); color: var(--white)"
+        >
+          Explore All Services <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service 1 -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+          <span class="service-number">01</span>
+          <div class="service-icon">
+            <i class="bi bi-lightbulb"></i>
+          </div>
+          <h3 class="service-title">Digital Strategy</h3>
+          <p class="service-text">
+            We help you envision and plan your digital future with strategies
+            that align technology investments with business outcomes.
+          </p>
+          <ul class="service-list">
+            <li>Digital Roadmap Development</li>
+            <li>Technology Assessment</li>
+            <li>Innovation Consulting</li>
+          </ul>
+          <a href="#" class="service-link">
+            Learn More <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <span class="service-number">02</span>
+          <div class="service-icon">
+            <i class="bi bi-code-slash"></i>
+          </div>
+          <h3 class="service-title">Software Engineering</h3>
+          <p class="service-text">
+            Custom software solutions built with modern architectures, clean
+            code practices, and scalability at the core.
+          </p>
+          <ul class="service-list">
+            <li>Full-Stack Development</li>
+            <li>API Design & Integration</li>
+            <li>Legacy Modernization</li>
+          </ul>
+          <a href="#" class="service-link">
+            Learn More <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <span class="service-number">03</span>
+          <div class="service-icon">
+            <i class="bi bi-cloud"></i>
+          </div>
+          <h3 class="service-title">Cloud & Infrastructure</h3>
+          <p class="service-text">
+            Architect, migrate, and optimize cloud environments for performance,
+            security, and cost efficiency.
+          </p>
+          <ul class="service-list">
+            <li>Cloud Migration</li>
+            <li>Infrastructure as Code</li>
+            <li>Multi-Cloud Strategy</li>
+          </ul>
+          <a href="#" class="service-link">
+            Learn More <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+          <span class="service-number">04</span>
+          <div class="service-icon">
+            <i class="bi bi-robot"></i>
+          </div>
+          <h3 class="service-title">AI & Data Analytics</h3>
+          <p class="service-text">
+            Unlock the power of your data with advanced analytics, machine
+            learning, and AI-driven insights.
+          </p>
+          <ul class="service-list">
+            <li>Predictive Analytics</li>
+            <li>Machine Learning Models</li>
+            <li>Data Strategy & Governance</li>
+          </ul>
+          <a href="#" class="service-link">
+            Learn More <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <span class="service-number">05</span>
+          <div class="service-icon">
+            <i class="bi bi-infinity"></i>
+          </div>
+          <h3 class="service-title">DevOps & Automation</h3>
+          <p class="service-text">
+            Accelerate delivery with CI/CD pipelines, automated testing, and
+            infrastructure automation.
+          </p>
+          <ul class="service-list">
+            <li>CI/CD Implementation</li>
+            <li>Container Orchestration</li>
+            <li>Monitoring & Observability</li>
+          </ul>
+          <a href="#" class="service-link">
+            Learn More <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <span class="service-number">06</span>
+          <div class="service-icon">
+            <i class="bi bi-shield-check"></i>
+          </div>
+          <h3 class="service-title">Quality & Security</h3>
+          <p class="service-text">
+            Build trust with robust security practices and comprehensive quality
+            assurance embedded in every phase.
+          </p>
+          <ul class="service-list">
+            <li>Security Audits</li>
+            <li>Test Automation</li>
+            <li>Compliance & Risk Management</li>
+          </ul>
+          <a href="#" class="service-link">
+            Learn More <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FEATURED CAPABILITY ==================== -->
+    <section class="featured-section">
+      <div class="featured-grid">
+        <div class="featured-image" data-aos="fade-right">
+          <img
+            src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+            alt="Digital Transformation"
+          />
+        </div>
+        <div class="featured-content" data-aos="fade-left">
+          <span class="featured-label">Featured Capability</span>
+          <h2 class="featured-title">End-to-End Digital Transformation</h2>
+          <p class="featured-text">
+            We don't just build software—we transform organizations. Our
+            holistic approach combines strategy, technology, and change
+            management to deliver outcomes that matter.
+          </p>
+          <div class="featured-points">
+            <div class="featured-point">
+              <div class="featured-point-icon">
+                <i class="bi bi-graph-up-arrow"></i>
+              </div>
+              <span class="featured-point-text"
+                >40% average efficiency improvement</span
+              >
+            </div>
+            <div class="featured-point">
+              <div class="featured-point-icon">
+                <i class="bi bi-clock-history"></i>
+              </div>
+              <span class="featured-point-text">60% faster time-to-market</span>
+            </div>
+            <div class="featured-point">
+              <div class="featured-point-icon">
+                <i class="bi bi-currency-dollar"></i>
+              </div>
+              <span class="featured-point-text"
+                >30% reduction in operational costs</span
+              >
+            </div>
+            <div class="featured-point">
+              <div class="featured-point-icon">
+                <i class="bi bi-people"></i>
+              </div>
+              <span class="featured-point-text"
+                >Improved employee experience</span
+              >
+            </div>
+          </div>
+          <a href="{% url 'contact' %}" class="btn-epic btn-epic-primary">
+            Discuss Your Transformation <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROCESS SECTION ==================== -->
+    <section class="process-section">
+      <div class="process-container">
+        <div class="process-header" data-aos="fade-up">
+          <span class="section-label">Our Approach</span>
+          <h2 class="section-title">How we deliver excellence</h2>
+          <p class="section-description">
+            A proven methodology refined over years of delivering complex
+            projects for organizations across industries.
+          </p>
+        </div>
+
+        <div class="process-timeline">
+          <div class="process-step" data-aos="fade-up" data-aos-delay="0">
+            <div class="process-step-number">01</div>
+            <div class="process-step-content">
+              <h3 class="process-step-title">Discover</h3>
+              <p class="process-step-text">
+                Deep-dive into your business context, challenges, and
+                aspirations to define the right problem to solve.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-step" data-aos="fade-up" data-aos-delay="100">
+            <div class="process-step-number">02</div>
+            <div class="process-step-content">
+              <h3 class="process-step-title">Design</h3>
+              <p class="process-step-text">
+                Craft elegant solutions through collaborative ideation,
+                prototyping, and architecture design.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+            <div class="process-step-number">03</div>
+            <div class="process-step-content">
+              <h3 class="process-step-title">Develop</h3>
+              <p class="process-step-text">
+                Build with agility, transparency, and engineering excellence—
+                delivering value incrementally.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+            <div class="process-step-number">04</div>
+            <div class="process-step-content">
+              <h3 class="process-step-title">Deploy & Scale</h3>
+              <p class="process-step-text">
+                Launch with confidence and continuously optimize for
+                performance, reliability, and growth.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TECH STACK ==================== -->
+    <section class="tech-section">
+      <div class="tech-container">
+        <div class="tech-header" data-aos="fade-up">
+          <span class="section-label">Technology</span>
+          <h2 class="section-title">Our technology ecosystem</h2>
+        </div>
+
+        <div class="tech-grid" data-aos="fade-up" data-aos-delay="100">
+          <div class="tech-item">
+            <div class="tech-icon-wrapper">
+              <i class="bi bi-filetype-py"></i>
+            </div>
+            <span class="tech-name">Python</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon-wrapper">
+              <i class="bi bi-box"></i>
+            </div>
+            <span class="tech-name">Django</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon-wrapper">
+              <i class="bi bi-filetype-jsx"></i>
+            </div>
+            <span class="tech-name">React</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon-wrapper">
+              <i class="bi bi-boxes"></i>
+            </div>
+            <span class="tech-name">Docker</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon-wrapper">
+              <i class="bi bi-gear"></i>
+            </div>
+            <span class="tech-name">Kubernetes</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon-wrapper">
+              <i class="bi bi-cloud"></i>
+            </div>
+            <span class="tech-name">AWS</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon-wrapper">
+              <i class="bi bi-database"></i>
+            </div>
+            <span class="tech-name">PostgreSQL</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon-wrapper">
+              <i class="bi bi-git"></i>
+            </div>
+            <span class="tech-name">Git</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TESTIMONIAL ==================== -->
+    <section class="testimonial-section">
+      <div class="testimonial-container" data-aos="fade-up">
+        <p class="testimonial-quote">
+          "JMatsika Innovations transformed our entire digital infrastructure.
+          Their team's expertise and dedication delivered results that exceeded
+          our expectations—on time and within budget."
+        </p>
+        <div class="testimonial-author">
+          <img
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+            alt="Client"
+            class="testimonial-avatar"
+          />
+          <span class="testimonial-name">James Mitchell</span>
+          <span class="testimonial-role">CTO, Enterprise Solutions Inc.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CTA SECTION ==================== -->
+    <section class="cta-section">
+      <div class="cta-container">
+        <div class="cta-content" data-aos="fade-right">
+          <span class="section-label">Let's Connect</span>
+          <h2 class="cta-title">Ready to build something extraordinary?</h2>
+          <p class="cta-text">
+            Whether you're looking to transform your business, build a new
+            product, or modernize legacy systems—we're here to help you navigate
+            the journey from vision to reality.
+          </p>
+          <div class="cta-buttons">
+            <a href="{% url 'contact' %}" class="btn-cta-primary">
+              <span>Start a Project</span> <i class="bi bi-arrow-right"></i>
+            </a>
+            <a href="{% url 'portfolio_new' %}" class="btn-cta-secondary">
+              View Our Work <i class="bi bi-briefcase"></i>
+            </a>
+          </div>
+        </div>
+        <div class="cta-image-grid" data-aos="fade-left">
+          <div class="cta-image-item">
+            <img
+              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+              alt="Team"
+            />
+          </div>
+          <div class="cta-image-item">
+            <img
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+              alt="Collaboration"
+            />
+          </div>
+          <div class="cta-image-item">
+            <img
+              src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+              alt="Meeting"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer-minimal">
+      <div class="footer-container">
+        <a href="{% url 'index' %}" class="footer-brand">JMatsika</a>
+        <div class="footer-links">
+          <a href="{% url 'index' %}" class="footer-link">Home</a>
+          <a href="{% url 'services' %}" class="footer-link">Services</a>
+          <a href="{% url 'portfolio_new' %}" class="footer-link">Work</a>
+          <a href="{% url 'about' %}" class="footer-link">About</a>
+          <a href="{% url 'contact' %}" class="footer-link">Contact</a>
+        </div>
+        <p class="footer-copyright">
+          © 2024 JMatsika Innovations. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 50,
+      });
+
+      // Counter Animation
+      const counters = document.querySelectorAll('.stat-number');
+      const animateCounters = () => {
+        counters.forEach((counter) => {
+          const target = parseInt(counter.innerText);
+          const suffix = counter.innerHTML.includes('+')
+            ? '+'
+            : counter.innerHTML.includes('%')
+            ? '%'
+            : '';
+          let current = 0;
+          const increment = target / 50;
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+              counter.innerHTML = target + '<span>' + suffix + '</span>';
+              clearInterval(timer);
+            } else {
+              counter.innerHTML =
+                Math.floor(current) + '<span>' + suffix + '</span>';
+            }
+          }, 30);
+        });
+      };
+
+      // Intersection Observer for counters
+      const statsSection = document.querySelector('.intro-stats');
+      if (statsSection) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                animateCounters();
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.5 }
+        );
+        observer.observe(statsSection);
+      }
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+      // Parallax effect on hero
+      window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const heroImage = document.querySelector('.hero-image-bg');
+        if (heroImage) {
+          heroImage.style.transform = `translateY(${scrolled * 0.5}px)`;
+        }
+      });
+    </script>
   </body>
 </html>

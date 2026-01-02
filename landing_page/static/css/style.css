@@ -1108,9 +1108,9 @@ body {
 
 /* Headline lines */
 .headline-line {
-  font-family: 'Roboto', sans-serif; /* you can replace with a bolder professional font */
+  font-family: 'Roboto', sans-serif;
   font-weight: 900;
-  font-size: 4rem; /* increase for bigger impact */
+  font-size: 4rem;
   color: white;
   margin: 0.2em 0;
   opacity: 0;
