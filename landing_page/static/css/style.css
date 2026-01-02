@@ -492,6 +492,7 @@ body.offcanvas,
   margin-bottom: 10px;
   letter-spacing: 1px;
   line-height: auto;
+  color: salmon;
 }
 .blog-entry .desc h3 a {
   color: #000;
@@ -514,6 +515,10 @@ body.offcanvas,
   letter-spacing: 2px;
   color: #000;
 }
+.blog-entry .desc .desc-p {
+  color: greenyellow;
+}
+
 .blog-entry:hover .blog-img img {
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
